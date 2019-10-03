@@ -28,6 +28,8 @@
 
 ### KOPAS
 
+Belum ada yang di KOPAS.
+
 ### FONT STYLE ROBOTO
 
 1. Normal : 400
