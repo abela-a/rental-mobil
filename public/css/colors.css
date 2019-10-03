@@ -1,0 +1,57 @@
+.bg-main {
+  background-color: #118791;
+  color: white;
+}
+.bg-main-dark {
+  background-color: #037272;
+  color: white;
+}
+.bg-dark {
+  background-color: #1c1f4c;
+  color: white;
+}
+.bg-wow {
+  background-color: #fccf17;
+  color: #1c1f4c;
+}
+.bg-wow-dark {
+  background-color: #fec20f;
+  color: #1c1f4c;
+}
+.bg-back {
+  background-color: #edebd9;
+}
+.text-wow {
+  color: #fccf17;
+}
+.btn-main {
+  background-color: #118791;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: -1px;
+  transition: 0.5s ease-in-out;
+}
+.btn-main:hover {
+  background-color: #15808a;
+  color: white;
+  text-decoration: none;
+}
+.btn-main-active {
+  background-color: #0f7b85;
+  border-right: #fccf17 5px solid;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+.bl-wow {
+  border-left: #fccf17 7px solid;
+}
+.bt-wow {
+  border-bottom: #fccf17 7px solid;
+}
+.text-main-dark {
+  color: #037272;
+}
