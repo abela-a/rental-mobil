@@ -126,6 +126,7 @@
           <div class="form-group">
             <label for="Password">Password</label>
             <input type="password" class="form-control" id="Password" name="Password" autocomplete="off">
+            <small class="text-danger">kosongkan jika tidak ingin mengubah password</small>
           </div>
 
           <div class="form-group">
