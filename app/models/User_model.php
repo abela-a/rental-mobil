@@ -16,8 +16,32 @@ class User_model
   }
   public function editDataUser($data)
   {
-    $NoTelp = preg_replace('/\D/', '', $data['NoTelp']);
-    $query = "UPDATE users SET 
+    if ($data['Password'] == '') {
+      $NoTelp = preg_replace('/\D/', '', $data['NoTelp']);
+      $query = "UPDATE users SET 
+              NIK = :NIK,
+              Nama = :Nama,
+              NamaUser = :NamaUser,
+              JenisKelamin = :JenisKelamin, 
+              Alamat = :Alamat,
+              NoTelp = :NoTelp
+              WHERE id = :id";
+
+      $this->db->query($query);
+
+      $this->db->bind('NIK', $data['NIK']);
+      $this->db->bind('Nama', $data['Nama']);
+      $this->db->bind('NamaUser', $data['NamaUser']);
+      $this->db->bind('JenisKelamin', $data['JenisKelamin']);
+      $this->db->bind('Alamat', $data['Alamat']);
+      $this->db->bind('NoTelp', $NoTelp);
+      $this->db->bind('id', $data['id']);
+
+      $this->db->execute();
+      return $this->db->rowCount();
+    } else {
+      $NoTelp = preg_replace('/\D/', '', $data['NoTelp']);
+      $query = "UPDATE users SET 
               NIK = :NIK,
               Nama = :Nama,
               NamaUser = :NamaUser, 
@@ -27,22 +51,23 @@ class User_model
               NoTelp = :NoTelp
               WHERE id = :id";
 
-    $this->db->query($query);
+      $this->db->query($query);
 
-    $password = $data['Password'];
-    $password = password_hash($password, PASSWORD_DEFAULT);
+      $password = $data['Password'];
+      $password = password_hash($password, PASSWORD_DEFAULT);
 
-    $this->db->bind('NIK', $data['NIK']);
-    $this->db->bind('Nama', $data['Nama']);
-    $this->db->bind('NamaUser', $data['NamaUser']);
-    $this->db->bind('Password', $password);
-    $this->db->bind('JenisKelamin', $data['JenisKelamin']);
-    $this->db->bind('Alamat', $data['Alamat']);
-    $this->db->bind('NoTelp', $NoTelp);
-    $this->db->bind('id', $data['id']);
+      $this->db->bind('NIK', $data['NIK']);
+      $this->db->bind('Nama', $data['Nama']);
+      $this->db->bind('NamaUser', $data['NamaUser']);
+      $this->db->bind('Password', $password);
+      $this->db->bind('JenisKelamin', $data['JenisKelamin']);
+      $this->db->bind('Alamat', $data['Alamat']);
+      $this->db->bind('NoTelp', $NoTelp);
+      $this->db->bind('id', $data['id']);
 
-    $this->db->execute();
-    return $this->db->rowCount();
+      $this->db->execute();
+      return $this->db->rowCount();
+    }
   }
   public function prosesUploadFotoUser()
   {
