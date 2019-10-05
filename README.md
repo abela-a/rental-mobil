@@ -6,9 +6,12 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 
 ## 📒 Fitur
 
-1. Sistem Login dan Register.
-2. Multiuser
-   Role | Keterangan
-   -----|-----------
-   Admin|Mengatur jalannya aplikasi,
-   |Menambah dan menghapus karyawan serta pelanggan,
+1. Sistem Login dan Register
+2. Multiusers
+3. Multiroles
+4. Dashboard dan Homepage
+5. Manajemen Transaksi
+6. Manajemen Karyawan, Pelanggan, Role, Sopir dan Akun Baru
+7. Manajemen Merk, Type, dan Data Mobil
+8. Mengubah foto profile user
+9. ... dll
