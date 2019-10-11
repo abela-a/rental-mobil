@@ -32,4 +32,7 @@ $(document).ready(function() {
   jarallax(document.querySelectorAll(".jarallax-keep-img"), {
     keepImg: true
   });
+
+  // MATERIAL SELECT
+  $(".mdb-select").material_select();
 });
