@@ -1,6 +1,5 @@
 <!--Main Navigation-->
 <header>
-
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark indigo scrolling-navbar py-0">
     <div class="container">
 
@@ -45,16 +44,15 @@
 
           <?php else : ?>
             <!-- Jika ada sesi Login -->
-            <span style="font-weight:400;font-size:15px" class="py-3 text-white">
-              <?= $_SESSION['Login']['Nama'] ?>
-            </span>
-
-            <div class="btn-group">
-              <div class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+              <a class="nav-link" id="mobil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span style="font-weight:400;font-size:15px" class="text-white mr-2">
+                  <?= $_SESSION['Login']['Nama'] ?>
+                </span>
                 <img src="<?= BASEURL . '/img/fotouser/' . $_SESSION['Login']['Foto'] ?>" class="rounded border" width="35" height="35">
-              </div>
+              </a>
 
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu dropdown-warning dropdown-menu-right" aria-labelledby="mobil">
                 <a class="dropdown-item" href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>">
                   Dashboard
                 </a>
@@ -64,12 +62,10 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="<?= BASEURL ?>/auth/SignOut">Logout</a>
               </div>
-            </div>
-
+            </li>
           <?php endif; ?>
         </ul>
       </div>
-      <!-- Classic tabs -->
     </div>
   </nav>
 </header>
