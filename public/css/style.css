@@ -1,6 +1,54 @@
 .nav-active {
   border-bottom: #ffbb33 3px solid;
 }
+.btn-warning {
+  color: black;
+}
+.btn-warning:hover {
+  color: black;
+}
+.font-weight-bold {
+  font-weight: 700;
+}
+.font-weight-medium {
+  font-weight: 500;
+}
+.font-weight-regular {
+  font-weight: 300;
+}
+.font-weight-light {
+  font-weight: 200;
+}
+.font-weight-thin {
+  font-weight: 100;
+}
+#motto {
+  font-weight: 100;
+  font-size: 29px;
+  font-family: "Fira Code iScript";
+}
+#alasan {
+  margin-top: -50px;
+  z-index: 10;
+}
+#landing-img {
+  z-index: 100;
+  position: absolute;
+  height: 550px;
+  right: -50px;
+  bottom: -155px;
+}
+footer {
+  background-color: #292c2f;
+  position: relative;
+  width: 100%;
+  font-size: 16px;
+  padding: 20px 25px;
+  bottom: 0;
+  color: #fff;
+}
+
+/* ANU LAMA DI BAWAH INI */
 #sign {
   text-align: center;
   padding: 40px;
@@ -18,15 +66,6 @@
 }
 .site-section h1 {
   margin-bottom: 30px;
-}
-footer {
-  background-color: #292c2f;
-  position: relative;
-  width: 100%;
-  font-size: 16px;
-  padding: 20px 25px;
-  bottom: 0;
-  color: #fff;
 }
 .row-vh {
   height: 15vh;
