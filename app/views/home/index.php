@@ -15,7 +15,7 @@
             <span id="motto">
               <i> Your Car Rental Solution</i>
             </span>
-            <div id="home" class="pr-5">
+            <div id="home" class="pr-5 font-weight-regular">
               <p class="mt-4">
                 Kami adalah penyedia layanan sewa mobil di Makassar yang sudah berpengalaman dalam menyediakan mobil berkualitas dengan harga yang murah sejak tahun 2019.
               </p>
