@@ -23,4 +23,4 @@
   <title><?= $data['judul']; ?></title>
 </head>
 
-<body class="bg-abu">
+<body class="bg-gray">
