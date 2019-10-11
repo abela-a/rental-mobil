@@ -15,7 +15,7 @@
             <span style="font-weight:100;font-size:29px;font-family:'Fira Code iScript'">
               <i> Your Car Rental Solution</i>
             </span>
-            <div id="about" class="pr-5">
+            <div id="home" class="pr-5">
               <p class="mt-4">
                 Kami adalah penyedia layanan sewa mobil di Makassar yang sudah berpengalaman dalam menyediakan mobil berkualitas dengan harga yang murah sejak tahun 2019.
               </p>
@@ -29,8 +29,8 @@
               </p>
             </div>
             <div class="clear-fix mt-4">
-              <button class="btn btn-warning" style="color:black">Daftar</button>
-              <button class="btn btn-outline-white" style="color:black">login</button>
+              <a class="btn btn-warning" href="<?= BASEURL; ?>/auth/login" style="color:black">Daftar</a>
+              <a class="btn btn-outline-white" href="<?= BASEURL; ?>/auth/registration" style="color:black">login</a>
             </div>
           </div>
           <div class="col-md-7 col-sm-12">
@@ -42,3 +42,9 @@
   </div>
 </div>
 <!-- AKHIR LANDING -->
+
+<div class="container">
+  <!-- AWAL MEMILIH KAMI -->
+
+  <!-- AKHIR MEMILIH KAMI -->
+</div>
