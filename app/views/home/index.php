@@ -46,7 +46,7 @@
 <div class="container position-relative">
 
   <!-- AWAL MEMILIH KAMI -->
-  <section id="alasan" class="px-5 py-5 bg-white rounded shadow" style="margin-top:-50px;z-index:10;position:absolute;width:100%">
+  <section id="alasan" class="px-5 py-5 bg-white rounded shadow" style="margin-top:-50px;z-index:10;">
 
     <h4 class="text-center h3">Mengapa Memilih Kami ?</h4>
     <div class="row mt-5">
@@ -82,10 +82,19 @@
           </p>
         </div>
       </div>
+
     </div>
   </section>
   <!-- AKHIR MEMILIH KAMI -->
 
   <!-- AWAL DAFTAR MOBIL -->
+  <section id="alasan" class="px-5 py-5 bg-white rounded shadow mt-4">
+
+    <h4 class="text-center h3">
+      <span>Mobil yang Kami Miliki</span>
+      <span class="badge badge-danger rounded-pill">18</span>
+    </h4>
+
+  </section>
   <!-- AKHIR DAFTAR MOBIL -->
 </div>
