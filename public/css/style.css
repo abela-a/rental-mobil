@@ -1,3 +1,6 @@
+.nav-active {
+  border-bottom: #ffbb33 3px solid;
+}
 #sign {
   text-align: center;
   padding: 40px;
