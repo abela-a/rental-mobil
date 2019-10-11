@@ -21,4 +21,15 @@ $(document).ready(function() {
   $(".uang").mask("0.000.000.000", { reverse: true });
   // MASK NO TELP
   $(".telp").mask("0000-0000-00000");
+
+  // JARALLAX
+  // object-fit polyfill run
+  objectFitImages();
+
+  /* init Jarallax */
+  jarallax(document.querySelectorAll(".jarallax"));
+
+  jarallax(document.querySelectorAll(".jarallax-keep-img"), {
+    keepImg: true
+  });
 });
