@@ -16,6 +16,7 @@ class Home extends Controller
     $this->view('templates/header', $data);
     $this->view('templates/navhome');
     $this->view('home/index');
+    $this->view('templates/footerhome');
     $this->view('templates/footer');
   }
   public function UbahFotoUser()
