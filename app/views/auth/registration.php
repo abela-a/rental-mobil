@@ -47,7 +47,7 @@
 
             <div class="form-group">
               <label for="JenisKelamin">Jenis Kelamin</label>
-              <select class="custom-select" name="JenisKelamin" id="JenisKelamin">
+              <select class="mdb-select" name="JenisKelamin" id="JenisKelamin">
                 <option value="" selected>Pilih jenis Kelamin</option>
                 <option value="L">Laki-laki</option>
                 <option value="P">Perempuan</option>
