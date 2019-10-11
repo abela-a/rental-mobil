@@ -33,8 +33,10 @@
             <a class="nav-link py-3 dropdown-toggle" id="mobil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About
             </a>
             <div class="dropdown-menu dropdown-warning" aria-labelledby="mobil">
+              <a class="dropdown-item" href="#">Mengapa Memilih Kami?</a>
+              <a class="dropdown-item" href="#">Layanan Kami</a>
               <a class="dropdown-item" href="#">Kontak Kami</a>
-              <a class="dropdown-item" href="#">Pertanyaan</a>
+              <a class="dropdown-item" href="#">FAQ</a>
             </div>
           </li>
         </ul>
