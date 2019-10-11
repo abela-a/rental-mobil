@@ -29,8 +29,13 @@
               </p>
             </div>
             <div class="clear-fix mt-4">
-              <a class="btn btn-warning" href="<?= BASEURL; ?>/auth/registration" style="color:black">Daftar</a>
-              <a class="btn btn-outline-white" href="<?= BASEURL; ?>/auth/login" style="color:black">login</a>
+              <?php
+              if (!isset($_SESSION['Login'])) : ?>
+                <a class="btn btn-warning" href="<?= BASEURL; ?>/auth/registration" style="color:black">Daftar</a>
+                <a class="btn btn-outline-white" href="<?= BASEURL; ?>/auth/login">login</a>
+              <?php else : ?>
+                <a class="btn btn-warning" href="<?= BASEURL; ?>/auth/registration" style="color:black">Pesan Mobil</a>
+              <?php endif; ?>
             </div>
           </div>
           <div class="col-md-7 col-sm-12">
@@ -46,7 +51,7 @@
 <div class="container position-relative">
 
   <!-- AWAL MEMILIH KAMI -->
-  <section id="alasan" class="px-5 py-5 bg-white rounded shadow" style="margin-top:-50px;z-index:10;">
+  <section id="alasan" class="px-5 py-5 bg-white rounded shadow-sm" style="margin-top:-50px;z-index:10;">
 
     <h4 class="text-center h3">Mengapa Memilih Kami ?</h4>
     <div class="row mt-5">
@@ -88,7 +93,7 @@
   <!-- AKHIR MEMILIH KAMI -->
 
   <!-- AWAL DAFTAR MOBIL -->
-  <section id="alasan" class="px-5 py-5 bg-white rounded shadow mt-4">
+  <section id="alasan" class="px-5 py-5 bg-white rounded shadow-sm mt-4">
 
     <h4 class="text-center h3">
       <span>Mobil yang Kami Miliki</span>
