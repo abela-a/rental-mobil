@@ -9,10 +9,10 @@
       <div class="text-white container px-4">
         <div class="row">
           <div class="col-md-5 col-sm-12">
-            <h3 style="font-weight:500;font-size:50px;">
+            <h3 style="font-size:50px;" class="font-weight-bold">
               <?= APP_NAME; ?> <?= APP_TYPE; ?>
             </h3>
-            <span style="font-weight:100;font-size:29px;font-family:'Fira Code iScript'">
+            <span id="motto">
               <i> Your Car Rental Solution</i>
             </span>
             <div id="home" class="pr-5">
@@ -31,15 +31,15 @@
             <div class="clear-fix mt-4">
               <?php
               if (!isset($_SESSION['Login'])) : ?>
-                <a class="btn btn-warning" href="<?= BASEURL; ?>/auth/registration" style="color:black">Daftar</a>
+                <a class="btn btn-warning" href="<?= BASEURL; ?>/auth/registration">Daftar</a>
                 <a class="btn btn-outline-white" href="<?= BASEURL; ?>/auth/login">login</a>
               <?php else : ?>
-                <a class="btn btn-warning" href="<?= BASEURL; ?>/auth/registration" style="color:black">Pesan Mobil</a>
+                <a class="btn btn-warning" href="<?= BASEURL; ?>/auth/registration">Pesan Mobil</a>
               <?php endif; ?>
             </div>
           </div>
           <div class="col-md-7 col-sm-12">
-            <img src="<?= BASEURL ?>/img/assets/landing.png" style="z-index: 100;position: absolute;height: 550px;right: -50px;bottom: -155px;">
+            <img src="<?= BASEURL ?>/img/assets/landing.png" id="landing-img">
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@
 <div class="container position-relative">
 
   <!-- AWAL MEMILIH KAMI -->
-  <section id="alasan" class="px-5 py-5 bg-white rounded shadow-sm" style="margin-top:-50px;z-index:10;">
+  <section id="alasan" class="px-5 py-5 bg-white rounded shadow-sm">
 
     <h4 class="text-center h3">Mengapa Memilih Kami ?</h4>
     <div class="row mt-5">
@@ -93,7 +93,7 @@
   <!-- AKHIR MEMILIH KAMI -->
 
   <!-- AWAL DAFTAR MOBIL -->
-  <section id="alasan" class="px-5 py-5 bg-white rounded shadow-sm mt-4">
+  <section id="daftar-mobil" class="px-5 py-5 bg-white rounded shadow-sm mt-4">
 
     <h4 class="text-center h3">
       <span>Mobil yang Kami Miliki</span>

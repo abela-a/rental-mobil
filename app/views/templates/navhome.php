@@ -5,8 +5,8 @@
 
       <a class="navbar-brand py-0" href="#">
         <img src="<?= BASEURL; ?>/img/assets/logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
-        <span style="font-weight:700;font-size:25px"><?= APP_NAME; ?></span>
-        <span style="font-weight:200;font-size:18px"><?= APP_TYPE; ?></span>
+        <span style="font-size:25px" class="font-weight-bold"><?= APP_NAME; ?></span>
+        <span style="font-size:18px" class="font-weight-thin"><?= APP_TYPE; ?></span>
       </a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navResponsive" aria-controls="navResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,7 +16,7 @@
         <ul class="navbar-nav mr-auto">
           <!-- HOME -->
           <li class="nav-item mr-3 nav-active">
-            <a class="nav-link py-3" href="#">Home</a>
+            <a class="nav-link py-3" href="<?= BASEURL ?>">Home</a>
           </li>
           <!-- MOBIL -->
           <li class="nav-item mr-3 dropdown">
@@ -48,7 +48,7 @@
             <!-- Jika ada sesi Login -->
             <li class="nav-item dropdown">
               <a class="nav-link" id="mobil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span style="font-weight:400;font-size:15px" class="text-white mr-2">
+                <span style="font-size:15px" class="text-white mr-2 font-weight-regular">
                   <?= $_SESSION['Login']['Nama'] ?>
                 </span>
                 <img src="<?= BASEURL . '/img/fotouser/' . $_SESSION['Login']['Foto'] ?>" class="rounded border" width="35" height="35">
