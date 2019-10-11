@@ -1,14 +1,14 @@
-# 🚗 RENTAL MOBIL
+# RENTAL MOBIL
 
 Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, [SMK MUTIARA ILMU](http://mutiarailmu.sch.id).Aplikasi ini dibuat menggunakan bahasa pemrograman PHP yang berbasis objek atau OOP dan berbentuk MVC (Model View Controller).
 
 > Aplikasi ini masih dalam tahap pengembangan.
 
-## 📷Screenshot
+## Screenshot
 
-![Dashboard Admin](/uploads/21297b366bfc3c7ee7ef7f8c38b590ea/Screenshot__36_.png)
+![Homepage](/uploads/8e03b405750cb64504bd87d378542e61/Screenshot__40_.png)
 
-## 📒 Fitur
+## Fitur
 
 1. Sistem Login dan Register
 2. Multiusers
