@@ -33,6 +33,8 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 * [ ]  Flasher default
 
+* [ ]  Sidebar
+
 ##### ❌ Removed
 
 ##### 🔨 Fixed
