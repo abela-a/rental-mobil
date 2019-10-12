@@ -24,8 +24,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 
 ## Cara Install
 
-1. Download aplikasi penyedia web server.
-   > Saran : XAMPP
+1. Download aplikasi penyedia web server. *Saran saya Anda dapat menggunakan XAMPP.*
 2. Instal XAMPP / Aplikasi web server.
 3. [Download](https://gitlab.com/abela-a/RentalMobil/-/releases) aplikasi Rental Mobil ini.
 4. Extract menggunakan winrar atau aplikasi lainnya ke `C:/xampp/htdocs/`
@@ -38,9 +37,9 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
    - pilih tab import
    - pilih `Choose File`
    - kemudian pilih file `database.sql` yang berada di folder 
-      `htdocs/namaaplikasianda`
+      `htdocs/nama_aplikasi_anda`
       
-7. Buka file `Config.php` di folder `app/config/` 
+7. Buka file `Config.php` di folder `app/config/`. Kemudian ikuti panduan berikut :
    ```php
       // Di bawah ini adalah url aplikasi Anda, silahkan ubah projekukk menjadi nama folder anda di htdocs
       define('BASEURL', 'https://localhost/RentalMobil/public');
@@ -77,7 +76,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
       define('APP_TAGLINE', 'Your rental car solution.');
    ```
 8. Buka browser Anda dan arahkan ke url `localhost/nama_aplikasi_anda/public`.
-9. Anda sudah siap untuk mengatur aplikasi.
+9. Jika tidak ada error, maka Anda sudah siap untuk mengatur aplikasi. `;)`
 
 ## Cara Mengatur Aplikasi
 
