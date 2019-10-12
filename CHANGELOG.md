@@ -79,10 +79,14 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 ### ✅ Added
 
 - Isi KOPAS di README.md
+- View Template
+  - navpelanggan.php
+  - navkaryawan.php
 
 ### 🔄 Changed
 
 - config.php
+- navadmin.php
 
 ## **[0.5.0]**
 
