@@ -34,7 +34,7 @@
                 <a class="btn btn-warning" href="<?= BASEURL; ?>/auth/registration">Daftar</a>
                 <a class="btn btn-outline-white" href="<?= BASEURL; ?>/auth/login">login</a>
               <?php else : ?>
-                <a class="btn btn-warning" href="<?= BASEURL; ?>/auth/registration">Pesan Mobil</a>
+                <a class="btn indigo accent-2" href="<?= BASEURL; ?>">Pesan Mobil</a>
               <?php endif; ?>
             </div>
           </div>
