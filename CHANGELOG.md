@@ -10,7 +10,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 > Berikut fitur-fitur yang akan **ditambahkan**, **fix** bug yang akan dilakukan, **perubahan** yang akan disimpan, dan **penghapusan** fitur yang akan dilakukan dikemudian hari.
 
-## **[1.1.0] - 2019-10-18**
+## **[1.1.0]** - 2019-10-18
 
 ### ✅ Added
 
@@ -27,6 +27,62 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 ## 📆 *[Released]*
 
 > Versi yang yang telah dapat dipakai. Dan semoga fiturnya sudah tidak mempunyai bug.
+
+## **[0.9.0]** - 2019-10-11
+
+### ✅ Added
+
+- Landing Page @ *index.php* "home"
+- Material Select @ *script.js*
+- Footer Dashboard
+
+### 🔄 Changed
+
+- Header Homepage @ *navhome.php*
+- prettyfooter.php -> footerhome.php
+- Icon web
+- CHANGELOG.md
+
+## **[0.8.0]** - 2019-10-10
+
+### ✅ Added
+
+- Folder test
+- File *dashboard.php* @ "test"
+- Link asset dan vendor @ *header.php*
+
+### 🔄 Changed
+
+- README.md
+
+## **[0.7.0]** - 2019-10-05
+
+### ✅ Added
+
+- CHANGELOG
+- Alert ubah password @ *editprofile.php*, *karyawan.php*, dan *pelanggan.php*
+- Fungsi jika password tidak ingin di ubah @ *editprofile.php*
+- Fitur @ *README.md*
+- Folder *vendor* dan *img*
+
+### 🔄 Changed
+
+- ekstensi CHANGELOG
+- .gitignore
+
+### ❌ Removed
+
+- Isi KOPAS di README.md
+
+## **[0.6.0]** - 2019-10-03
+
+### ✅ Added
+
+- Isi KOPAS di README.md
+
+### 🔄 Changed
+
+- config.php
 
 ## **[0.5.0]**
 
