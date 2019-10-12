@@ -2,7 +2,10 @@
 
 Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, [SMK MUTIARA ILMU](http://mutiarailmu.sch.id).Aplikasi ini dibuat menggunakan bahasa pemrograman PHP yang berbasis objek atau OOP dan berbentuk MVC (Model View Controller).
 
+🔥 [Download Latest Version](https://gitlab.com/abela-a/RentalMobil/-/releases)
+
 > Aplikasi ini masih dalam tahap pengembangan.
+
 
 ## Screenshot
 
@@ -19,3 +22,13 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 7. Manajemen Merk, Type, dan Data Mobil
 8. Mengubah foto profile user
 9. ... dll
+
+## Database dan Tabel
+
+### Tabel Merk
+
+| Name | Type | Lenght | Attribute |
+| --- | --- | --- | --- |
+| id | int | 3 | auto_increment, primary_key |
+| KdMerk | varchar | 50 | primary_key |
+| NmMerk | varchar | 50 | - |
