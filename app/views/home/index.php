@@ -3,7 +3,7 @@
   <!-- JUMBOTRON -->
   <div class="view jarallax jumbotron card card-image" style="height:100vh">
     <!-- JARALLAX -->
-    <img src="<?= BASEURL ?>/img/assets/image4.jpg" alt="" class="jarallax-img">
+    <img src="<?= BASEURL ?>/img/assets/bg.jpg" alt="" class="jarallax-img">
     <!-- MASK WARNA -->
     <div class="mask flex-center rgba-indigo-strong">
       <div class="text-white container px-4">
