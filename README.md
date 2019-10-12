@@ -39,6 +39,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
    - pilih `Choose File`
    - kemudian pilih file `database.sql` yang berada di folder 
       `htdocs/namaaplikasianda`
+      
 7. Buka file `Config.php` di folder `app/config/` 
    ```php
       // Di bawah ini adalah url aplikasi Anda, silahkan ubah projekukk menjadi nama folder anda di htdocs
@@ -84,7 +85,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 
 ## Database dan Tabel
 
-### Tabel `merk`
+### Tabel merk
 
 | Name   | Type    | Lenght | Attribute                   |
 | ------ | ------- | ------ | --------------------------- |
@@ -92,7 +93,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 | KdMerk | varchar | 50     | primary_key                 |
 | NmMerk | varchar | 50     | -                           |
 
-### Tabel `type`
+### Tabel type
 
 | Name   | Type    | Lenght | Attribute                   |
 | ------ | ------- | ------ | --------------------------- |
@@ -101,7 +102,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 | NmType | varchar | 50     | -                           |
 | KdMerk | varchar | 50     | -                           |
 
-### Tabel `mobil`
+### Tabel mobil
 
 | Name         | Type    | Lenght | Attribute                   |
 | ------------ | ------- | ------ | --------------------------- |
@@ -113,7 +114,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 | HargaSewa    | double  | 10     | -                           |
 | FotoMobil    | varchar | 100    | -                           |
 
-### Tabel `users`
+### Tabel users
 
 | Name         | Type    | Lenght | Attribute                   |
 | ------------ | ------- | ------ | --------------------------- |
@@ -129,14 +130,14 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 | RoleId       | int     | 2      | -                           |
 | IsActive     | int     | 1      | -                           |
 
-### Tabel `user_role`
+### Tabel user_role
 
 | Name | Type    | Lenght | Attribute                   |
 | ---- | ------- | ------ | --------------------------- |
 | id   | int     | 11     | auto_increment, primary_key |
 | role | varchar | 20     | -                           |
 
-### Tabel `sopir`
+### Tabel sopir
 
 | Name         | Type    | Lenght | Attribute                   |
 | ------------ | ------- | ------ | --------------------------- |
@@ -150,7 +151,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 | NoSim        | char    | 20     | -                           |
 | TarifPerhari | double  | 10     | -                           |
 
-### Tabel `transaksi`
+### Tabel transaksi
 
 | Name              | Type    | Lenght | Attribute   |
 | ----------------- | ------- | ------ | ----------- |
@@ -173,3 +174,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 | Total             | double  | 11     | -           |
 | status            | enum    | 0      | ""          |
 | new               | char    | 1      | -           |
+
+## Kritik, Saran, atau Menemukan Bug
+
+Anda dapat mengadukan kritik, saran, ataupun bug ke tab [Issues](https://gitlab.com/abela-a/RentalMobil/issues).
