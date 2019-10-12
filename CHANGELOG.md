@@ -12,15 +12,15 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ## **[1.1.0]** - 2019-10-18
 
-### ✅ Added
+##### ✅ Added
 
-### 🔄 Changed
+##### 🔄 Changed
 
-### 📝 Deprecated
+##### 📝 Deprecated
 
-### ❌ Removed
+##### ❌ Removed
 
-### 🔨 Fixed
+##### 🔨 Fixed
 
 ****
 
@@ -30,13 +30,13 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ## **[0.9.0]** - 2019-10-11
 
-### ✅ Added
+##### ✅ Added
 
 - Landing Page @ *index.php* "home"
 - Material Select @ *script.js*
 - Footer Dashboard
 
-### 🔄 Changed
+##### 🔄 Changed
 
 - Header Homepage @ *navhome.php*
 - prettyfooter.php -> footerhome.php
@@ -45,19 +45,19 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ## **[0.8.0]** - 2019-10-10
 
-### ✅ Added
+##### ✅ Added
 
 - Folder test
 - File *dashboard.php* @ "test"
 - Link asset dan vendor @ *header.php*
 
-### 🔄 Changed
+##### 🔄 Changed
 
 - README.md
 
 ## **[0.7.0]** - 2019-10-05
 
-### ✅ Added
+##### ✅ Added
 
 - CHANGELOG
 - Alert ubah password @ *editprofile.php*, *karyawan.php*, dan *pelanggan.php*
@@ -65,32 +65,32 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 - Fitur @ *README.md*
 - Folder *vendor* dan *img*
 
-### 🔄 Changed
+##### 🔄 Changed
 
 - ekstensi CHANGELOG
 - .gitignore
 
-### ❌ Removed
+##### ❌ Removed
 
 - Isi KOPAS di README.md
 
 ## **[0.6.0]** - 2019-10-03
 
-### ✅ Added
+##### ✅ Added
 
 - Isi KOPAS di README.md
 - View Template
   - navpelanggan.php
   - navkaryawan.php
 
-### 🔄 Changed
+##### 🔄 Changed
 
 - config.php
 - navadmin.php
 
 ## **[0.5.0]**
 
-### ✅ Added
+##### ✅ Added
 
 - Controller Pelanggan
 - Model
@@ -109,13 +109,13 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
     - sopir.php
     - pelanggan.php
   
-### ❌ Removed
+##### ❌ Removed
 - View Admin
   - index.php
 
 ## **[0.4.0]**
 
-### ✅ Added
+##### ✅ Added
 
 - Controller Karyawan
 - Model
@@ -132,7 +132,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ## **[0.3.0]**
 
-### ✅ Added
+##### ✅ Added
 
 - Sistem Login dan Register
 - Multiuser dan Role
@@ -146,7 +146,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ## **[0.2.0]**
 
-### ✅ Added
+##### ✅ Added
 
 - Controller Home
 - View Home
@@ -159,7 +159,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ## **[0.1.0]**
 
-### ✅ Added
+##### ✅ Added
 
 - MVC
   - config
