@@ -4,43 +4,88 @@ Semua perubahan yang terjadi akan didokumentasikan di berkas ini.
 
 Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [Unreleased]
+## 📅 [Unreleased]
 
-## [1.1.0] - 2019-10-18
+## **[1.1.0] - 2019-10-18**
 
-### Added
+### ✅Added
 
-### Changed
+### 🔄Changed
 
-### Removed
+### ❌Removed
 
-## [0.3.0]
+## **[0.5.0]**
 
-### Added
+### ✅ Added
+
+- Controller Pelanggan
+- Model
+  - Pelanggan_model.php
+  - Sopir_model.php
+  - User_model.php
+- View
+  - Admin
+    - karyawan.php
+    - pendinguser.php
+    - role.php
+  - Pelanggan
+    - editprofile.php
+    - transaksi.php
+  - Karyawan
+    - sopir.php
+    - pelanggan.php
+  - 
+### ❌Removed
+- View Admin
+  - index.php
+
+## **[0.4.0]**
+
+### ✅Added
+
+- Controller Karyawan
+- Model
+  - Karyawan_model.php
+  - Merk_model.php
+  - Type_model.php
+  - Mobil_model.php
+- View
+  - dashboard.php
+  - getType.php
+  - merk.php
+  - type.php
+  - mobil.php
+
+## **[0.3.0]**
+
+### ✅Added
 
 - Sistem Login dan Register
 - Multiuser dan Role
 - Controller Auth
-- Model Auth
+- Model 
+  - Auth_model.php
 - View Auth
   - login.php
   - registration.php
+- SweetAlert
 
-## [0.2.0]
+## **[0.2.0]**
 
-### Added
+### ✅Added
 
 - Controller Home
 - View Home
+  - index.php
 - View templates
   - navhome.php
   - navadmin.php
   - header.php
   - footer.php
 
-## [0.1.0]
+## **[0.1.0]**
 
-### Added
+### ✅Added
 
 - MVC
   - config
@@ -56,4 +101,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 - Controller Home
 - Controller Admin
 - View Admin
-- Model Admin
+  - index.php
+- Model 
+  - Admin_model.php
+- Link all asset
