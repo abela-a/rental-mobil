@@ -18,7 +18,7 @@
   <!-- CUSTOM COLOR -->
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/colors.css">
   <!-- FAVICON -->
-  <link rel="shortcut icon" href="<?= BASEURL; ?>/img/assets/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="<?= BASEURL; ?>/img/assets/icon.png" type="image/x-icon">
 
   <title><?= $data['judul']; ?></title>
 </head>
