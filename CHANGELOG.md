@@ -47,6 +47,8 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 > Versi yang yang telah dapat dipakai. Dan semoga fiturnya sudah tidak mempunyai bug.
 
+🔥 [Download Latest Version](https://gitlab.com/abela-a/RentalMobil/-/releases)
+
 ## **[0.9.0]** - 2019-10-11
 
 ##### ✅ Added
