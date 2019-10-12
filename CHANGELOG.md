@@ -10,13 +10,28 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 > Berikut fitur-fitur yang akan **ditambahkan**, **fix** bug yang akan dilakukan, **perubahan** yang akan disimpan, dan **penghapusan** fitur yang akan dilakukan dikemudian hari.
 
-## **[1.1.0]** - 2019-10-18
+## **[1.0.0]** - [Tanggal Selesai]
 
 ##### ✅ Added
 
+* [ ]  Complete Landing Page
+
+* [ ]  Complete SweetAlert2
+
+* [ ]  Section Daftar Mobil
+
+* [ ]  Section Layanan
+
 ##### 🔄 Changed
 
+
+* [ ]  Login dan Register page menjadi modal di Homepage
+
+* [ ]  Layout dashboard menjadi modern-style
+
 ##### 📝 Deprecated
+
+* [ ]  Flasher default
 
 ##### ❌ Removed
 
@@ -34,6 +49,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 - Landing Page @ *index.php* "home"
 - Material Select @ *script.js*
+- Complete Footer Home
 - Footer Dashboard
 
 ##### 🔄 Changed
