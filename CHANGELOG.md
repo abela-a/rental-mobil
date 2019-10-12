@@ -10,11 +10,15 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ## **[1.1.0] - 2019-10-18**
 
-### ✅Added
+### ✅ Added
 
-### 🔄Changed
+### 🔄 Changed
 
-### ❌Removed
+### 📝 Deprecated
+
+### ❌ Removed
+
+### 🔨 Fixed
 
 ****
 
@@ -41,13 +45,13 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
     - sopir.php
     - pelanggan.php
   
-### ❌Removed
+### ❌ Removed
 - View Admin
   - index.php
 
 ## **[0.4.0]**
 
-### ✅Added
+### ✅ Added
 
 - Controller Karyawan
 - Model
@@ -64,7 +68,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ## **[0.3.0]**
 
-### ✅Added
+### ✅ Added
 
 - Sistem Login dan Register
 - Multiuser dan Role
@@ -78,7 +82,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ## **[0.2.0]**
 
-### ✅Added
+### ✅ Added
 
 - Controller Home
 - View Home
@@ -91,7 +95,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ## **[0.1.0]**
 
-### ✅Added
+### ✅ Added
 
 - MVC
   - config
