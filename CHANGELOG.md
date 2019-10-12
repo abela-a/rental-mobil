@@ -8,6 +8,8 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ## 📅 *[Unreleased]*
 
+> Berikut fitur-fitur yang akan **ditambahkan**, **fix** bug yang akan dilakukan, **perubahan** yang akan disimpan, dan **penghapusan** fitur yang akan dilakukan dikemudian hari.
+
 ## **[1.1.0] - 2019-10-18**
 
 ### ✅ Added
@@ -23,6 +25,8 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 ****
 
 ## 📆 *[Released]*
+
+> Versi yang yang telah dapat dipakai. Dan semoga fiturnya sudah tidak mempunyai bug.
 
 ## **[0.5.0]**
 
