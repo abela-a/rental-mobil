@@ -1,10 +1,12 @@
-# Changelog
+# CHANGELOG
 
 Semua perubahan yang terjadi akan didokumentasikan di berkas ini.
 
 Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## 📅 [Unreleased]
+****
+
+## 📅 *[Unreleased]*
 
 ## **[1.1.0] - 2019-10-18**
 
@@ -13,6 +15,10 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 ### 🔄Changed
 
 ### ❌Removed
+
+****
+
+## 📆 *[Released]*
 
 ## **[0.5.0]**
 
@@ -34,7 +40,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
   - Karyawan
     - sopir.php
     - pelanggan.php
-  - 
+  
 ### ❌Removed
 - View Admin
   - index.php
