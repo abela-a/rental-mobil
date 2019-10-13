@@ -19,21 +19,15 @@
             <a class="nav-link py-3" href="<?= BASEURL ?>">Home</a>
           </li>
           <!-- MOBIL -->
-          <li class="nav-item mr-3 dropdown">
-            <a class="nav-link py-3 dropdown-toggle" id="mobil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Daftar Mobil
-            </a>
-            <div class="dropdown-menu dropdown-warning" aria-labelledby="mobil">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+          <li class="nav-item mr-3">
+            <a class="nav-link py-3" href="#daftar-mobil">Daftar Mobil</a>
           </li>
           <!-- ABOUT -->
           <li class="nav-item mr-3 dropdown">
             <a class="nav-link py-3 dropdown-toggle" id="mobil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About
             </a>
             <div class="dropdown-menu dropdown-warning" aria-labelledby="mobil">
-              <a class="dropdown-item" href="#">Mengapa Memilih Kami?</a>
+              <a class="dropdown-item" href="#alasan">Mengapa Memilih Kami?</a>
               <a class="dropdown-item" href="#">Layanan Kami</a>
               <a class="dropdown-item" href="#">Kontak Kami</a>
               <a class="dropdown-item" href="#">FAQ</a>
