@@ -110,4 +110,13 @@ class Admin_model
     $this->db->query("SELECT * FROM viewmobil WHERE StatusRental = 'Kosong'");
     return $this->db->resultSet();
   }
+  public function parseURL()
+  {
+    if (isset($_GET['url'])) {
+      $url = rtrim($_GET['url'], '/');
+      $url = filter_var($url, FILTER_SANITIZE_URL);
+      $url = explode('/', $url);
+      return $url;
+    }
+  }
 }

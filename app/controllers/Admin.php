@@ -29,6 +29,7 @@ class Admin extends Controller
     $data['JmlPending'] = $this->admin->countUserUnactive();
     $data['JmlMobil'] = $this->admin->countMobil();
     $data['MobilKosong'] = $this->admin->mobilKosong();
+    $data['url'] = $this->admin->parseURL();
 
     $data['userProfile'] = $this->user->getUserProfileById($id);
 
@@ -44,6 +45,7 @@ class Admin extends Controller
     $data['judul'] = 'Merk';
 
     $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['url'] = $this->admin->parseURL();
 
     $data['merk'] = $this->merk->getAllMerk();
 
@@ -96,6 +98,7 @@ class Admin extends Controller
     $data['judul'] = 'Tipe';
 
     $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['url'] = $this->admin->parseURL();
 
     $data['type'] = $this->type->getAllType();
 
@@ -149,6 +152,7 @@ class Admin extends Controller
     $data['judul'] = 'Mobil';
 
     $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['url'] = $this->admin->parseURL();
 
     $data['mobil'] = $this->mobil->getAllMobil();
     $data['merkOption'] = $this->mobil->getMerkOption();
@@ -207,6 +211,7 @@ class Admin extends Controller
     $data['judul'] = 'Karyawan';
 
     $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['url'] = $this->admin->parseURL();
 
     $data['karyawan'] = $this->karyawan->getAllKaryawan();
 
@@ -258,6 +263,7 @@ class Admin extends Controller
     $data['judul'] = 'Pelanggan';
 
     $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['url'] = $this->admin->parseURL();
 
     $data['pelanggan'] = $this->pelanggan->getAllPelanggan();
     $this->view('templates/header', $data);
@@ -313,6 +319,7 @@ class Admin extends Controller
     $data['judul'] = 'Sopir';
 
     $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['url'] = $this->admin->parseURL();
 
     $data['sopir'] = $this->sopir->getAllSopir();
 
@@ -365,6 +372,7 @@ class Admin extends Controller
 
     $data['pending'] = $this->admin->getUserUnactive();
     $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['url'] = $this->admin->parseURL();
 
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
@@ -404,6 +412,7 @@ class Admin extends Controller
     $data['role'] = $this->admin->getUserRole();
     $data['roleOption'] = $this->admin->getRoleOption();
     $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['url'] = $this->admin->parseURL();
 
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
@@ -427,6 +436,7 @@ class Admin extends Controller
     $data['judul'] = 'Profile';
 
     $data['userProfile'] = $this->user->getUserProfileById($id);
+    $data['url'] = $this->admin->parseURL();
 
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
