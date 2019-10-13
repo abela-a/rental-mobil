@@ -23,14 +23,14 @@
 <script src="<?= BASEURL; ?>/vendor/MaterialBootstrap/js/addons/datatables.js"></script>
 <!-- SWEET ALERT -->
 <script src="<?= BASEURL; ?>/vendor/SweetAlert2/dist/sweetalert2.all.min.js"></script>
-
-<?= SweetAlert::SwalAlert() ?>
-<?= SweetAlert::SwalToast() ?>
-
+<?= SweetAlert::SwalAlert() ?><?= SweetAlert::SwalToast() ?>
 <!-- MASK -->
 <script src="<?= BASEURL; ?>/vendor/MaterialBootstrap/js/jquery.mask.min.js"></script>
 <!-- MY SCRIPT -->
 <script src="<?= BASEURL; ?>/js/script.js"></script>
+<!-- HEADROOM -->
+<script src="<?= BASEURL; ?>/vendor/Headroom/jQuery.headroom.min.js"></script>
+<script src="<?= BASEURL; ?>/vendor/Headroom/headroom.min.js"></script>
 
 <script>
   $(document).ready(function() {
