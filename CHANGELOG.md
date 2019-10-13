@@ -14,28 +14,24 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ##### ✅ Added
 
-* [ ]  Complete Landing Page
-
-* [ ]  Complete SweetAlert2
-
+* [x]  Landing Page
+* [ ]  New UI design
+* [ ]  Fungsi SweetAlert2
+* [ ]  Nav Laporan
 * [ ]  Section Daftar Mobil
-
 * [ ]  Section Layanan
-
 * [ ]  Section Testimonial
 
 ##### 🔄 Changed
 
-
 * [ ]  Login dan Register page menjadi modal di Homepage
-
-* [ ]  Layout dashboard menjadi modern-style
+* [ ]  Layout dashboard, merk, tipe, mobil, karyawan, pelanggan, akun pending, role, sopir, profile menjadi modern-style
 
 ##### 📝 Deprecated
 
 * [ ]  Flasher default
-
 * [ ]  Sidebar
+* [ ]  Tab Management
 
 ##### ❌ Removed
 
