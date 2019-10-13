@@ -125,8 +125,8 @@
 
       </div>
       <div class="modal-footer text-center justify-content-center">
-        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Keluar</button>
-        <button type="submit" class="btn btn-primary" id="submit">Simpan Data</button>
+        <button type="button" class="btn btn-outline-primary shadow-none" data-dismiss="modal">Keluar</button>
+        <button type="submit" class="btn btn-primary shadow-none" id="submit">Simpan Data</button>
       </div>
       </form>
     </div>

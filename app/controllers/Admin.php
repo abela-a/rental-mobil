@@ -110,16 +110,17 @@ class Admin extends Controller
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
     $this->view('karyawan/type', $data);
+    $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
   public function tambahType()
   {
     if ($this->type->tambahDataType($_POST) > 0) {
-      Flasher::setFlash('Data berhasil ditambahkan', 'info');
+      SweetAlert::setSwalAlert('Berhasil', 'Tipe baru telah ditambahkan!', 'success');
       header('Location:' . BASEURL . '/admin/type');
       exit;
     } else {
-      Flasher::setFlash('Data gagal ditambahkan', 'danger');
+      SweetAlert::setSwalAlert('Gagal', 'Merk baru gagal ditambahkan!', 'error');
       header('Location:' . BASEURL . '/admin/type');
       exit;
     }
@@ -127,11 +128,11 @@ class Admin extends Controller
   public function hapusType($IdType)
   {
     if ($this->type->hapusDataType($IdType) > 0) {
-      Flasher::setFlash('Data berhasil dihapus', 'warning');
+      SweetAlert::setSwalAlert('Berhasil', 'Tipe berhasil dihapus!', 'success');
       header('Location:' . BASEURL . '/admin/type');
       exit;
     } else {
-      Flasher::setFlash('Data gagal dihapus', 'danger');
+      SweetAlert::setSwalAlert('Gagal', 'Tipe gagal dihapus!', 'error');
       header('Location:' . BASEURL . '/admin/type');
       exit;
     }
@@ -139,11 +140,11 @@ class Admin extends Controller
   public function editType()
   {
     if ($this->type->editDataType($_POST) > 0) {
-      Flasher::setFlash('Data berhasil diubah', 'success');
+      SweetAlert::setSwalAlert('Berhasil', 'Tipe berhasil diubah!', 'success');
       header('Location:' . BASEURL . '/admin/type');
       exit;
     } else {
-      Flasher::setFlash('Data gagal ubah', 'danger');
+      SweetAlert::setSwalAlert('Gagal', 'Tipe gagal dihapus!', 'error');
       header('Location:' . BASEURL . '/admin/type');
       exit;
     }
