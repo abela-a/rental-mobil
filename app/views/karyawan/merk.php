@@ -1,6 +1,6 @@
 <!-- TOMBOL -->
 <div class="container" id="main-menu">
-  <div class="row">
+  <div class="row mb-4">
     <div class="col-md clear-fix">
       <button class="btn btn-primary shadow-none mb-3 tombolTambahMerk float-right" type="button" data-toggle="modal" data-target="#inputMerk">
         <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Tambah Merk
