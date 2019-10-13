@@ -39,6 +39,7 @@ if (!isset($_SESSION['Login'])) {
             <!-- Jika ada sesi Login -->
             <li class="nav-item dropdown">
               <a class="nav-link" id="mobil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="badge badge-light shadow-none mr-2"><?= $_SESSION['Login']['Role'] ?></span>
                 <span style="font-size:15px" class="text-white mr-2 font-weight-regular">
                   <?= $_SESSION['Login']['Nama'] ?>
                 </span>
@@ -66,44 +67,93 @@ if (!isset($_SESSION['Login'])) {
     <ul id="no-waves" class="nav md-tabs indigo shadow-none mx-0 mb-0">
 
       <li class="nav-item mr-2">
-        <a class="nav-link nav-dashboard-active rounded" href="#">Dashboard</a>
+        <a class="nav-link <?php if ($data['judul'] == 'Dashboard') echo 'nav-dashboard-active rounded' ?>" href="<?= BASEURL; ?>/admin">
+          <i class="fas fa-tachometer-alt fa-fw mr-1"></i>
+          Dashboard
+        </a>
       </li>
 
       <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kendaraan</a>
+        <a class="nav-link dropdown-toggle 
+        <?php if (
+          $data['judul'] == 'Merk' ||
+          $data['judul'] == 'Tipe' ||
+          $data['judul'] == 'Mobil'
+        )
+          echo 'nav-dashboard-active rounded' ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-car fa-fw mr-1"></i>
+          Kendaraan
+        </a>
         <div class="dropdown-menu dropdown-primary">
-          <a class="dropdown-item" href="#">Merk</a>
-          <a class="dropdown-item" href="#">Type</a>
-          <a class="dropdown-item" href="#">Mobil</a> </div>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Merk') echo 'active' ?>" href="<?= BASEURL ?>/admin/merk">Merk</a>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Tipe') echo 'active' ?>" href="<?= BASEURL ?>/admin/type">Type</a>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Mobil') echo 'active' ?>" href="<?= BASEURL ?>/admin/mobil">Mobil</a> </div>
       </li>
 
       <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Transaksi</a>
+        <a class="nav-link dropdown-toggle
+        <?php if (
+          $data['judul'] == 'Transaksi' ||
+          $data['judul'] == 'Transaksi Selesai' ||
+          $data['judul'] == 'Arsip Transaksi'
+        )
+          echo 'nav-dashboard-active rounded' ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-dollar-sign fa-fw mr-1"></i>
+          Transaksi
+        </a>
         <div class="dropdown-menu dropdown-primary">
-          <a class="dropdown-item" href="#">Transaksi</a>
-          <a class="dropdown-item" href="#">Transaksi Selesai</a>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Transaksi') echo 'active' ?>" href="<?= BASEURL ?>/admin/transaksi">Transaksi</a>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Transaksi Selesai') echo 'active' ?>" href="<?= BASEURL ?>/admin/transaksi_selesai">Transaksi Selesai</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Arsip Transaksi</a>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Arsip Transaksi') echo 'active' ?>" href="<?= BASEURL ?>/admin/arsip_transaksi">Arsip Transaksi</a>
         </div>
       </li>
 
       <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Data Akun</a>
+        <a class="nav-link dropdown-toggle
+        <?php if (
+          $data['judul'] == 'Pelanggan' ||
+          $data['judul'] == 'Karyawan' ||
+          $data['judul'] == 'Role' ||
+          $data['judul'] == 'Akun Pending'
+        )
+          echo 'nav-dashboard-active rounded' ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-users fa-fw mr-3"></i>
+          Data Akun
+          <?php if ($data['JmlPending'] > 0) echo
+            '<span class="ml-1 badge badge-danger">
+              ' . $data['JmlPending'] . '
+              </span>'
+          ?>
+        </a>
         <div class="dropdown-menu dropdown-primary">
-          <a class="dropdown-item" href="#">Pelanggan</a>
-          <a class="dropdown-item" href="#">Karyawan</a>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Pelanggan') echo 'active' ?>" href="<?= BASEURL ?>/admin/pelanggan">Pelanggan</a>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Karyawan') echo 'active' ?>" href="<?= BASEURL ?>/admin/karyawan">Karyawan</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Akun Pending</a>
-          <a class="dropdown-item" href="#">User Role</a>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Akun Pending') echo 'active' ?>" href="<?= BASEURL ?>/admin/pending">
+            Akun Pending
+            <?php if ($data['JmlPending'] > 0) echo
+              '<span class="badge badge-danger float-right">
+              ' . $data['JmlPending'] . '
+              </span>'
+            ?>
+          </a>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Role') echo 'active' ?>" href="<?= BASEURL ?>/admin/role">User Role</a>
         </div>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="#!">Data Sopir</a>
+      <li class="nav-item mr-2">
+        <a class="nav-link <?php if ($data['judul'] == 'Sopir') echo 'nav-dashboard-active rounded' ?>" href="<?= BASEURL ?>/admin/sopir">
+          <i class="fas fa-user-tie fa-fw mr-1"></i>
+          Data Sopir
+        </a>
       </li>
 
       <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Laporan</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-print fa-fw mr-1"></i>
+          Laporan
+        </a>
         <div class="dropdown-menu dropdown-primary">
           <a class="dropdown-item" href="#">Transaksi</a>
           <div class="dropdown-divider"></div>
@@ -119,128 +169,8 @@ if (!isset($_SESSION['Login'])) {
 </div>
 <!-- Akhir Nav -->
 
-<div class="row no-gutters">
-  <div class="col-lg-3 shadow">
-    <div class="sidebar">
-      <!-- WEB TITLE -->
-      <a href="<?= BASEURL ?>">
-        <div class="ml-4 mt-2 bg-main">
-          <span class="web-title"><?= APP_NAME; ?>
-            <span class="web-subtitle"><?= APP_TYPE; ?></span>
-          </span><br>
-          <i style="font-size:15px" class="badge-success rounded p-1"><?= APP_TAGLINE; ?></i>
-        </div>
-      </a>
-      <!-- USER -->
-      <a href="#user" data-toggle="collapse" aria-expanded="false" class="p-3 mx-4 mt-4 bg-wow rounded list-group-item">
-        <div class="row">
-          <div class="col-md-3"><img src="<?= BASEURL ?>/img/fotouser/<?= $_SESSION['Login']['Foto'] ?>" class="rounded" width="50" height="50"></div>
-          <div class="col-md">
-            <span style="font-weight:400;font-size:17px"><?= $_SESSION['Login']['Nama'] ?></span><br>
-            <span style="font-size:15px"><?= $_SESSION['Login']['Role'] ?></span>
-          </div>
-        </div>
-      </a>
-      <div id='user' class="collapse mx-4">
-        <div class="row no-gutters p-1">
-          <div class="col-md m-1">
-            <a href="<?= BASEURL; ?>/admin/userProfile/<?= $_SESSION['Login']['Id'] ?>" class="btn bg-back btn-block">
-              <i class="fas fa-edit fa-fw"></i>
-            </a>
-          </div>
-          <div class="col-md m-1">
-            <a href="<?= BASEURL; ?>/auth/SignOut" class="btn bg-back btn-block">
-              <i class="fas fa-power-off fa-fw"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="mt-3 accordion" id="menu-coll">
-        <!-- DASHBOARD -->
-        <a href="<?= BASEURL; ?>/admin" class="btn-main <?php if ($data['judul'] == 'Dashboard') echo 'btn-main-active'; ?>">
-          <i class="fas fa-tachometer-alt fa-fw mr-3"></i>
-          <span class="text-menu">Dashboard</span>
-        </a>
-        <hr class="my-2 mx-4">
-        <!-- TRANSAKSI -->
-        <a href="<?= BASEURL; ?>/admin/transaksi" class="btn-main <?php if ($data['judul'] == 'Transaksi') echo 'btn-main-active'; ?>">
-          <i class="fas fa-dollar-sign fa-fw mr-3"></i>
-          <span class="text-menu">Transaksi</span>
-        </a>
-        <hr class="my-2 mx-4">
-        <!-- DATA KENDARAAN -->
-        <a href="#kendaraan" data-toggle="collapse" aria-expanded="false" class="btn-main">
-          <i class="fas fa-car fa-fw mr-3"></i>
-          <span class="text-menu">Data Kendaraan</span>
-        </a>
-        <div id='kendaraan' class="collapse bg-white rounded <?php if ($data['judul'] == 'Merk' || $data['judul'] == 'Tipe' || $data['judul'] == 'Mobil') echo 'show'; ?>" data-parent="#menu-coll">
-          <a href="<?= BASEURL; ?>/admin/merk" class="btn-main <?php if ($data['judul'] == 'Merk') echo 'btn-main-active'; ?>">
-            <i class="fas fa-fw mr-3"></i>
-            <span>Merk</span>
-          </a>
-          <a href="<?= BASEURL; ?>/admin/type" class="btn-main <?php if ($data['judul'] == 'Tipe') echo 'btn-main-active'; ?>">
-            <i class="fas fa-fw mr-3"></i>
-            <span>Tipe</span>
-          </a>
-          <a href="<?= BASEURL; ?>/admin/mobil" class="btn-main <?php if ($data['judul'] == 'Mobil') echo 'btn-main-active'; ?>">
-            <i class="fas fa-fw mr-3"></i>
-            <span>Mobil</span>
-          </a>
-        </div>
-        <hr class="my-2 mx-4">
-        <!-- DATA KENDARAAN -->
-        <a href="#akun" data-toggle="collapse" aria-expanded="false" class="btn-main">
-          <i class="fas fa-users fa-fw mr-3"></i>
-          <span class="text-menu">Data Akun</span>
-        </a>
-        <div id='akun' class="collapse bg-white rounded 
-        <?php if ($data['judul'] == 'Karyawan' || $data['judul'] == 'Pelanggan' || $data['judul'] == 'Sopir') echo 'show'; ?>" data-parent="#menu-coll">
-          <a href="<?= BASEURL; ?>/admin/karyawan" class="btn-main <?php if ($data['judul'] == 'Karyawan') echo 'btn-main-active'; ?>">
-            <i class="fas fa-fw mr-3"></i>
-            <span>Karyawan</span>
-          </a>
-          <a href="<?= BASEURL; ?>/admin/pelanggan" class="btn-main <?php if ($data['judul'] == 'Pelanggan') echo 'btn-main-active'; ?>">
-            <i class="fas fa-fw mr-3"></i>
-            <span>Pelanggan</span>
-          </a>
-          <a href="<?= BASEURL; ?>/admin/sopir" class="btn-main <?php if ($data['judul'] == 'Sopir') echo 'btn-main-active'; ?>">
-            <i class="fas fa-fw mr-3"></i>
-            <span>Sopir</span>
-          </a>
-        </div>
-        <hr class="my-2 mx-4">
-
-        <!-- MANAGEMENT -->
-        <a href="#manage" data-toggle="collapse" aria-expanded="false" class="btn-main">
-          <i class="fas fa-folder fa-fw mr-3"></i>
-          <span class="text-menu">Management</span>
-        </a>
-        <div id='manage' class="collapse bg-white rounded 
-        <?php if ($data['judul'] == 'Role' || $data['judul'] == 'Log Aktivitas' || $data['judul'] == 'Akun Pending') echo 'show'; ?>" data-parent="#menu-coll">
-          <a href="<?= BASEURL; ?>/admin/pending" class="btn-main <?php if ($data['judul'] == 'Akun Pending') echo 'btn-main-active'; ?>">
-            <i class="fas fa-fw mr-3"></i>
-            <span>Akun Pending</span>
-            <?php if ($data['JmlPending'] > 0) echo
-              '<span class="badge badge-danger float-right">
-              ' . $data['JmlPending'] . '
-              </span>'
-            ?>
-          </a>
-          <a href="<?= BASEURL; ?>/admin/role" class="btn-main <?php if ($data['judul'] == 'Role') echo 'btn-main-active'; ?>">
-            <i class="fas fa-fw mr-3"></i>
-            <span>User Role</span>
-          </a>
-          <a href="<?= BASEURL; ?>/admin/log" class="btn-main <?php if ($data['judul'] == 'Log Aktivitas') echo 'btn-main-active'; ?>">
-            <i class="fas fa-fw mr-3"></i>
-            <span>Log Aktivitas</span>
-          </a>
-        </div>
-        <hr class="my-2 mx-4">
-      </div>
+<div class="col-lg main">
+  <div class="container px-5">
+    <div class="bg-white row-vh mt-3 ">
+      <span class="main-title"><?= $data['judul'] ?></span>
     </div>
-  </div>
-  <div class="col-lg main">
-    <div class="container px-5">
-      <div class="bg-white row-vh mt-3 ">
-        <span class="main-title"><?= $data['judul'] ?></span>
-      </div>

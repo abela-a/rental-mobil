@@ -96,7 +96,6 @@ footer {
   overflow: hidden;
 }
 .main {
-  overflow-y: scroll;
   height: 100vh;
 }
 .bl-main {
