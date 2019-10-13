@@ -26,6 +26,7 @@ class Admin extends Controller
 
     $data['UserUn'] = $this->admin->getUserUnactive();
     $data['JmlKaryawan'] = $this->admin->countKaryawan();
+    $data['JmlPelanggan'] = $this->admin->countPelanggan();
     $data['JmlPending'] = $this->admin->countUserUnactive();
     $data['JmlMobil'] = $this->admin->countMobil();
     $data['MobilKosong'] = $this->admin->mobilKosong();
@@ -36,6 +37,7 @@ class Admin extends Controller
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
     $this->view('karyawan/dashboard', $data);
+    $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
 

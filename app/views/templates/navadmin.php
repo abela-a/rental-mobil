@@ -16,7 +16,7 @@ if (!isset($_SESSION['Login'])) {
   <nav class="navbar navbar-expand-lg navbar-dark indigo accent-2 scrolling-navbar py-0 shadow-none">
     <div class="container">
 
-      <a class="navbar-brand py-0" href="#">
+      <a class="navbar-brand py-0" href="<?= BASEURL; ?>">
         <img src="<?= BASEURL; ?>/img/assets/logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
         <span style="font-size:25px" class="font-weight-bold"><?= APP_NAME; ?></span>
         <span style="font-size:18px" class="font-weight-thin"><?= APP_TYPE; ?></span>
@@ -168,9 +168,27 @@ if (!isset($_SESSION['Login'])) {
   </div>
 </div>
 <!-- Akhir Nav -->
-
-<div class="col-lg main">
-  <div class="container px-5">
-    <div class="bg-white row-vh mt-3 ">
-      <span class="main-title"><?= $data['judul'] ?></span>
+<div class="indigo shadow-sm" id="top-main">
+  <div class="container">
+    <div class="pt-5 pb-1">
+      <h2 class="h1 text-white"><?= strtoupper($data['judul']) ?></h2>
     </div>
+    <div class="pb-5" id="breadcrump">
+      <span style="font-size:17px" class="text-white">
+        <i class="fa fa-home fa-fw"></i>
+        <span class="mx-3">|</span>
+        <span>Home</span>
+        <i class="fa fa-angle-right fa-fw mx-2"></i>
+        <span>Dashboard</span>
+        <?php
+        if (!isset($data['url'][1])) : ?>
+        <?php else : ?>
+          <i class="fa fa-angle-right fa-fw mx-2"></i>
+          <span>
+            <?= ucfirst($data['url'][1]) ?>
+          </span>
+        <?php endif; ?>
+      </span>
+    </div>
+  </div>
+</div>
