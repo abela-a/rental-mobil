@@ -1,6 +1,11 @@
 .nav-active {
   border-bottom: #ffbb33 3px solid;
 }
+.nav-dashboard-active {
+  background-color: #ffbb33;
+  font-weight: 400;
+  color: black !important;
+}
 .btn-warning {
   color: black;
 }

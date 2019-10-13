@@ -11,6 +11,119 @@ if (!isset($_SESSION['Login'])) {
   }
 }
 ?>
+<!--Main Navigation-->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark indigo accent-2 scrolling-navbar py-0 shadow-none">
+    <div class="container">
+
+      <a class="navbar-brand py-0" href="#">
+        <img src="<?= BASEURL; ?>/img/assets/logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
+        <span style="font-size:25px" class="font-weight-bold"><?= APP_NAME; ?></span>
+        <span style="font-size:18px" class="font-weight-thin"><?= APP_TYPE; ?></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navResponsive" aria-controls="navResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ml-4" id="navResponsive">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <input class="form-control form-control-sm" type="text" placeholder="Cari...">
+          </li>
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+          <?php
+          if (!isset($_SESSION['Login'])) : ?>
+
+          <?php else : ?>
+            <!-- Jika ada sesi Login -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" id="mobil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span style="font-size:15px" class="text-white mr-2 font-weight-regular">
+                  <?= $_SESSION['Login']['Nama'] ?>
+                </span>
+                <img src="<?= BASEURL . '/img/fotouser/' . $_SESSION['Login']['Foto'] ?>" class="rounded border" width="35" height="35">
+              </a>
+
+              <div class="dropdown-menu dropdown-warning dropdown-menu-right" aria-labelledby="mobil">
+                <a class="dropdown-item" href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] . '/userProfile' . '/' . $_SESSION['Login']['Id'] ?>">
+                  Edit Profile
+                </a>
+                <a class="dropdown-item" href="<?= BASEURL ?>/auth/SignOut">Logout</a>
+              </div>
+            </li>
+          <?php endif; ?>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!--Main Navigation-->
+
+<!-- Nav -->
+<div class="indigo">
+<div class="container py-1">
+  <ul id="no-waves" class="nav md-tabs indigo shadow-none mx-0 mb-0">
+
+  <li class="nav-item mr-2">
+    <a class="nav-link nav-dashboard-active rounded" href="#">Dashboard</a>
+  </li>
+
+  <li class="nav-item dropdown mr-2">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+      aria-expanded="false">Kendaraan</a>
+    <div class="dropdown-menu dropdown-primary">
+      <a class="dropdown-item" href="#">Merk</a>
+      <a class="dropdown-item" href="#">Type</a>
+      <a class="dropdown-item" href="#">Mobil</a>
+    </div>
+  </li>
+
+  <li class="nav-item dropdown mr-2">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+      aria-expanded="false">Transaksi</a>
+    <div class="dropdown-menu dropdown-primary">
+      <a class="dropdown-item" href="#">Transaksi</a>
+      <a class="dropdown-item" href="#">Transaksi Selesai</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Arsip Transaksi</a>
+    </div>
+  </li>
+
+  <li class="nav-item dropdown mr-2">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+      aria-expanded="false">Data Akun</a>
+    <div class="dropdown-menu dropdown-primary">
+      <a class="dropdown-item" href="#">Pelanggan</a>
+      <a class="dropdown-item" href="#">Karyawan</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Akun Pending</a>
+      <a class="dropdown-item" href="#">User Role</a>
+    </div>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="#!">Data Sopir</a>
+  </li>
+
+  <li class="nav-item dropdown mr-2">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+      aria-expanded="false">Laporan</a>
+    <div class="dropdown-menu dropdown-primary">
+      <a class="dropdown-item" href="#">Transaksi</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Kendaraan</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Karyawan</a>
+      <a class="dropdown-item" href="#">Pelanggan</a>
+    </div>
+  </li>
+
+</ul>
+</div>
+</div>
+<!-- Akhir Nav -->
+
 <div class="row no-gutters">
   <div class="col-lg-3 shadow">
     <div class="sidebar">
