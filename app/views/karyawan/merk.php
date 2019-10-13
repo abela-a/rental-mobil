@@ -29,8 +29,8 @@
             <td><?= ucfirst($merk['KdMerk']); ?></td>
             <td><?= ucfirst($merk['NmMerk']); ?></td>
             <td class="text-center">
-              <button class="btn btn-warning" data-toggle="modal" data-target="#editMerk<?= ($merk['KdMerk']); ?>"><i class="fas fa-fw fa-edit"></i></button>
-              <button class="btn btn-danger" data-toggle="modal" data-target="#hapus<?= $merk['KdMerk']; ?>"><i class="fas fa-fw fa-trash"></i></button>
+              <button class="btn btn-warning shadow-none" data-toggle="modal" data-target="#editMerk<?= ($merk['KdMerk']); ?>"><i class="fas fa-fw fa-edit"></i></button>
+              <button class="btn btn-danger shadow-none" data-toggle="modal" data-target="#hapus<?= $merk['KdMerk']; ?>"><i class="fas fa-fw fa-trash"></i></button>
             </td>
           </tr>
 
@@ -62,8 +62,8 @@
 
                 </div>
                 <div class="modal-footer text-center justify-content-center">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Keluar</button>
-                  <button type="submit" class="btn btn-primary" id="submit">Ubah Data</button>
+                  <button type="button" class="btn btn-outline-primary shadow-none" data-dismiss="modal">Keluar</button>
+                  <button type="submit" class="btn btn-primary shadow-none" id="submit">Ubah Data</button>
                 </div>
                 </form>
               </div>
@@ -85,8 +85,8 @@
                     </center>
                 </div>
                 <div class="modal-footer text-center justify-content-center">
-                  <button type="submit" class="btn btn-danger">Ya</button>
-                  <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Tidak</button>
+                  <button type="submit" class="btn btn-danger shadow-none">Ya</button>
+                  <button type="button" class="btn btn-outline-danger shadow-none" data-dismiss="modal">Tidak</button>
                 </div>
                 </form>
               </div>
