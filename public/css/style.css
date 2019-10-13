@@ -63,6 +63,14 @@ footer {
 #main-menu {
   margin-top: -155px;
 }
+#mdb-preloader {
+  animation: ease-in;
+  background-color: #19214e !important;
+}
+#mdb-preloader.loaded {
+  opacity: 0;
+  transition: 0.3s ease-in 1s;
+}
 
 /* ANU LAMA DI BAWAH INI */
 #sign {

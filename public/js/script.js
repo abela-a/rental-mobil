@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  // LOADER
+  $(window).on("load", function() {
+    $("#mdb-preloader").fadeOut("slow");
+  });
+
   //DATA TABLES
   $("#tolong").DataTable();
 

@@ -1,3 +1,16 @@
+<!-- LOADER -->
+<div id="mdb-preloader" class="flex-center">
+  <div class="spinner-grow text-info" role="status">
+    <span class="sr-only"></span>
+  </div>
+  <div class="spinner-grow text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-warning" role="status">
+    <span class="sr-only"></span>
+  </div>
+</div>
+
 <!-- JQUERY -->
 <script src="<?= BASEURL; ?>/vendor/MaterialBootstrap/js/jquery-3.4.1.min.js"></script>
 <!-- POPPER -->

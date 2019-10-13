@@ -16,6 +16,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 * [x]  Landing Page
 * [ ]  New UI design
+* [x]  Loader
 * [ ]  Fungsi SweetAlert2
 * [ ]  Nav Laporan
 * [ ]  Section Daftar Mobil
