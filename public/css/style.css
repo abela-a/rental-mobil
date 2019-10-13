@@ -62,6 +62,9 @@ footer {
   margin-top: -70px;
   z-index: 10;
 }
+#main-menu {
+  margin-top: -140px;
+}
 
 /* ANU LAMA DI BAWAH INI */
 #sign {

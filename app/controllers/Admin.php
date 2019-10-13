@@ -54,17 +54,18 @@ class Admin extends Controller
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
     $this->view('karyawan/merk', $data);
+    $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
 
   public function tambahMerk()
   {
     if ($this->merk->tambahDataMerk($_POST) > 0) {
-      Flasher::setFlash('Data berhasil ditambahkan', 'info');
+      SweetAlert::setSwalAlert('Berhasil', 'Merk baru telah ditambahkan!', 'success');
       header('Location:' . BASEURL . '/admin/merk');
       exit;
     } else {
-      Flasher::setFlash('Data gagal ditambahkan', 'danger');
+      SweetAlert::setSwalAlert('Gagal', 'Merk baru gagal ditambahkan!', 'error');
       header('Location:' . BASEURL . '/admin/merk');
       exit;
     }
@@ -72,11 +73,11 @@ class Admin extends Controller
   public function hapusMerk($KdMerk)
   {
     if ($this->merk->hapusDataMerk($KdMerk) > 0) {
-      Flasher::setFlash('Data berhasil dihapus', 'warning');
+      SweetAlert::setSwalAlert('Berhasil', 'Merk berhasil dihapus!', 'success');
       header('Location:' . BASEURL . '/admin/merk');
       exit;
     } else {
-      Flasher::setFlash('Data gagal dihapus', 'danger');
+      SweetAlert::setSwalAlert('Gagal', 'Merk gagal dihapus!', 'error');
       header('Location:' . BASEURL . '/admin/merk');
       exit;
     }
@@ -84,11 +85,11 @@ class Admin extends Controller
   public function editMerk()
   {
     if ($this->merk->editDataMerk($_POST) > 0) {
-      Flasher::setFlash('Data berhasil diubah', 'success');
+      SweetAlert::setSwalAlert('Berhasil', 'Merk berhasil diubah!', 'success');
       header('Location:' . BASEURL . '/admin/merk');
       exit;
     } else {
-      Flasher::setFlash('Data gagal ubah', 'danger');
+      SweetAlert::setSwalAlert('Gagal', 'Merk gagal dihapus!', 'error');
       header('Location:' . BASEURL . '/admin/merk');
       exit;
     }
