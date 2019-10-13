@@ -62,65 +62,60 @@ if (!isset($_SESSION['Login'])) {
 
 <!-- Nav -->
 <div class="indigo">
-<div class="container py-1">
-  <ul id="no-waves" class="nav md-tabs indigo shadow-none mx-0 mb-0">
+  <div class="container py-1">
+    <ul id="no-waves" class="nav md-tabs indigo shadow-none mx-0 mb-0">
 
-  <li class="nav-item mr-2">
-    <a class="nav-link nav-dashboard-active rounded" href="#">Dashboard</a>
-  </li>
+      <li class="nav-item mr-2">
+        <a class="nav-link nav-dashboard-active rounded" href="#">Dashboard</a>
+      </li>
 
-  <li class="nav-item dropdown mr-2">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-      aria-expanded="false">Kendaraan</a>
-    <div class="dropdown-menu dropdown-primary">
-      <a class="dropdown-item" href="#">Merk</a>
-      <a class="dropdown-item" href="#">Type</a>
-      <a class="dropdown-item" href="#">Mobil</a>
-    </div>
-  </li>
+      <li class="nav-item dropdown mr-2">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kendaraan</a>
+        <div class="dropdown-menu dropdown-primary">
+          <a class="dropdown-item" href="#">Merk</a>
+          <a class="dropdown-item" href="#">Type</a>
+          <a class="dropdown-item" href="#">Mobil</a> </div>
+      </li>
 
-  <li class="nav-item dropdown mr-2">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-      aria-expanded="false">Transaksi</a>
-    <div class="dropdown-menu dropdown-primary">
-      <a class="dropdown-item" href="#">Transaksi</a>
-      <a class="dropdown-item" href="#">Transaksi Selesai</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Arsip Transaksi</a>
-    </div>
-  </li>
+      <li class="nav-item dropdown mr-2">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Transaksi</a>
+        <div class="dropdown-menu dropdown-primary">
+          <a class="dropdown-item" href="#">Transaksi</a>
+          <a class="dropdown-item" href="#">Transaksi Selesai</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Arsip Transaksi</a>
+        </div>
+      </li>
 
-  <li class="nav-item dropdown mr-2">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-      aria-expanded="false">Data Akun</a>
-    <div class="dropdown-menu dropdown-primary">
-      <a class="dropdown-item" href="#">Pelanggan</a>
-      <a class="dropdown-item" href="#">Karyawan</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Akun Pending</a>
-      <a class="dropdown-item" href="#">User Role</a>
-    </div>
-  </li>
+      <li class="nav-item dropdown mr-2">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Data Akun</a>
+        <div class="dropdown-menu dropdown-primary">
+          <a class="dropdown-item" href="#">Pelanggan</a>
+          <a class="dropdown-item" href="#">Karyawan</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Akun Pending</a>
+          <a class="dropdown-item" href="#">User Role</a>
+        </div>
+      </li>
 
-  <li class="nav-item">
-    <a class="nav-link" href="#!">Data Sopir</a>
-  </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#!">Data Sopir</a>
+      </li>
 
-  <li class="nav-item dropdown mr-2">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-      aria-expanded="false">Laporan</a>
-    <div class="dropdown-menu dropdown-primary">
-      <a class="dropdown-item" href="#">Transaksi</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Kendaraan</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Karyawan</a>
-      <a class="dropdown-item" href="#">Pelanggan</a>
-    </div>
-  </li>
+      <li class="nav-item dropdown mr-2">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Laporan</a>
+        <div class="dropdown-menu dropdown-primary">
+          <a class="dropdown-item" href="#">Transaksi</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Kendaraan</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Karyawan</a>
+          <a class="dropdown-item" href="#">Pelanggan</a>
+        </div>
+      </li>
 
-</ul>
-</div>
+    </ul>
+  </div>
 </div>
 <!-- Akhir Nav -->
 
