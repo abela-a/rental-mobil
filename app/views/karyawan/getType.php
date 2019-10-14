@@ -1,5 +1,5 @@
 <label for="IdType">Tipe</label>
-<select class="custom-select" name="IdType" id="IdType">
+<select class="browser-default custom-select" name="IdType" id="IdType">
   <option value="" selected disabled>Pilih Tipe</option>
   <?php
   foreach ($data['typeOption'] as $typeOption) :

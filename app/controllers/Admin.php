@@ -165,6 +165,7 @@ class Admin extends Controller
     $this->view('templates/navadmin', $data);
     $this->view('karyawan/mobil', $data);
     $this->view('templates/footer');
+    $this->view('templates/footerdashboard');
   }
   public function getType($KdMerk = '')
   {
@@ -173,13 +174,12 @@ class Admin extends Controller
   }
   public function tambahMobil()
   {
-    $this->mobil->uploadGambarMobil();
     if ($this->mobil->tambahDataMobil($_POST) > 0) {
-      Flasher::setFlash('Data berhasil ditambahkan', 'info');
+      SweetAlert::setSwalAlert('Berhasil', 'Mobil baru telah ditambahkan!', 'success');
       header('Location:' . BASEURL . '/admin/mobil');
       exit;
     } else {
-      Flasher::setFlash('Data gagal ditambahkan', 'danger');
+      SweetAlert::setSwalAlert('Gagal', 'Mobil baru gagal ditambahkan!', 'error');
       header('Location:' . BASEURL . '/admin/mobil');
       exit;
     }
@@ -187,11 +187,11 @@ class Admin extends Controller
   public function hapusMobil($id)
   {
     if ($this->mobil->hapusDataMobil($id) > 0) {
-      Flasher::setFlash('Data berhasil dihapus', 'warning');
+      SweetAlert::setSwalAlert('Berhasil', 'Data mobil berhasil dihapus', 'success');
       header('Location:' . BASEURL . '/admin/mobil');
       exit;
     } else {
-      Flasher::setFlash('Data gagal dihapus', 'danger');
+      SweetAlert::setSwalAlert('Gagal', 'Data mobil gagal dihapus', 'error');
       header('Location:' . BASEURL . '/admin/mobil');
       exit;
     }
@@ -199,11 +199,11 @@ class Admin extends Controller
   public function editMobil()
   {
     if ($this->mobil->editDataMobil($_POST) > 0) {
-      Flasher::setFlash('Data berhasil diubah', 'success');
+      SweetAlert::setSwalAlert('Berhasil', 'Data mobil berhasil diubah', 'success');
       header('Location:' . BASEURL . '/admin/mobil');
       exit;
     } else {
-      Flasher::setFlash('Data gagal ubah', 'danger');
+      SweetAlert::setSwalAlert('Gagal', 'Data mobil gagal dihapus', 'error');
       header('Location:' . BASEURL . '/admin/mobil');
       exit;
     }
