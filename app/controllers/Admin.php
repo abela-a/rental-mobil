@@ -273,16 +273,17 @@ class Admin extends Controller
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
     $this->view('karyawan/pelanggan', $data);
+    $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
   public function tambahPelanggan()
   {
     if ($this->pelanggan->tambahDataPelanggan($_POST) > 0) {
-      Flasher::setFlash('Data berhasil ditambahkan', 'info');
+      SweetAlert::setSwalAlert("Berhasil", "Pelanggan baru berhasil ditambahkan!", "success");
       header('Location:' . BASEURL . '/admin/pelanggan');
       exit;
     } else {
-      Flasher::setFlash('Data gagal ditambahkan', 'danger');
+      SweetAlert::setSwalAlert("Gagal", "Pelanggan baru gagal ditambahkan", "error");
       header('Location:' . BASEURL . '/admin/pelanggan');
       exit;
     }
@@ -290,11 +291,11 @@ class Admin extends Controller
   public function editPelanggan()
   {
     if ($this->pelanggan->editDataPelanggan($_POST) > 0) {
-      Flasher::setFlash('Data berhasil diubah', 'success');
+      SweetAlert::setSwalAlert("Berhasil", "Data pelanggan berhasil diubah", "success");
       header('Location:' . BASEURL . '/admin/pelanggan');
       exit;
     } else {
-      Flasher::setFlash('Data gagal ubah', 'danger');
+      SweetAlert::setSwalAlert("Gagal", "Data pelanggan gagal diubah", "error");
       header('Location:' . BASEURL . '/admin/pelanggan');
       exit;
     }
@@ -302,11 +303,11 @@ class Admin extends Controller
   public function hapusPelanggan($id)
   {
     if ($this->pelanggan->hapusDataPelanggan($id) > 0) {
-      Flasher::setFlash('Data berhasil dihapus', 'warning');
+      SweetAlert::setSwalAlert("Berhasil", "Pelanggan berhasil dihapus", "success");
       header('Location:' . BASEURL . '/admin/pelanggan');
       exit;
     } else {
-      Flasher::setFlash('Data gagal dihapus', 'danger');
+      SweetAlert::setSwalAlert("Gagal", "Pelanggan gagal dihapus", "error");
       header('Location:' . BASEURL . '/admin/pelanggan');
       exit;
     }
