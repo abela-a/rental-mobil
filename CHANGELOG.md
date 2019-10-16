@@ -15,10 +15,10 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 ##### ✅ Added
 
 * [x]  Landing Page
-* [ ]  New UI design
+* [x]  New UI design
 * [x]  Loader
-* [ ]  Fungsi SweetAlert2
-* [ ]  Nav Laporan
+* [ ]  Fungsi SweetAlert2 (Login)
+* [x]  Nav Laporan
 * [ ]  Section Daftar Mobil
 * [ ]  Section Layanan
 * [ ]  Section Testimonial
@@ -26,18 +26,19 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 ##### 🔄 Changed
 
 * [ ]  Login dan Register page menjadi modal di Homepage
-* [ ]  Layout dashboard, merk, tipe, mobil, karyawan, pelanggan, akun pending, role, sopir, profile menjadi modern-style
+* [x]  Layout dashboard, merk, tipe, mobil, karyawan, pelanggan, akun pending, role, sopir, profile menjadi modern-style
 
 ##### 📝 Deprecated
 
 * [ ]  Flasher default
-* [ ]  Sidebar
-* [ ]  Tab Management
+* [x]  Sidebar
+* [x]  Tab Management
 
 ##### ❌ Removed
 
 ##### 🔨 Fixed
 
+* [ ]  Upload foto mobil dan user
 ****
 
 ## 📆 *[Released]*
