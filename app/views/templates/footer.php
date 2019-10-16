@@ -28,10 +28,7 @@
 <script src="<?= BASEURL; ?>/vendor/MaterialBootstrap/js/jquery.mask.min.js"></script>
 <!-- MY SCRIPT -->
 <script src="<?= BASEURL; ?>/js/script.js"></script>
-<!-- HEADROOM -->
-<script src="<?= BASEURL; ?>/vendor/Headroom/jQuery.headroom.min.js"></script>
-<script src="<?= BASEURL; ?>/vendor/Headroom/headroom.min.js"></script>
-
+<!-- GET -->
 <script>
   $(document).ready(function() {
     // GET TYPE
