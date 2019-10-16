@@ -39,7 +39,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ##### 🔨 Fixed
 
-* [ ]  Upload foto mobil dan user
+* [x]  Upload foto mobil dan user
 ****
 
 ## 📆 *[Released]*
