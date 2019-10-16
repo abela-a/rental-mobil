@@ -13,7 +13,7 @@ if (!isset($_SESSION['Login'])) {
 ?>
 <!--Main Navigation-->
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark indigo accent-2 py-0 shadow-none">
+  <nav class="navbar navbar-expand-lg navbar-dark indigo accent-2 py-2 shadow-none">
     <div class="container">
 
       <a class="navbar-brand py-0" href="<?= BASEURL; ?>">
@@ -62,7 +62,7 @@ if (!isset($_SESSION['Login'])) {
 <!--Main Navigation-->
 
 <!-- Nav -->
-<div class="indigo">
+<div class="indigo sticky-top" id="navdashboard" style="z-index:1">
   <div class="container py-1">
     <ul id="no-waves" class="nav md-tabs justify-content-center indigo shadow-none mx-0 mb-0">
 
