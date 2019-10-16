@@ -222,16 +222,17 @@ class Admin extends Controller
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
     $this->view('admin/karyawan', $data);
+    $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
   public function tambahKaryawan()
   {
     if ($this->karyawan->tambahDataKaryawan($_POST) > 0) {
-      Flasher::setFlash('Data berhasil ditambahkan', 'info');
+      SweetAlert::setSwalAlert("Berhasil", "Karyawan baru berhasil ditambahkan!", "success");
       header('Location:' . BASEURL . '/admin/karyawan');
       exit;
     } else {
-      Flasher::setFlash('Data gagal ditambahkan', 'danger');
+      SweetAlert::setSwalAlert("Gagal", "Karyawan baru gagal ditambahkan!", "error");
       header('Location:' . BASEURL . '/admin/karyawan');
       exit;
     }
@@ -239,11 +240,11 @@ class Admin extends Controller
   public function editKaryawan()
   {
     if ($this->karyawan->editDataKaryawan($_POST) > 0) {
-      Flasher::setFlash('Data berhasil diubah', 'success');
+      SweetAlert::setSwalAlert("Berhasil", "Data karyawan berhasil diubah!", "success");
       header('Location:' . BASEURL . '/admin/karyawan');
       exit;
     } else {
-      Flasher::setFlash('Data gagal ubah', 'danger');
+      SweetAlert::setSwalAlert("Gagal", "Data karyawan gagal diubah!", "error");
       header('Location:' . BASEURL . '/admin/karyawan');
       exit;
     }
@@ -251,11 +252,11 @@ class Admin extends Controller
   public function hapusKaryawan($id)
   {
     if ($this->karyawan->hapusDataKaryawan($id) > 0) {
-      Flasher::setFlash('Data berhasil dihapus', 'warning');
+      SweetAlert::setSwalAlert("Berhasil", "Data karyawan berhasil dihapus!", "success");
       header('Location:' . BASEURL . '/admin/karyawan');
       exit;
     } else {
-      Flasher::setFlash('Data gagal dihapus', 'danger');
+      SweetAlert::setSwalAlert("Gagal", "Data karyawan gagal diubah!", "error");
       header('Location:' . BASEURL . '/admin/karyawan');
       exit;
     }
