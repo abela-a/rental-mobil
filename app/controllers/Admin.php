@@ -445,22 +445,24 @@ class Admin extends Controller
     $data['judul'] = 'Profile';
 
     $data['userProfile'] = $this->user->getUserProfileById($id);
+    $data['JmlPending'] = $this->admin->countUserUnactive();
     $data['url'] = $this->admin->parseURL();
 
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
     $this->view('pelanggan/editprofile', $data);
+    $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
   public function editProfile()
   {
     if ($this->user->editDataUser($_POST) > 0) {
-      Flasher::setFlash('Profile berhasil diubah', 'success');
-      header('Location:' . BASEURL . '/admin');
+      SweetAlert::setSwalAlert("Berhasil", "Profile berhasil diubah", "success");
+      header('Location:' . BASEURL . '/admin/userprofile/' . $_SESSION['Login']['id']);
       exit;
     } else {
-      Flasher::setFlash('Profile gagal ubah', 'danger');
-      header('Location:' . BASEURL . '/admin');
+      SweetAlert::setSwalAlert("Gagal", "Profile gagal diubah", "error");
+      header('Location:' . BASEURL . '/admin/userprofile/' . $_SESSION['Login']['Id']);
       exit;
     }
   }
