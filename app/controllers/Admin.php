@@ -332,16 +332,17 @@ class Admin extends Controller
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
     $this->view('karyawan/sopir', $data);
+    $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
   public function tambahSopir()
   {
     if ($this->sopir->tambahDataSopir($_POST) > 0) {
-      Flasher::setFlash('Data berhasil ditambahkan', 'info');
+      SweetAlert::setSwalAlert("Berhasil", "Sopir baru berhasil ditambahkan!", "success");
       header('Location:' . BASEURL . '/admin/sopir');
       exit;
     } else {
-      Flasher::setFlash('Data gagal ditambahkan', 'danger');
+      SweetAlert::setSwalAlert("Gagal", "Sopir baru gagal ditambahkan!", "error");
       header('Location:' . BASEURL . '/admin/sopir');
       exit;
     }
@@ -349,11 +350,11 @@ class Admin extends Controller
   public function hapusSopir($id)
   {
     if ($this->sopir->hapusDataSopir($id) > 0) {
-      Flasher::setFlash('Data berhasil dihapus', 'warning');
+      SweetAlert::setSwalAlert("Berhasil", "Data sopir berhasil dihapus", "success");
       header('Location:' . BASEURL . '/admin/sopir');
       exit;
     } else {
-      Flasher::setFlash('Data gagal dihapus', 'danger');
+      SweetAlert::setSwalAlert("Gagal", "Data sopir gagal dihapus", "error");
       header('Location:' . BASEURL . '/admin/sopir');
       exit;
     }
@@ -361,11 +362,11 @@ class Admin extends Controller
   public function editSopir()
   {
     if ($this->sopir->editDataSopir($_POST) > 0) {
-      Flasher::setFlash('Data berhasil diubah', 'success');
+      SweetAlert::setSwalAlert("Berhasil", "Data sopir berhasil diubah", "success");
       header('Location:' . BASEURL . '/admin/sopir');
       exit;
     } else {
-      Flasher::setFlash('Data gagal ubah', 'danger');
+      SweetAlert::setSwalAlert("Gagal", "Data sopir gagal diubah", "error");
       header('Location:' . BASEURL . '/admin/sopir');
       exit;
     }

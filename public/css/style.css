@@ -4,13 +4,7 @@
 .nav-dashboard-active {
   background-color: #ffbb33;
   font-weight: 400;
-  color: black !important;
-}
-.btn-warning {
-  color: black;
-}
-.btn-warning:hover {
-  color: black;
+  color: white !important;
 }
 .font-weight-bold {
   font-weight: 700;
