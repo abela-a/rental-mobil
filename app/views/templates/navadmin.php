@@ -28,7 +28,7 @@ if (!isset($_SESSION['Login'])) {
       <div class="collapse navbar-collapse ml-4" id="navResponsive">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <input class="form-control form-control-sm" type="text" placeholder="Cari...">
+            <input class="form-control form-control-sm" type="text" placeholder="Cari..." style="width:300px">
           </li>
         </ul>
         <ul class="navbar-nav nav-flex-icons">
@@ -64,7 +64,7 @@ if (!isset($_SESSION['Login'])) {
 <!-- Nav -->
 <div class="indigo">
   <div class="container py-1">
-    <ul id="no-waves" class="nav md-tabs indigo shadow-none mx-0 mb-0">
+    <ul id="no-waves" class="nav md-tabs justify-content-center indigo shadow-none mx-0 mb-0">
 
       <li class="nav-item mr-2">
         <a class="nav-link <?php if ($data['judul'] == 'Dashboard') echo 'nav-dashboard-active rounded' ?>" href="<?= BASEURL; ?>/admin">
