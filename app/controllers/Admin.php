@@ -383,16 +383,17 @@ class Admin extends Controller
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
     $this->view('admin/pendinguser', $data);
+    $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
   public function konfirmasiUser()
   {
     if ($this->admin->accUser($_POST) > 0) {
-      Flasher::setFlash('User berhasil diaktivasi', 'success');
+      SweetAlert::setSwalAlert("Berhasil", "User berhasil diaktivasi", "success");
       header('Location:' . BASEURL . '/admin/pending');
       exit;
     } else {
-      Flasher::setFlash('Tidak ada perubahan', 'danger');
+      SweetAlert::setSwalAlert("Peringatan", "Tidak ada perubahan", "warning");
       header('Location:' . BASEURL . '/admin/pending');
       exit;
     }
@@ -400,11 +401,11 @@ class Admin extends Controller
   public function hapusPending($id)
   {
     if ($this->admin->delUser($id) > 0) {
-      Flasher::setFlash('User berhasil dihapus', 'warning');
+      SweetAlert::setSwalAlert("Berhasil", "User pending berhasil dihapus", "success");
       header('Location:' . BASEURL . '/admin/pending');
       exit;
     } else {
-      Flasher::setFlash('User gagal dihapus', 'danger');
+      SweetAlert::setSwalAlert("Gagal", "User pending gagal dihapus", "error");
       header('Location:' . BASEURL . '/admin/pending');
       exit;
     }
