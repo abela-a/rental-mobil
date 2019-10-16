@@ -41,7 +41,4 @@ $(document).ready(function() {
   // MATERIAL SELECT
   $(".mdb-select").material_select();
   $("select[name='tolong_length']").addClass("d-inline");
-
-  //HEADROOM
-  $("#navdashboard").headroom();
 });
