@@ -424,16 +424,17 @@ class Admin extends Controller
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
     $this->view('admin/role', $data);
+    $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
   public function updaterole()
   {
     if ($this->admin->UpdateRole($_POST) > 0) {
-      Flasher::setFlash('Role berhasil diubah', 'success');
+      SweetAlert::setSwalAlert("Berhasil", "Role berhasil diubah", "success");
       header('Location:' . BASEURL . '/admin/role');
       exit;
     } else {
-      Flasher::setFlash('Tidak ada perubahan', 'danger');
+      SweetAlert::setSwalAlert("Gagal", "Role gagal diubah", "error");
       header('Location:' . BASEURL . '/admin/role');
       exit;
     }
