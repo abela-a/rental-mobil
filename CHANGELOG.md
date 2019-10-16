@@ -26,6 +26,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 ##### 🔄 Changed
 
 * [ ]  Login dan Register page menjadi modal di Homepage
+* [ ]  Login dan Register page modern style
 * [x]  Layout dashboard, merk, tipe, mobil, karyawan, pelanggan, akun pending, role, sopir, profile menjadi modern-style
 
 ##### 📝 Deprecated
