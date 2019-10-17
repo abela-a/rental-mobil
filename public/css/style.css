@@ -1,3 +1,6 @@
+body.modal-open {
+  overflow: hidden;
+}
 .nav-active {
   border-bottom: #ffbb33 3px solid;
 }
