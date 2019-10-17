@@ -6,6 +6,7 @@ $(document).ready(function() {
 
   //DATA TABLES
   $("#tolong").DataTable();
+  $("select[name='tolong_length']").addClass("d-inline");
 
   // TOOLTIPS
   $("[data-toggle=tooltip]").tooltip();
@@ -28,17 +29,32 @@ $(document).ready(function() {
   $(".telp").mask("0000-0000-00000");
 
   // JARALLAX
-  // object-fit polyfill run
   objectFitImages();
-
-  /* init Jarallax */
   jarallax(document.querySelectorAll(".jarallax"));
-
   jarallax(document.querySelectorAll(".jarallax-keep-img"), {
     keepImg: true
   });
 
   // MATERIAL SELECT
   $(".mdb-select").material_select();
-  $("select[name='tolong_length']").addClass("d-inline");
+
+  // SWEETALERT HAPUS
+  $(".tombol-hapus").on("click", function(e) {
+    e.preventDefault();
+    const href = $(this).attr("href");
+    Swal.fire({
+      title: "Apakah Anda yakin?",
+      text: "Data ini akan dihapus",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#4285F4",
+      cancelButtonColor: "#FF3547",
+      confirmButtonText: "Ya, hapus",
+      cancelButtonText: "Batal"
+    }).then(result => {
+      if (result.value) {
+        document.location.href = href;
+      }
+    });
+  });
 });
