@@ -25,6 +25,9 @@
   border-bottom: solid #536dfe 4px;
   width: 30%;
 }
+.btn {
+  border-radius: 5px;
+}
 #motto {
   font-weight: 100;
   font-size: 29px;
