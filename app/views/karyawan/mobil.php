@@ -9,7 +9,7 @@
   </div>
   <div class="bg-white shadow-sm rounded pt-5 pb-4 px-5">
     <!-- TABLE -->
-    <table class="table table-hover table-bordered" id="tolong">
+    <table class="table table-hover" id="tolong">
       <thead>
         <tr>
           <th scope="col">#</th>
