@@ -63,11 +63,11 @@
 
               <div class="modal-content">
 
-                <div class="modal-header text-center bg-info text-white">
+                <div class="modal-header text-center text-primary">
                   <h4 class="modal-title w-100 h5" id="myModalLabel">DETAIL PELANGGAN BARU</h4>
                 </div>
 
-                <div class="modal-body">
+                <div class="modal-body px-5">
 
                   <ul class="list-group list-group-flush">
 

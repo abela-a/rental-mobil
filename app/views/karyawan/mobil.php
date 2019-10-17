@@ -67,7 +67,7 @@
                     <?= ucfirst($mobil['NmType']); ?>
                   </h5>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body px-5">
                   <img class="" width="100%" src="<?= BASEURL ?>/img/fotomobil/<?= $mobil['FotoMobil']; ?>">
                 </div>
               </div>
@@ -77,12 +77,12 @@
 
           <!-- AWAL MODAL EDIT-->
           <div class="modal fade" id="edit<?= $mobil['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="editMobilLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
               <div class="modal-content">
-                <div class="modal-header bg-primary text-white text-center">
+                <div class="modal-header text-primary text-center">
                   <h5 class="modal-title h5 w-100" id="editMobilLabel">UBAH DATA MOBIL</h5>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body px-5">
 
                   <!-- AWAL FORM -->
 
@@ -151,12 +151,12 @@
 
           <!-- AWAL HAPUS -->
           <div class="modal fade center" id="hapus<?= $mobil['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
               <div class="modal-content">
-                <div class="modal-header bg-danger text-white text-center">
+                <div class="modal-header text-danger text-center">
                   <h5 class="modal-title h5 w-100">HAPUS DATA MOBIL</h5>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body px-5">
                   <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/hapusMobil/<?= $mobil['id'] ?>" method="post">
                     <center>
                       <h5>
@@ -182,12 +182,12 @@
 </div>
 <!-- AWAL MODAL-->
 <div class="modal fade" id="inputMobil" tabindex="-1" role="dialog" aria-labelledby="inputMobilLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header bg-primary text-white text-center">
+      <div class="modal-header text-primary text-center">
         <h5 class="modal-title h5 w-100" id="inputMobilLabel">TAMBAH DATA MOBIL</h5>
       </div>
-      <div class="modal-body">
+      <div class="modal-body px-5">
 
         <!-- AWAL FORM -->
 

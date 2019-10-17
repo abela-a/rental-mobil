@@ -43,11 +43,11 @@
 
               <div class="modal-content">
 
-                <div class="modal-header text-center bg-info text-white">
+                <div class="modal-header text-center text-primary">
                   <h4 class="modal-title w-100 h5" id="myModalLabel">DETAIL PELANGGAN</h4>
                 </div>
 
-                <div class="modal-body">
+                <div class="modal-body px-5">
 
                   <ul class="list-group list-group-flush">
 
@@ -99,12 +99,12 @@
 
           <!-- AWAL MODAL EDIT-->
           <div class="modal fade" id="edit<?= $user['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="edituUserLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
               <div class="modal-content">
-                <div class="modal-header bg-primary text-white text-center">
+                <div class="modal-header text-primary text-center">
                   <h5 class="modal-title h5 w-100" id="edituUserLabel">UBAH DATA PELANGGAN</h5>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body px-5">
 
                   <!-- AWAL FORM -->
 
@@ -171,12 +171,12 @@
 
           <!-- AWAL HAPUS -->
           <div class="modal fade center" id="hapus<?= $user['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
               <div class="modal-content">
-                <div class="modal-header bg-danger text-white text-center">
+                <div class="modal-header text-danger text-center">
                   <h5 class="modal-title h5 w-100">HAPUS DATA PELANGGAN</h5>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body px-5">
                   <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/hapusPelanggan/<?= $user['id'] ?>" method="post">
                     <center>
                       <h5>
@@ -200,12 +200,12 @@
 </div>
 <!-- AWAL MODAL-->
 <div class="modal fade" id="inputUser" tabindex="-1" role="dialog" aria-labelledby="inputUserLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header bg-primary text-white text-center">
+      <div class="modal-header text-primary text-center">
         <h5 class="modal-title h5 w-100" id="inputUserLabel">TAMBAH DATA PELANGGAN</h5>
       </div>
-      <div class="modal-body">
+      <div class="modal-body px-5">
 
         <!-- AWAL FORM -->
 

@@ -69,7 +69,7 @@
       <div class="modal-header text-center">
         <h5 class="modal-title h5 w-100">PERBAHARUI FOTO</h5>
       </div>
-      <div class="modal-body">
+      <div class="modal-body px-5">
         <img class="" width="100%" src="<?= BASEURL ?>/img/fotouser/<?= $data['userProfile']['Foto'] ?>">
       </div>
       <div class="modal-footer">
@@ -95,12 +95,12 @@
 
 <!-- AWAL MODAL EDIT-->
 <div class="modal fade" id="edit<?= $data['userProfile']['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="edituUserLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header bg-primary text-white text-center">
+      <div class="modal-header text-primary text-center">
         <h5 class="modal-title h5 w-100" id="edituUserLabel">UBAH PROFILE</h5>
       </div>
-      <div class="modal-body">
+      <div class="modal-body px-5">
 
         <!-- AWAL FORM -->
 
