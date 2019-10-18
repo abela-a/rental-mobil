@@ -41,7 +41,7 @@
                 <div class="modal-header text-primary text-center">
                   <h5 class="modal-title h5 w-100" id="editTypeLabel">UBAH DATA TIPE</h5>
                 </div>
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
 
                   <!-- AWAL FORM -->
 
@@ -85,7 +85,7 @@
                 <div class="modal-header text-danger text-center">
                   <h5 class="modal-title h5 w-100">HAPUS DATA TIPE</h5>
                 </div>
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
                   <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/hapusType/<?= $type['IdType'] ?>" method="post">
                     <center>
                       <h5>Data ini akan dihapus. Apakah anda yakin?</h5>
@@ -113,7 +113,7 @@
       <div class="modal-header text-primary text-center">
         <h5 class="modal-title h5 w-100" id="inputTypeLabel">TAMBAH DATA TIPE</h5>
       </div>
-      <div class="modal-body px-5">
+      <div class="modal-body px-5 grey lighten-5">
 
         <!-- AWAL FORM -->
 

@@ -41,7 +41,7 @@
                 <div class="modal-header text-primary text-center">
                   <h5 class="modal-title h5 w-100" id="editMerkLabel">UBAH DATA MERK</h5>
                 </div>
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
 
                   <!-- AWAL FORM -->
 
@@ -78,7 +78,7 @@
                 <div class="modal-header text-danger text-center">
                   <h5 class="modal-title h5 w-100" id="editMerkLabel">HAPUS DATA MERK</h5>
                 </div>
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
                   <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/hapusMerk/<?= $merk['KdMerk'] ?>" method="post">
                     <center>
                       <h5>Data ini akan dihapus. Apakah anda yakin?</h5>
@@ -106,7 +106,7 @@
       <div class="modal-header text-primary text-center">
         <h5 class="modal-title h5 w-100" id="inputMerkLabel">TAMBAH DATA MERK</h5>
       </div>
-      <div class="modal-body px-5">
+      <div class="modal-body px-5 grey lighten-5">
 
         <!-- AWAL FORM -->
 

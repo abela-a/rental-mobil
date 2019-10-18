@@ -47,7 +47,7 @@
                   <h4 class="modal-title w-100 h5" id="myModalLabel">DETAIL KARYAWAN</h4>
                 </div>
 
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
 
                   <ul class="list-group list-group-flush">
 
@@ -104,7 +104,7 @@
                 <div class="modal-header text-primary text-center">
                   <h5 class="modal-title h5 w-100" id="edituUserLabel">UBAH DATA KARYAWAN</h5>
                 </div>
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
 
                   <!-- AWAL FORM -->
 
@@ -176,7 +176,7 @@
                 <div class="modal-header text-danger text-center">
                   <h5 class="modal-title h5 w-100">HAPUS DATA KARYAWAN</h5>
                 </div>
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
                   <form action="<?= BASEURL; ?>/admin/hapusKaryawan/<?= $user['id'] ?>" method="post">
                     <center>
                       <h5>
@@ -208,7 +208,7 @@
       <div class="modal-header text-primary text-center">
         <h5 class="modal-title h5 w-100" id="inputUserLabel">TAMBAH DATA KARYAWAN</h5>
       </div>
-      <div class="modal-body px-5">
+      <div class="modal-body px-5 grey lighten-5">
 
         <!-- AWAL FORM -->
 

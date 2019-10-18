@@ -69,7 +69,7 @@
       <div class="modal-header text-center">
         <h5 class="modal-title h5 w-100">PERBAHARUI FOTO</h5>
       </div>
-      <div class="modal-body px-5">
+      <div class="modal-body px-5 grey lighten-5">
         <img class="" width="100%" src="<?= BASEURL ?>/img/fotouser/<?= $data['userProfile']['Foto'] ?>">
       </div>
       <div class="modal-footer">
@@ -100,7 +100,7 @@
       <div class="modal-header text-primary text-center">
         <h5 class="modal-title h5 w-100" id="edituUserLabel">UBAH PROFILE</h5>
       </div>
-      <div class="modal-body px-5">
+      <div class="modal-body px-5 grey lighten-5">
 
         <!-- AWAL FORM -->
 

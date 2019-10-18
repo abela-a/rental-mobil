@@ -31,8 +31,8 @@
             <div class="clear-fix mt-4">
               <?php
               if (!isset($_SESSION['Login'])) : ?>
-                <a class="btn btn-warning" href="<?= BASEURL; ?>/auth/registration">Daftar</a>
-                <a class="btn btn-outline-white" href="<?= BASEURL; ?>/auth/login">login</a>
+                <a data-target="#Register" data-toggle="modal" class="btn btn-warning">Daftar</a>
+                <a data-target="#Login" data-toggle="modal" class="btn btn-outline-white">login</a>
               <?php else : ?>
                 <a class="btn indigo accent-2" href="<?= BASEURL; ?>">Pesan Mobil</a>
               <?php endif; ?>
@@ -103,3 +103,103 @@
   </section>
   <!-- AKHIR DAFTAR MOBIL -->
 </div>
+
+<!-- Modal Login -->
+<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-primary text-center">
+        <h5 class="modal-title h5 w-100" id="">LOGIN</h5>
+      </div>
+      <div class="modal-body px-5 grey lighten-5">
+
+        <!-- AWAL FORM -->
+
+        <form action="<?= BASEURL; ?>/auth/SignIn" method="post">
+          <div class="form-group">
+            <label for="NamaUser">Username/Email</label>
+            <input class="form-control" type="email" name="NamaUser" id="NamaUser" autofocus required>
+          </div>
+          <div class="form-group">
+            <label for="Password">Password</label>
+            <input class="form-control" type="Password" name="Password" id="Password" required>
+          </div>
+      </div>
+      <div class="modal-footer text-center justify-content-center">
+        <button type="button" class="btn btn-outline-primary shadow-none" data-dismiss="modal">Keluar</button>
+        <button class="btn btn-primary shadow-none" type="submit">Login</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- /Modal Login -->
+
+<!-- Modal Register -->
+<div class="modal fade" id="Register" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-primary text-center">
+        <h5 class="modal-title h5 w-100" id="">REGISTER</h5>
+      </div>
+      <div class="modal-body px-5 grey lighten-5">
+
+        <!-- AWAL FORM -->
+
+        <form action="<?= BASEURL; ?>/auth/signUp" method="post">
+
+          <input type="hidden" value="default.png" name="Foto">
+
+          <div class="form-group">
+            <label for="Nama">Nama Lengkap</label>
+            <input class="form-control" type="text" name="Nama" id="Nama" autocomplete="off" autofocus required>
+          </div>
+
+          <div class="form-group">
+            <label for="NIK">Nomor Induk Kependudukan</label>
+            <input class="form-control" type="number" name="NIK" id="NIK" autocomplete="off" required>
+          </div>
+
+          <div class="form-group">
+            <label for="NamaUser">Email</label>
+            <input class="form-control" type="email" name="NamaUser" id="NamaUser" autocomplete="off" required>
+          </div>
+
+          <div class="form-group">
+            <label for="Password">Password</label>
+            <input class="form-control" type="Password" name="Password" id="Password" required>
+          </div>
+
+          <div class="form-group">
+            <label for="Password2">Ulangi Password</label>
+            <input class="form-control" type="Password" name="Password2" id="Password2" required>
+          </div>
+
+          <div class="form-group">
+            <label for="JenisKelamin">Jenis Kelamin</label>
+            <select class="browser-default custom-select" name="JenisKelamin" id="JenisKelamin">
+              <option value="" selected>Pilih jenis Kelamin</option>
+              <option value="L">Laki-laki</option>
+              <option value="P">Perempuan</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="Alamat">Alamat</label>
+            <textarea class="form-control" type="number" name="Alamat" id="Alamat" autocomplete="off"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="NoTelp">No Telepon</label>
+            <input class="form-control telp" type="text" name="NoTelp" id="NoTelp" autocomplete="off" required>
+          </div>
+      </div>
+      <div class="modal-footer text-center justify-content-center">
+        <button type="button" class="btn btn-outline-primary shadow-none" data-dismiss="modal">Keluar</button>
+        <button class="btn btn-primary shadow-none" type="submit">DAFTAR</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- /Modal Register -->

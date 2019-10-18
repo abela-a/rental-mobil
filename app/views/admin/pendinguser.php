@@ -67,7 +67,7 @@
                   <h4 class="modal-title w-100 h5" id="myModalLabel">DETAIL PELANGGAN BARU</h4>
                 </div>
 
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
 
                   <ul class="list-group list-group-flush">
 

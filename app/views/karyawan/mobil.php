@@ -67,7 +67,7 @@
                     <?= ucfirst($mobil['NmType']); ?>
                   </h5>
                 </div>
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
                   <img class="" width="100%" src="<?= BASEURL ?>/img/fotomobil/<?= $mobil['FotoMobil']; ?>">
                 </div>
               </div>
@@ -82,7 +82,7 @@
                 <div class="modal-header text-primary text-center">
                   <h5 class="modal-title h5 w-100" id="editMobilLabel">UBAH DATA MOBIL</h5>
                 </div>
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
 
                   <!-- AWAL FORM -->
 
@@ -156,7 +156,7 @@
                 <div class="modal-header text-danger text-center">
                   <h5 class="modal-title h5 w-100">HAPUS DATA MOBIL</h5>
                 </div>
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
                   <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/hapusMobil/<?= $mobil['id'] ?>" method="post">
                     <center>
                       <h5>
@@ -187,7 +187,7 @@
       <div class="modal-header text-primary text-center">
         <h5 class="modal-title h5 w-100" id="inputMobilLabel">TAMBAH DATA MOBIL</h5>
       </div>
-      <div class="modal-body px-5">
+      <div class="modal-body px-5 grey lighten-5">
 
         <!-- AWAL FORM -->
 

@@ -51,7 +51,7 @@
                   <h4 class="modal-title w-100 h5" id="myModalLabel">DETAIL SOPIR</h4>
                 </div>
 
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
 
                   <ul class="list-group list-group-flush">
 
@@ -116,7 +116,7 @@
                 <div class="modal-header text-primary text-center">
                   <h5 class="modal-title h5 w-100" id="edituUserLabel">UBAH DATA SOPIR</h5>
                 </div>
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
 
                   <!-- AWAL FORM -->
 
@@ -196,7 +196,7 @@
                 <div class="modal-header text-danger text-center">
                   <h5 class="modal-title h5 w-100">HAPUS DATA SOPIR</h5>
                 </div>
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
                   <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/hapusSopir/<?= $user['id'] ?>" method="post">
                     <center>
                       <h5>
@@ -227,7 +227,7 @@
       <div class="modal-header text-primary text-center">
         <h5 class="modal-title h5 w-100" id="inputUserLabel">TAMBAH DATA SOPIR</h5>
       </div>
-      <div class="modal-body px-5">
+      <div class="modal-body px-5 grey lighten-5">
 
         <!-- AWAL FORM -->
 
