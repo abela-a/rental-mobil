@@ -28,11 +28,11 @@ class Auth extends Controller
   public function signUp()
   {
     if ($this->model('Auth_model')->registrasi($_POST) > 0) {
-      Flasher::setFlash('Registrasi Anda berhasil! Silahkan hubungi <a href="#" class="badge badge-default" data-toggle="tooltip" data-placement="top" title="0878-1697-3617">Admin</a> untuk aktivasi', 'info');
+      SweetAlert::setSwalAlert('Registrasi Anda Berhasil!', 'Silahkan hubungi Admin untuk aktivasi', 'success');
       header('Location:' . BASEURL . '/auth');
       exit;
     } else {
-      Flasher::setFlash('Registrasi Anda gagal', 'danger');
+      SweetAlert::setSwalAlert('Registrasi Anda gagal!', 'Silahkan registrasi ulang, atau hubungi Admin untuk bantuan', 'success');
       header('Location:' . BASEURL . '/auth/registration');
       exit;
     }
@@ -51,7 +51,7 @@ class Auth extends Controller
     if ($UserData > 0) {
       // CEK AKTIF
       if ($UserData['IsActive'] == 0) {
-        Flasher::setFlash('User anda belum aktif. Silahkan kontak <a href="#" class="badge badge-warning" data-toggle="tooltip" data-placement="top" title="0878-1697-3617">Admin</a> ', 'warning');
+        SweetAlert::setSwalAlert('Akun Anda belum aktif!', 'Silahkan hubungi Admin untuk konfirmasi dan aktivasi akun Anda', 'info');
         header('Location:' . BASEURL . '/auth');
         exit;
       } else {
@@ -66,44 +66,38 @@ class Auth extends Controller
           ];
           //JIKA ADMIN
           if ($_SESSION['Login']['RoleId'] == 1) {
-            //Flasher::setFlash('Login Anda berhasil. Selamat datang ' . $_SESSION['Login']['Nama'], 'success');
-
-            SweetAlert::setToast('top-end', '3000', 'success', 'Anda berhasil login!');
-
-            // SweetAlert::setSwalAlert('Anda berhasil login', 'Selamat datang ' . $_SESSION['Login']['Nama'], 'success');
-
+            SweetAlert::setToast('top-end', '5000', 'success', 'Anda berhasil login!');
             header('Location:' . BASEURL . '/admin');
             exit;
           }
           // JIKA KARYAWAN
           else if ($_SESSION['Login']['RoleId'] == 2) {
-            Flasher::setFlash('Login Anda berhasil. Selamat datang ' . $_SESSION['Login']['Nama'], 'success');
+            SweetAlert::setToast('top-end', '5000', 'success', 'Anda berhasil login!');
             header('Location:' . BASEURL . '/karyawan');
             exit;
           }
           // JIKA PELANGGAN
           else if ($_SESSION['Login']['RoleId'] == 3) {
-            Flasher::setFlash('Login Anda berhasil. Selamat datang ' . $_SESSION['Login']['Nama'], 'success');
+            SweetAlert::setToast('top-end', '5000', 'success', 'Anda berhasil login!');
             header('Location:' . BASEURL . '/pelanggan');
             exit;
           }
         } else {
-          Flasher::setFlash('Password Anda Salah', 'danger');
+          SweetAlert::setSwalAlert('Gagal Login', 'Password Anda salah!', 'error');
           header('Location:' . BASEURL . '/auth');
           exit;
         }
       }
     } else {
-      Flasher::setFlash('User belum terdaftar! Silahkan <a href="' . BASEURL . '/auth/registration">Daftar</a> terlebih dahulu', 'warning');
-      header('Location:' . BASEURL . '/auth');
+      SweetAlert::setSwalAlert('Akun belum terdaftar!', 'Silahkan lakukan registrasi terlebih dahulu', 'info');
+      header('Location:' . BASEURL . '/auth/registration');
       exit;
     }
   }
   public function SignOut()
   {
-    session_destroy();
-    session_unset();
-    Flasher::setFlash('Logout anda berhasil', 'success');
+    unset($_SESSION['Login']);
+    SweetAlert::setToast('top-end', '5000', 'success', 'Anda berhasil logout!');
     header('Location:' . BASEURL . '/home');
     exit;
   }

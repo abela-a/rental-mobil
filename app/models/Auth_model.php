@@ -21,14 +21,14 @@ class Auth_model
     $cekUser = $this->db->single();
 
     if ($cekUser) {
-      Flasher::setFlash('Username telah terdaftar', 'warning');
+      SweetAlert::setSwalAlert("Peringatan", "Username telah terdaftar!", "warning");
       header('Location:' . BASEURL . '/auth/registration');
       exit;
     }
 
     //CEK PASSWORD
     if ($password !== $password2) {
-      Flasher::setFlash('Password tidak sama', 'danger');
+      SweetAlert::setSwalAlert("Peringatan", "Password tidak sama!", "error");
       header('Location:' . BASEURL . '/auth/registration');
       exit;
     }

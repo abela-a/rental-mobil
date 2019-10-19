@@ -78,7 +78,7 @@ class User_model
 
     //Cek apakah tidak ada gambar yang diupload
     if ($error === 4) {
-      Flasher::setFlash('Gambar belum ditambahkan', 'warning');
+      SweetAlert::setSwalAlert("Peringatan", "Gambar belum ditambahkan!", "warning");
       header('Location:' . BASEURL . '/' . $_SESSION['Login']['Role'] . '/userProfile' . '/' . $_SESSION['Login']['Id']);
       exit;
     }
@@ -89,14 +89,14 @@ class User_model
     $ekstensiGambar = strtolower(end($ekstensiGambar));
 
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
-      Flasher::setFlash('Berkas bukan gambar', 'danger');
+      SweetAlert::setSwalAlert("Peringatan", "Berkas bukan gambar!", "warning");
       header('Location:' . BASEURL . '/' . $_SESSION['Login']['Role'] . '/userProfile' . '/' . $_SESSION['Login']['Id']);
       exit;
     }
 
     //cek ukuran file
     if ($ukuranFile > UKURANFOTO) {
-      Flasher::setFlash('Ukuran gambar terlalu besar', 'danger');
+      SweetAlert::setSwalAlert("Peringatan", "Ukuran gambar terlalu besar", "warning");
       header('Location:' . BASEURL . '/' . $_SESSION['Login']['Role'] . '/userProfile' . '/' . $_SESSION['Login']['Id']);
       exit;
     }

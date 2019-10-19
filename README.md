@@ -16,7 +16,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 2. Multiusers
 3. Multiroles
 4. Dashboard dan Homepage
-5. Manajemen Transaksi
+5. Manajemen Transaksi (Coming Soon)
 6. Manajemen Karyawan, Pelanggan, Role, Sopir dan Akun Baru
 7. Manajemen Merk, Type, dan Data Mobil
 8. Mengubah foto profile user
@@ -173,6 +173,14 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 | Total             | double  | 11     | -           |
 | status            | enum    | 0      | ""          |
 | new               | char    | 1      | -           |
+
+## Changelog
+
+Anda dapat melihat semua perubahan di [CHANGELOG](https://gitlab.com/abela-a/RentalMobil/blob/master/CHANGELOG.md)
+
+## License
+
+Aplikasi ini dilindungi oleh [MIT LICENSE](https://gitlab.com/abela-a/RentalMobil/blob/master/LICENSE)
 
 ## Kritik, Saran, atau Menemukan Bug
 

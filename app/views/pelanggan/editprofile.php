@@ -1,63 +1,63 @@
-<?= Flasher::flash(); ?>
-<!-- TOMBOL -->
-<a class="btn btn-outline-info mb-3" href="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/dashboard"><i class="fas fa-fw fa-backward" aria-hidden="true"></i> Kembali
-</a>
-<button class="btn btn-info mb-3" data-toggle="modal" title="Edit" data-target="#edit<?= $data['userProfile']['id']; ?>"><i class="fas fa-fw fa-edit"></i> Edit Data</button>
-
-<!-- DETAIL -->
-<div class="card mb-5" style="max-width: 1000px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <div class="hovereffect">
-        <img src="<?= BASEURL ?>/img/fotouser/<?= $data['userProfile']['Foto'] ?>" class="card-img fotoUser rounded-left img-responsive">
-        <div class="overlay">
-          <a data-toggle="modal" data-target="#foto" class="info">
-            UBAH FOTO
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title"><?= $data['userProfile']['Nama'] ?></h5>
-        <p class="card-text"><?= $data['userProfile']['NamaUser'] ?></p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <i class="fa fa-address-card fa-fw"></i>
-          <?= $data['userProfile']['NIK'] ?>
-        </li>
-        <li class="list-group-item">
-          <i class="fas fa-location-arrow fa-fw"></i>
-          <?= $data['userProfile']['Alamat'] ?>
-        </li>
-        <li class="list-group-item">
-          <i class="fas fa-phone fa-fw"></i>
-          <span class="telp">
-            <?= $data['userProfile']['NoTelp'] ?>
-          </span>
-        </li>
-        <li class="list-group-item">
-          <i class="fa fa-<?php if ($data['userProfile']['JenisKelamin'] == 'L') {
-                            echo 'male';
-                          } else {
-                            echo 'female';
-                          } ?> fa-fw">
-          </i>
-          <?php if ($data['userProfile']['JenisKelamin'] == 'L') {
-            echo 'Laki-laki';
-          } else {
-            echo 'Perempuan';
-          } ?>
-        </li>
-      </ul>
+<div class="container" id="main-menu">
+  <div class="row mb-4">
+    <div class="col-md clear-fix">
+      <button class="btn btn-primary mb-3 shadow-none float-right" type="button" data-toggle="modal" data-target="#edit<?= $data['userProfile']['id']; ?>">
+        <i class="fa fa-user-edit fa-fw" aria-hidden="true"></i> Edit Profile
+      </button>
     </div>
   </div>
-  <!-- AKHIR DETAIL -->
-</div>
-<!-- TUTUP CONTAINER -->
-</div>
-<!-- TUTUP COL-LG-9 -->
+  <div class="bg-white shadow-sm rounded pt-5 pb-4 px-5">
+    <div class="card mb-5 shadow-none">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <div class="hovereffect">
+            <img src="<?= BASEURL ?>/img/fotouser/<?= $data['userProfile']['Foto'] ?>" class="card-img fotoUser rounded-left img-responsive">
+            <div class="overlay">
+              <a data-toggle="modal" data-target="#foto" class="info">
+                UBAH FOTO
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><?= $data['userProfile']['Nama'] ?></h5>
+            <p class="card-text"><?= $data['userProfile']['NamaUser'] ?></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="fa fa-address-card fa-fw"></i>
+              <?= $data['userProfile']['NIK'] ?>
+            </li>
+            <li class="list-group-item">
+              <i class="fas fa-location-arrow fa-fw"></i>
+              <?= $data['userProfile']['Alamat'] ?>
+            </li>
+            <li class="list-group-item">
+              <i class="fas fa-phone fa-fw"></i>
+              <span class="telp">
+                <?= $data['userProfile']['NoTelp'] ?>
+              </span>
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-<?php if ($data['userProfile']['JenisKelamin'] == 'L') {
+                                echo 'male';
+                              } else {
+                                echo 'female';
+                              } ?> fa-fw">
+              </i>
+              <?php if ($data['userProfile']['JenisKelamin'] == 'L') {
+                echo 'Laki-laki';
+              } else {
+                echo 'Perempuan';
+              } ?>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- AKHIR DETAIL -->
+    </div>
+  </div>
 </div>
 
 <!-- AWAL MODAL FOTO -->
@@ -69,7 +69,7 @@
       <div class="modal-header text-center">
         <h5 class="modal-title h5 w-100">PERBAHARUI FOTO</h5>
       </div>
-      <div class="modal-body">
+      <div class="modal-body px-5 grey lighten-5">
         <img class="" width="100%" src="<?= BASEURL ?>/img/fotouser/<?= $data['userProfile']['Foto'] ?>">
       </div>
       <div class="modal-footer">
@@ -95,12 +95,12 @@
 
 <!-- AWAL MODAL EDIT-->
 <div class="modal fade" id="edit<?= $data['userProfile']['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="edituUserLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header bg-primary text-white text-center">
+      <div class="modal-header text-primary text-center">
         <h5 class="modal-title h5 w-100" id="edituUserLabel">UBAH PROFILE</h5>
       </div>
-      <div class="modal-body">
+      <div class="modal-body px-5 grey lighten-5">
 
         <!-- AWAL FORM -->
 
@@ -156,8 +156,8 @@
 
       </div>
       <div class="modal-footer text-center justify-content-center">
-        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Keluar</button>
-        <button type="submit" class="btn btn-primary" id="submit">Ubah Data</button>
+        <button type="button" class="btn btn-outline-primary shadow-none" data-dismiss="modal">Keluar</button>
+        <button type="submit" class="btn btn-primary shadow-none" id="submit">Ubah Data</button>
       </div>
       </form>
     </div>
