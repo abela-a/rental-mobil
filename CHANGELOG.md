@@ -10,41 +10,26 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 > Berikut fitur-fitur yang akan **ditambahkan**, **fix** bug yang akan dilakukan, **perubahan** yang akan disimpan, dan **penghapusan** fitur yang akan dilakukan dikemudian hari.
 
-## **[1.0.0]** - [Tanggal Selesai]
+## **[1.1.0]** - [Tanggal Selesai]
 
 ##### ✅ Added
 
-* [x]  Landing Page
-* [x]  New UI design
-* [x]  Loader
-* [x]  New Scrollbar
-* [x]  Fungsi SweetAlert2
-* [x]  Show/Hide Password
-* [x]  Nav Laporan
+* [ ]  Sistem Transaksi
 * [ ]  Section Daftar Mobil
 * [ ]  Section Layanan
 * [ ]  Section Testimonial
 
 ##### 🔄 Changed
 
-* [x]  Modal modern style
-* [x]  Login dan Register page modern style
-* [x]  Login dan Register page menjadi modal di Homepage
-* [x]  Layout dashboard, merk, tipe, mobil, karyawan, pelanggan, akun pending, role, sopir, profile menjadi modern-style
-
 ##### 📝 Deprecated
-
-* [x]  Implementasi Flasher default
-* [x]  Sidebar
-* [x]  Tab Management
-* [x]  Count Daftar Mobil
 
 ##### ❌ Removed
 
 ##### 🔨 Fixed
 
-* [x]  Upload foto mobil dan user
-* [x]  Auth Login dan Register
+* [ ]  Role Karyawan
+* [ ]  Role Pelanggan
+
 ****
 
 ## 📆 *[Released]*
@@ -52,6 +37,37 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 > Versi yang yang telah dapat dipakai. Dan semoga fiturnya sudah tidak mempunyai bug.
 
 🔥 [Download Latest Version](https://gitlab.com/abela-a/RentalMobil/-/releases)
+
+## **[1.0.0]** - [2019-10-19]
+
+##### ✅ Added
+
+ Landing Page
+- New UI design
+- Loader
+- New Scrollbar
+- Fungsi SweetAlert2
+- Show/Hide Password
+- Nav Laporan
+
+##### 🔄 Changed
+
+- Modal modern style
+- Login dan Register page modern style
+- Login dan Register page menjadi modal di Homepage
+- Layout dashboard, merk, tipe, mobil, karyawan, pelanggan, akun pending, role, sopir, profile menjadi modern-style
+
+##### ❌ Removed
+
+- Implementasi Flasher default
+- Sidebar
+- Tab Management
+- Count Daftar Mobil
+
+##### 🔨 Fixed
+
+- Upload foto mobil dan user
+- Auth Login dan Register
 
 ## **[0.9.0]** - 2019-10-11
 
