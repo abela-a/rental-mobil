@@ -21,7 +21,6 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 * [x]  Fungsi SweetAlert2
 * [x]  Show/Hide Password
 * [x]  Nav Laporan
-* [ ]  Sistem Transaksi
 * [ ]  Section Daftar Mobil
 * [ ]  Section Layanan
 * [ ]  Section Testimonial
@@ -38,7 +37,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 * [x]  Implementasi Flasher default
 * [x]  Sidebar
 * [x]  Tab Management
-* [ ]  Count Daftar Mobil
+* [x]  Count Daftar Mobil
 
 ##### ❌ Removed
 
