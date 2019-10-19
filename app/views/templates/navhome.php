@@ -1,6 +1,6 @@
 <!--Main Navigation-->
 <header>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark indigo scrolling-navbar py-0">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark indigo accent-2 scrolling-navbar py-0">
     <div class="container">
 
       <a class="navbar-brand py-0" href="#">
