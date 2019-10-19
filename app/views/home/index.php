@@ -122,7 +122,14 @@
           </div>
           <div class="form-group">
             <label for="Password">Password</label>
-            <input class="form-control" type="Password" name="Password" id="Password" required>
+            <div class="input-group" id="showhidepass">
+              <input class="form-control" type="Password" name="Password" id="Password" required>
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <a href="#"><i class="fa fa-fw fa-eye" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
           </div>
       </div>
       <div class="modal-footer text-center justify-content-center">
@@ -140,7 +147,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header text-primary text-center">
-        <h5 class="modal-title h5 w-100" id="">REGISTER</h5>
+        <h5 class="modal-title h5 w-100" id="">DAFTAR</h5>
       </div>
       <div class="modal-body px-5 grey lighten-5">
 
