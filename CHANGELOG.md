@@ -42,7 +42,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ##### ✅ Added
 
- Landing Page
+- Landing Page
 - New UI design
 - Loader
 - New Scrollbar
