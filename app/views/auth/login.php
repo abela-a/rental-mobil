@@ -9,7 +9,7 @@ if (isset($_SESSION['Login'])) {
       <div class="row justify-content-md-center no-gutters">
         <div class="col-md-5 mt-5 shadow-lg mb-0">
 
-          <div class="card-image h-100" style="background-image: url(<?= BASEURL ?>/img/assets/bg.jpg);">
+          <div class="card-image h-100" style="background-image: url(<?= BASEURL ?>/img/assets/card-login-register.jpg);">
             <div class="text-white text-center flex-center rgba-indigo-strong py-5 px-4">
               <div>
                 <a class="text-white py-0" href="<?= BASEURL; ?>">
