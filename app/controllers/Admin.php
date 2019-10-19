@@ -466,4 +466,17 @@ class Admin extends Controller
       exit;
     }
   }
+  public function transaksi()
+  {
+    $data['judul'] = 'Transaksi';
+
+    $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['url'] = $this->admin->parseURL();
+
+    $this->view('templates/header', $data);
+    $this->view('templates/navadmin', $data);
+    $this->view('karyawan/transaksi', $data);
+    $this->view('templates/footerdashboard');
+    $this->view('templates/footer');
+  }
 }
