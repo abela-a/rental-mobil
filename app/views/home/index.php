@@ -95,10 +95,8 @@
   <!-- AWAL DAFTAR MOBIL -->
   <section id="daftar-mobil" class="px-5 py-5 bg-white rounded shadow-sm mt-4">
 
-    <h4 class="text-center h3">
-      <span>Mobil yang Kami Miliki</span>
-      <span class="badge badge-danger rounded-pill">18</span>
-    </h4>
+    <h4 class="text-center h3">Mobil yang Kami Miliki</h4>
+
 
   </section>
   <!-- AKHIR DAFTAR MOBIL -->
