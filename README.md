@@ -8,7 +8,9 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 
 ## Screenshot
 
-![Homepage](/uploads/8e03b405750cb64504bd87d378542e61/Screenshot__40_.png)
+![Homepage](/uploads/d5197ae9f8916d411feb73ff6a00111a/Homepage.png)
+
+![Dashboard](/uploads/ad1a22f7d52b235d427f72fbc6ee0fd2/Dashboard.png)
 
 ## Fitur
 
