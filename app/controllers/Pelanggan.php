@@ -18,7 +18,7 @@ class Pelanggan extends Controller
 
     $this->view('templates/header', $data);
     $this->view('templates/navpelanggan', $data);
-    $this->view('pelanggan/transaksi', $data);
+    $this->view('pelanggan/riwayat_transaksi', $data);
     $this->view('templates/footer');
   }
   public function userProfile($id)

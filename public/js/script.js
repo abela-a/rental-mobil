@@ -38,6 +38,20 @@ $(document).ready(function() {
   // MATERIAL SELECT
   $(".mdb-select").material_select();
 
+  // SHOWHIDEPASS
+  $("#showhidepass a").on("click", function(event) {
+    event.preventDefault();
+    if ($("#showhidepass input").attr("type") == "text") {
+      $("#showhidepass input").attr("type", "Password");
+      $("#showhidepass i").addClass("fa-eye");
+      $("#showhidepass i").removeClass("fa-eye-slash");
+    } else if ($("#showhidepass input").attr("type") == "Password") {
+      $("#showhidepass input").attr("type", "text");
+      $("#showhidepass i").removeClass("fa-eye");
+      $("#showhidepass i").addClass("fa-eye-slash");
+    }
+  });
+
   // SWEETALERT HAPUS
   $(".tombol-hapus").on("click", function(e) {
     e.preventDefault();

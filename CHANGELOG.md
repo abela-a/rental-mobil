@@ -18,7 +18,8 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 * [x]  New UI design
 * [x]  Loader
 * [x]  New Scrollbar
-* [ ]  Fungsi SweetAlert2 (Login)
+* [x]  Fungsi SweetAlert2
+* [x]  Show/Hide Password
 * [x]  Nav Laporan
 * [ ]  Section Daftar Mobil
 * [ ]  Section Layanan
@@ -27,13 +28,13 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 ##### 🔄 Changed
 
 * [x]  Modal modern style
-* [ ]  Login dan Register page modern style
+* [x]  Login dan Register page modern style
 * [x]  Login dan Register page menjadi modal di Homepage
 * [x]  Layout dashboard, merk, tipe, mobil, karyawan, pelanggan, akun pending, role, sopir, profile menjadi modern-style
 
 ##### 📝 Deprecated
 
-* [ ]  Flasher default
+* [x]  Implementasi Flasher default
 * [x]  Sidebar
 * [x]  Tab Management
 
