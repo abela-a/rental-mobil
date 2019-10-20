@@ -26,8 +26,10 @@
 <?= SweetAlert::SwalAlert() ?><?= SweetAlert::SwalToast() ?>
 <!-- MASK -->
 <script src="<?= BASEURL; ?>/vendor/MaterialBootstrap/js/jquery.mask.min.js"></script>
-<!-- DATEPICKER -->
-<script src="<?= BASEURL; ?>/vendor/DatePicker/datepicker.min.js"></script>
+<!--SOPIR -->
+<script src="<?= BASEURL; ?>/js/sopir.js"></script>
+<!--DATEPICKER -->
+<script src="<?= BASEURL; ?>/js/datepicker_sett.js"></script>
 <!-- MY SCRIPT -->
 <script src="<?= BASEURL; ?>/js/script.js"></script>
 <!-- GET -->
