@@ -18,6 +18,12 @@ class Sopir_model
     $this->db->query("SELECT * FROM sopir WHERE StatusSopir = 'Free'");
     return $this->db->resultSet();
   }
+  public function SopirKosongById($IdSopir)
+  {
+    $this->db->query("SELECT * FROM sopir WHERE IdSopir = :IdSopir");
+    $this->db->bind('IdSopir', $IdSopir);
+    return $this->db->single();
+  }
   public function tambahDataSopir($data)
   {
     $NoTelp = preg_replace('/\D/', '', $data['NoTelp']);

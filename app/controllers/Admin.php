@@ -487,6 +487,11 @@ class Admin extends Controller
     $data['getMobil'] = $this->mobil->getMobilById($IdMobil);
     $this->view('get/getMobil', $data);
   }
+  public function getSopir($IdSopir = '')
+  {
+    $data['getSopir'] = $this->sopir->SopirKosongById($IdSopir);
+    $this->view('get/getSopir', $data);
+  }
   public function tambahTransaksi()
   {
     var_dump($_POST);

@@ -131,7 +131,7 @@
                 </select>
               </div>
 
-              <div class="form-group">
+              <div class="form-group" id="tarifSopir">
                 <label for="TarifSopirPerhari">Tarif Sopir / Hari</label>
                 <div class="input-group">
                   <div class="input-group-prepend">

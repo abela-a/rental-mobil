@@ -46,6 +46,12 @@
       var mobil = $('#Mobil').val();
       $('#hargaSewaRental').load("<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/getMobil/" + mobil);
     });
+
+    // GET SOPIR
+    $("#Sopir").change(function() {
+      var Sopir = $('#Sopir').val();
+      $('#tarifSopir').load("<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/getSopir/" + Sopir);
+    });
   });
 </script>
 
