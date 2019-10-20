@@ -35,9 +35,6 @@ $(document).ready(function() {
     keepImg: true
   });
 
-  // MATERIAL SELECT
-  $(".mdb-select").material_select();
-
   // SHOWHIDEPASS
   $("#showhidepass a").on("click", function(event) {
     event.preventDefault();
