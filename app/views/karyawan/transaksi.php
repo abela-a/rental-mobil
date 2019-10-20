@@ -98,7 +98,7 @@
 
           <div class="form-group">
             <label for="LamaRental">Lama Rental</label>
-            <div class="input-group" style="width:160px">
+            <div class="input-group" style="width:100px">
               <input type="text" class="form-control" id="LamaRental" name="LamaRental" readonly>
               <div class="input-group-append">
                 <span class="input-group-text">Hari</span>
@@ -137,7 +137,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Rp.</span>
                   </div>
-                  <input type="text" class="form-control" id="TarifSopirPerhari" name="TarifSopirPerhari" readonly>
+                  <input type="text" class="form-control" id="TarifSopirPerhari" name="TarifSopirPerhari" readonly value="0">
                 </div>
               </div>
             </div>

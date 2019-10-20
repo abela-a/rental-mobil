@@ -11,4 +11,35 @@ $(document).ready(function() {
         .addClass("d-none");
     }
   });
+
+  // RANGE DATE
+  $("#Tanggal_Kembali").change(function() {
+    var tanggalMulai = $("input[name='Tanggal_Pinjam_submit']").val();
+    var tanggalAkhir = $("input[name='Tanggal_Kembali_submit']").val();
+
+    var tanggalMulai = moment(tanggalMulai);
+    var tanggalAkhir = moment(tanggalAkhir);
+
+    var lamaRental = tanggalAkhir.diff(tanggalMulai, "days");
+
+    $("#LamaRental").val(lamaRental);
+
+    // MATH FUNCTION
+    var hargaSewaMobil = parseFloat($("#TarifMobilPerhari").val());
+    var lamaRental = parseFloat($("#LamaRental").val());
+    var totalBayar = hargaSewaMobil * lamaRental;
+
+    $("#TotalBayar").val(totalBayar);
+  });
+
+  // MATH FUNCTION
+  $("#Sopir").change(function() {
+    var hargaSewaMobil = parseFloat($("#TarifMobilPerhari").val());
+    var lamaRental = parseFloat($("#LamaRental").val());
+    var tarifSopir = parseFloat($("#TarifSopirPerhari").val());
+
+    var totalBayar = (hargaSewaMobil + tarifSopir) * lamaRental;
+
+    $("#TotalBayar").val(totalBayar);
+  });
 });
