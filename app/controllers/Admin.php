@@ -482,6 +482,11 @@ class Admin extends Controller
     $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
+  public function getMobil($IdMobil = '')
+  {
+    $data['getMobil'] = $this->mobil->getMobilById($IdMobil);
+    $this->view('get/getMobil', $data);
+  }
   public function tambahTransaksi()
   {
     var_dump($_POST);

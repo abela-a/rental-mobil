@@ -13,6 +13,12 @@ class Mobil_model
     $this->db->query("SELECT * FROM viewMobil ORDER BY id DESC");
     return $this->db->resultSet();
   }
+  public function getMobilById($IdMobil)
+  {
+    $this->db->query("SELECT DISTINCT * FROM mobil WHERE id = :IdMobil");
+    $this->db->bind('IdMobil', $IdMobil);
+    return $this->db->single();
+  }
   public function getMerkOption()
   {
     $this->db->query("SELECT DISTINCT * FROM merk");

@@ -71,13 +71,13 @@
             </select>
           </div>
 
-          <div class="form-group">
+          <div class="form-group" id="hargaSewaRental">
             <label for="TarifMobilPerhari">Harga Sewa / Hari</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Rp.</span>
               </div>
-              <input type="text" class="form-control" id="TarifMobilPerhari" name="TarifMobilPerhari" readonly placeholder="~">
+              <input type="text" class="uang form-control" disabled>
             </div>
           </div>
 
@@ -137,7 +137,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Rp.</span>
                   </div>
-                  <input type="text" class="form-control" id="TarifSopirPerhari" name="TarifSopirPerhari" readonly placeholder="~">
+                  <input type="text" class="form-control" id="TarifSopirPerhari" name="TarifSopirPerhari" readonly>
                 </div>
               </div>
             </div>
@@ -149,7 +149,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Rp.</span>
               </div>
-              <input type="text" class="form-control" id="TotalBayar" name="TotalBayar" readonly placeholder="~">
+              <input type="text" class="form-control" id="TotalBayar" name="TotalBayar" readonly>
             </div>
           </div>
           <!-- AKHIR FORM -->
