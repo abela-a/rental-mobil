@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="<?= BASEURL; ?>/vendor/MaterialBootstrap/css/mdb.min.css">
   <!-- DATATABLES -->
   <link rel="stylesheet" href="<?= BASEURL; ?>/vendor/MaterialBootstrap/css/addons/datatables.css">
+  <!-- DATEPICKER -->
+  <link rel="stylesheet" href="<?= BASEURL; ?>/vendor/DatePicker/datepicker.min.css">
   <!-- MY STYLE -->
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/style.css">
   <!-- CUSTOM COLOR -->
