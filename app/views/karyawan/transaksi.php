@@ -116,7 +116,7 @@
             </div>
             <div id="showSopir" class="d-none">
               <div class="form-group">
-                <select class="browser-default custom-select" name="Mobil" id="Mobil">
+                <select class="browser-default custom-select" name="Sopir" id="Sopir">
                   <option value="-" selected disabled>Pilih Sopir</option>
                   <?php
                   foreach ($data['SopirKosong'] as $sopir) :
