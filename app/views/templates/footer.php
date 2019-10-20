@@ -26,8 +26,8 @@
 <?= SweetAlert::SwalAlert() ?><?= SweetAlert::SwalToast() ?>
 <!-- MASK -->
 <script src="<?= BASEURL; ?>/vendor/MaterialBootstrap/js/jquery.mask.min.js"></script>
-<!--SOPIR -->
-<script src="<?= BASEURL; ?>/js/sopir.js"></script>
+<!--TRANSAKSI -->
+<script src="<?= BASEURL; ?>/js/transaksi.js"></script>
 <!--DATEPICKER -->
 <script src="<?= BASEURL; ?>/js/datepicker_sett.js"></script>
 <!-- MY SCRIPT -->
