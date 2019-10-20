@@ -3,13 +3,22 @@
   <div class="row mb-4">
     <div class="col-md clear-fix">
       <button class="btn btn-primary shadow-none mb-3 tombolTambahMerk float-right" type="button" data-toggle="modal" data-target="#input">
-        <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Tambah Transaksi
+        <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Tambah Pemesanan
       </button>
     </div>
   </div>
   <div class="bg-white shadow-sm rounded pt-5 pb-4 px-5">
     <table class="table table-hover" id="tolong">
-
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" class="text-center">Kode Merk</th>
+          <th scope="col" class="text-center">Nama Merk</th>
+          <th scope="col" class="text-center">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
     </table>
   </div>
 </div>
@@ -18,7 +27,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header text-primary text-center">
-        <h5 class="modal-title h5 w-100" id="input">TAMBAH TRANSAKSI</h5>
+        <h5 class="modal-title h5 w-100" id="input">TAMBAH PEMESANAN</h5>
       </div>
       <div class="modal-body px-5 grey lighten-5">
 
@@ -27,20 +36,128 @@
         <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/tambahTransaksi" method="post" role="form">
 
           <div class="form-group">
-            <label for="KdMerk">Kode Merk</label>
-            <input type="text" class="form-control" id="KdMerk" name="KdMerk" required autocomplete="off">
+            <label for="NoTransaksi">Kode Transaksi</label>
+            <input type="text" class="form-control" id="NoTransaksi" name="NoTransaksi" required autocomplete="off">
           </div>
 
           <div class="form-group">
-            <label for="NmMerk">Nama Merk</label>
-            <input type="text" class="form-control" id="NmMerk" name="NmMerk" required autocomplete="off">
+            <label for="Identitas">Identitas</label>
+            <select class="browser-default custom-select" name="Identitas" id="Identitas">
+              <option value="" selected disabled>Pilih Pelanggan</option>
+              <?php
+              foreach ($data['Pelanggan'] as $Pelanggan) :
+                echo '<option value="' . $Pelanggan['NIK'] . '">' . $Pelanggan['Nama'] . '</option>';
+              endforeach;
+              ?>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="Mobil">Mobil</label>
+            <select class="browser-default custom-select" name="Mobil" id="Mobil">
+              <option value="" selected disabled>Pilih Mobil</option>
+              <?php
+              foreach ($data['MobilKosong'] as $mobil) :
+                echo '<option value="' . $mobil['id'] . '">'
+                  . '[ '
+                  . $mobil['NoPlat']
+                  . ' ] '
+                  . $mobil['NmMerk']
+                  . ' '
+                  . $mobil['NmType']
+                  . '</option>';
+              endforeach;
+              ?>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="TarifMobilPerhari">Harga Sewa / Hari</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Rp.</span>
+              </div>
+              <input type="text" class="form-control" id="TarifMobilPerhari" name="TarifMobilPerhari" readonly placeholder="~">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="Tanggal_Pesan">Tanggal Pesan</label>
+            <input type="text" class="form-control datepicker" id="Tanggal_Pesan" name="Tanggal_Pesan" readonly data-value="[<?= date('Y-m-d') ?>]">
+          </div>
+
+          <div class="form-group">
+            <label for="Tanggal_Pinjam">Tanggal Mulai Rental</label>
+            <input type="text" class="form-control datepicker" id="Tanggal_Pinjam" name="Tanggal_Pinjam">
+          </div>
+
+          <div class="form-group">
+            <label for="Tanggal_Kembali">Tanggal Selesai Kembali</label>
+            <input type="text" class="form-control datepicker" id="Tanggal_Kembali" name="Tanggal_Kembali">
+          </div>
+
+          <div class="form-group">
+            <label for="LamaRental">Lama Rental</label>
+            <div class="input-group" style="width:160px">
+              <input type="text" class="form-control" id="LamaRental" name="LamaRental" readonly>
+              <div class="input-group-append">
+                <span class="input-group-text">Hari</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="switch">
+              <label>
+                Sopir ?
+                <input type="checkbox" id="sopirCheck">
+                <span class="lever"></span>
+              </label>
+            </div>
+            <div id="showSopir" class="d-none">
+              <div class="form-group">
+                <select class="browser-default custom-select" name="Mobil" id="Mobil">
+                  <option value="" selected disabled>Pilih Sopir</option>
+                  <?php
+                  foreach ($data['SopirKosong'] as $sopir) :
+                    echo '<option value="' . $sopir['IdSopir'] . '">'
+                      . '[ '
+                      . $sopir['IdSopir']
+                      . ' ] '
+                      . $sopir['NmSopir']
+                      . '</option>';
+                  endforeach;
+                  ?>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="TarifSopirPerhari">Tarif Sopir / Hari</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Rp.</span>
+                  </div>
+                  <input type="text" class="form-control" id="TarifSopirPerhari" name="TarifSopirPerhari" readonly placeholder="~">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group bg-primary p-3 rounded text-white mt-4">
+            <label for="TotalBayar">Total Bayar Sementara</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Rp.</span>
+              </div>
+              <input type="text" class="form-control" id="TotalBayar" name="TotalBayar" readonly placeholder="~">
+            </div>
           </div>
           <!-- AKHIR FORM -->
 
       </div>
       <div class="modal-footer text-center justify-content-center">
         <button type="button" class="btn btn-outline-primary shadow-none" data-dismiss="modal">Keluar</button>
-        <button type="submit" class="btn btn-primary shadow-none" id="submit">Simpan Data</button>
+        <button type="submit" class="btn btn-primary shadow-none" id="submit">Konfirmasi Pemesanan</button>
       </div>
       </form>
     </div>

@@ -472,11 +472,18 @@ class Admin extends Controller
 
     $data['JmlPending'] = $this->admin->countUserUnactive();
     $data['url'] = $this->admin->parseURL();
+    $data['Pelanggan'] = $this->pelanggan->getAllPelanggan();
+    $data['MobilKosong'] = $this->admin->mobilKosong();
+    $data['SopirKosong'] = $this->sopir->SopirKosong();
 
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
     $this->view('karyawan/transaksi', $data);
     $this->view('templates/footerdashboard');
     $this->view('templates/footer');
+  }
+  public function tambahTransaksi()
+  {
+    var_dump($_POST);
   }
 }
