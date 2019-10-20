@@ -170,7 +170,7 @@ class Admin extends Controller
   public function getType($KdMerk = '')
   {
     $data['typeOption'] = $this->mobil->getTypeOption($KdMerk);
-    $this->view('karyawan/getType', $data);
+    $this->view('get/getType', $data);
   }
   public function tambahMobil()
   {
