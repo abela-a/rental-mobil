@@ -41,8 +41,8 @@
           </div>
 
           <div class="form-group">
-            <label for="Identitas">Identitas</label>
-            <select class="browser-default custom-select" name="Identitas" id="Identitas">
+            <label for="Identitas">Identitas Pemesan</label>
+            <select class="browser-default custom-select" name="Identitas" id="Identitas" required>
               <option value="" selected disabled>Pilih Pelanggan</option>
               <?php
               foreach ($data['Pelanggan'] as $Pelanggan) :
@@ -54,7 +54,7 @@
 
           <div class="form-group">
             <label for="Mobil">Mobil</label>
-            <select class="browser-default custom-select" name="Mobil" id="Mobil">
+            <select class="browser-default custom-select" name="Mobil" id="Mobil" required>
               <option value="" selected disabled>Pilih Mobil</option>
               <?php
               foreach ($data['MobilKosong'] as $mobil) :
@@ -88,12 +88,12 @@
 
           <div class="form-group">
             <label for="Tanggal_Pinjam">Tanggal Mulai Rental</label>
-            <input type="text" class="form-control datepicker" id="Tanggal_Pinjam" name="Tanggal_Pinjam">
+            <input type="text" class="form-control datepicker" id="Tanggal_Pinjam" name="Tanggal_Pinjam" required>
           </div>
 
           <div class="form-group">
-            <label for="Tanggal_Kembali">Tanggal Selesai Kembali</label>
-            <input type="text" class="form-control datepicker" id="Tanggal_Kembali" name="Tanggal_Kembali">
+            <label for="Tanggal_Kembali">Tanggal Selesai Rental</label>
+            <input type="text" class="form-control datepicker" id="Tanggal_Kembali" name="Tanggal_Kembali" required>
           </div>
 
           <div class="form-group">
@@ -117,7 +117,7 @@
             <div id="showSopir" class="d-none">
               <div class="form-group">
                 <select class="browser-default custom-select" name="Mobil" id="Mobil">
-                  <option value="" selected disabled>Pilih Sopir</option>
+                  <option value="-" selected disabled>Pilih Sopir</option>
                   <?php
                   foreach ($data['SopirKosong'] as $sopir) :
                     echo '<option value="' . $sopir['IdSopir'] . '">'
