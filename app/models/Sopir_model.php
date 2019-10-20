@@ -13,6 +13,11 @@ class Sopir_model
     $this->db->query("SELECT * FROM sopir ORDER BY id DESC");
     return $this->db->resultSet();
   }
+  public function SopirKosong()
+  {
+    $this->db->query("SELECT * FROM sopir WHERE StatusSopir = 'Free'");
+    return $this->db->resultSet();
+  }
   public function tambahDataSopir($data)
   {
     $NoTelp = preg_replace('/\D/', '', $data['NoTelp']);
