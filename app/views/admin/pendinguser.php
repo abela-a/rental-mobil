@@ -49,7 +49,7 @@
                 <button class="btn btn-success text-white shadow-none" type="submit" title="Konfirmasi">
                   <i class=" fa fa-check" aria-hidden="true"></i>
                 </button>
-                <a href="<?= BASEURL ?>/admin/hapusPending/<?= $user['id'] ?>" class="btn btn-danger shadow-none" title="Hapus">
+                <a href="<?= BASEURL ?>/admin/hapusPending/<?= $user['id'] ?>" class="btn btn-danger shadow-none tombol-hapus" title="Hapus">
                   <i class="fas fa-fw fa-trash"></i>
                 </a>
               </td>
