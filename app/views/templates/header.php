@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="<?= BASEURL; ?>/vendor/MaterialBootstrap/css/mdb.min.css">
   <!-- DATATABLES -->
   <link rel="stylesheet" href="<?= BASEURL; ?>/vendor/MaterialBootstrap/css/addons/datatables.css">
+  <!-- ANIMATE.CSS -->
+  <link rel="stylesheet" href="<?= BASEURL; ?>/vendor/Animate.css/animate.css">
   <!-- MY STYLE -->
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/style.css">
   <!-- CUSTOM COLOR -->
