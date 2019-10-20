@@ -164,8 +164,8 @@ class Admin extends Controller
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
     $this->view('karyawan/mobil', $data);
-    $this->view('templates/footer');
     $this->view('templates/footerdashboard');
+    $this->view('templates/footer');
   }
   public function getType($KdMerk = '')
   {
