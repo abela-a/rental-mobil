@@ -67,7 +67,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header text-primary text-center">
-        <h5 class="modal-title h5 w-100" id="input">TAMBAH PEMESANAN</h5>
+        <h5 class="modal-title h5 w-100" id="input">TAMBAH PESANAN</h5>
       </div>
       <div class="modal-body px-5 grey lighten-5">
 
@@ -197,7 +197,7 @@
       </div>
       <div class="modal-footer text-center justify-content-center">
         <button type="button" class="btn btn-outline-primary shadow-none" data-dismiss="modal">Keluar</button>
-        <button type="submit" class="btn btn-primary shadow-none" id="submit">Konfirmasi Pemesanan</button>
+        <button type="submit" class="btn btn-primary shadow-none" id="submit">Konfirmasi Pesanan</button>
       </div>
       </form>
     </div>
