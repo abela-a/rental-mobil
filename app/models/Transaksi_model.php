@@ -8,12 +8,12 @@ class Transaksi_model
   {
     $this->db = new Database;
   }
-  public function getAllPengambilan()
+  public function getAllPemesanan()
   {
     $this->db->query('SELECT * FROM viewtransaksi ORDER BY NoTransaksi DESC');
     return $this->db->resultSet();
   }
-  public function tambahDataPengambilan($data)
+  public function tambahDataPemesanan($data)
   {
     $query = 'INSERT INTO transaksi 
     (NoTransaksi, NIK, Id_Mobil, Tanggal_Pesan, Tanggal_Pinjam, Tanggal_Kembali_Rencana, LamaRental, Id_Sopir, Total_Bayar, StatusTransaksi) 

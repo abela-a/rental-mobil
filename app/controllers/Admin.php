@@ -471,25 +471,25 @@ class Admin extends Controller
       exit;
     }
   }
-  public function transaksi()
+  public function pemesanan()
   {
     $this->db->query('SELECT * FROM transaksi ORDER BY NoTransaksi DESC LIMIT 1');
     $latest = $this->db->single();
 
     $data['autoIdTransaksi'] = $this->admin->autonumber($latest['NoTransaksi'], 3, 5);
 
-    $data['judul'] = 'Transaksi';
+    $data['judul'] = 'Pemesanan';
 
     $data['JmlPending'] = $this->count->countUserUnactive();
     $data['url'] = $this->admin->parseURL();
     $data['Pelanggan'] = $this->pelanggan->getAllPelanggan();
-    $data['Pengambilan'] = $this->transaksi->getAllPengambilan();
+    $data['Pemesanan'] = $this->transaksi->getAllPemesanan();
     $data['MobilKosong'] = $this->mobil->mobilKosong();
     $data['SopirKosong'] = $this->sopir->SopirKosong();
 
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
-    $this->view('karyawan/transaksi', $data);
+    $this->view('karyawan/pemesanan', $data);
     $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
@@ -503,14 +503,14 @@ class Admin extends Controller
     $data['getSopir'] = $this->sopir->SopirKosongById($IdSopir);
     $this->view('get/getSopir', $data);
   }
-  public function tambahPengambilan()
+  public function tambahPemesanan()
   {
-    if ($this->transaksi->tambahDataPengambilan($_POST) > 0) {
-      SweetAlert::setSwalAlert("Pengambilan Berhasil", "Pengambilan baru berhasil ditambahkan! Tolong ingatkan penyewa untuk segera membayar.", "success");
+    if ($this->transaksi->tambahDataPemesanan($_POST) > 0) {
+      SweetAlert::setSwalAlert("Pemesanan Berhasil", "Pemesanan baru berhasil ditambahkan! Tolong ingatkan penyewa untuk segera membayar.", "success");
       header('Location:' . BASEURL . '/admin/transaksi');
       exit;
     } else {
-      SweetAlert::setSwalAlert("Pengambilan Gagal", "Pengambilan baru gagal ditambahkan!", "error");
+      SweetAlert::setSwalAlert("Pemesanan Gagal", "Pemesanan baru gagal ditambahkan!", "error");
       header('Location:' . BASEURL . '/admin/transaksi');
       exit;
     }

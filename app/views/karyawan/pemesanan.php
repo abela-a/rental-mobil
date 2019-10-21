@@ -3,7 +3,7 @@
   <div class="row mb-4">
     <div class="col-md clear-fix">
       <button class="btn btn-primary shadow-none mb-3 tombolTambahMerk float-right" type="button" data-toggle="modal" data-target="#input">
-        <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Tambah Pemesanan
+        <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Tambah Pesanan
       </button>
     </div>
   </div>
@@ -25,25 +25,25 @@
         <?php
         // TAMPILKAN BARIS
         $no = 1;
-        foreach ($data['Pengambilan'] as $pengambilan) : ?>
+        foreach ($data['Pemesanan'] as $pemesanan) : ?>
 
           <tr>
             <td><?= $no++ ?></td>
-            <td><?= ucfirst($pengambilan['NoTransaksi']); ?></td>
-            <td><?= ucfirst($pengambilan['Nama']); ?></td>
+            <td><?= ucfirst($pemesanan['NoTransaksi']); ?></td>
+            <td><?= ucfirst($pemesanan['Nama']); ?></td>
             <td>
               <?= '[ '
-                  . $pengambilan['NoPlat']
+                  . $pemesanan['NoPlat']
                   . ' ] '
-                  . $pengambilan['NmMerk']
+                  . $pemesanan['NmMerk']
                   . ' '
-                  . $pengambilan['NmType']
+                  . $pemesanan['NmType']
                 ?>
             </td>
-            <td><?= ucfirst($pengambilan['Tanggal_Pesan']); ?></td>
-            <td><?= ucfirst($pengambilan['LamaRental']); ?> Hari</td>
+            <td><?= ucfirst($pemesanan['Tanggal_Pesan']); ?></td>
+            <td><?= ucfirst($pemesanan['LamaRental']); ?> Hari</td>
             <td>
-              Rp.<span class="uang"><?= ucfirst($pengambilan['Total_Bayar']); ?></span>,-
+              Rp.<span class="uang"><?= ucfirst($pemesanan['Total_Bayar']); ?></span>,-
             </td>
             <td class="text-center">
               <button type="button" class="dropdown btn btn-primary btn-sm shadow-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,7 +73,7 @@
 
         <!-- AWAL FORM -->
 
-        <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/tambahPengambilan" method="post" role="form">
+        <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/tambahPemesanan" method="post" role="form">
 
           <div class="form-group">
             <label for="NoTransaksi">Kode Transaksi</label>

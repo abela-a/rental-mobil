@@ -94,7 +94,7 @@ if (!isset($_SESSION['Login'])) {
         <a class="nav-link dropdown-toggle
         <?php if (
           $data['judul'] == 'Transaksi' ||
-          $data['judul'] == 'Transaksi Selesai' ||
+          $data['judul'] == 'Pemesanan' ||
           $data['judul'] == 'Arsip Transaksi'
         )
           echo 'nav-dashboard-active rounded' ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -102,8 +102,8 @@ if (!isset($_SESSION['Login'])) {
           Transaksi
         </a>
         <div class="dropdown-menu dropdown-primary">
+          <a class="dropdown-item <?php if ($data['judul'] == 'Pemesanan') echo 'active' ?>" href="<?= BASEURL ?>/admin/pemesanan">Pemesanan</a>
           <a class="dropdown-item <?php if ($data['judul'] == 'Transaksi') echo 'active' ?>" href="<?= BASEURL ?>/admin/transaksi">Transaksi</a>
-          <a class="dropdown-item <?php if ($data['judul'] == 'Transaksi Selesai') echo 'active' ?>" href="<?= BASEURL ?>/admin/transaksi_selesai">Transaksi Selesai</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item <?php if ($data['judul'] == 'Arsip Transaksi') echo 'active' ?>" href="<?= BASEURL ?>/admin/arsip_transaksi">Arsip Transaksi</a>
         </div>

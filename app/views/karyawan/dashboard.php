@@ -21,13 +21,13 @@
     <div class="col-md">
       <div class="bg-white p-4 rounded shadow-sm">
         <h1 class="h1 text-center"><?= $data['JmlPeminjaman'] ?></h1>
-        <h1 class="h6 text-center">Transaksi</h1>
+        <h1 class="h6 text-center">Pesanan</h1>
       </div>
     </div>
     <div class="col-md">
       <div class="bg-white p-4 rounded shadow-sm">
         <h1 class="h1 text-center"><?= $data['JmlTransaksi'] ?></h1>
-        <h1 class="h6 text-center">Selesai</h1>
+        <h1 class="h6 text-center">Transaksi</h1>
       </div>
     </div>
     <div class="col-md">
