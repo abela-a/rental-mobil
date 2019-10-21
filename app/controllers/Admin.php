@@ -31,6 +31,9 @@ class Admin extends Controller
     $data['JmlPelanggan'] = $this->count->countPelanggan();
     $data['JmlPending'] = $this->count->countUserUnactive();
     $data['JmlMobil'] = $this->count->countMobil();
+    $data['JmlSopir'] = $this->count->countSopir();
+    $data['JmlPeminjaman'] = $this->count->countPeminjaman();
+    $data['JmlTransaksi'] = $this->count->countTransaksi();
     $data['MobilKosong'] = $this->mobil->mobilKosong();
     $data['url'] = $this->admin->parseURL();
 
