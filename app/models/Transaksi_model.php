@@ -15,6 +15,25 @@ class Transaksi_model
   }
   public function tambahDataPemesanan($data)
   {
+    // MOBIL
+    $updateMobil = "UPDATE mobil SET 
+              StatusRental = :StatusRental
+              WHERE id = :id";
+    $this->db->query($updateMobil);
+    $this->db->bind('StatusRental', 'Dipesan');
+    $this->db->bind('id', $data['Mobil']);
+    $this->db->execute();
+
+    // SOPIR
+    $updateSopir = "UPDATE sopir SET 
+              StatusSopir = :StatusSopir
+              WHERE IdSopir = :id";
+    $this->db->query($updateSopir);
+    $this->db->bind('StatusSopir', 'Busy');
+    $this->db->bind('id', $data['Sopir']);
+    $this->db->execute();
+
+    // TRANSAKSI
     $query = 'INSERT INTO transaksi 
     (NoTransaksi, NIK, Id_Mobil, Tanggal_Pesan, Tanggal_Pinjam, Tanggal_Kembali_Rencana, LamaRental, Id_Sopir, Total_Bayar, StatusTransaksi) 
     VALUES(:NoTransaksi, :NIK, :Id_Mobil, :Tanggal_Pesan, :Tanggal_Pinjam, :Tanggal_Kembali_Rencana, :LamaRental, :Id_Sopir, :Total_Bayar, :StatusTransaksi)';

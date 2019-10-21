@@ -47,13 +47,16 @@
             </td>
             <td class="text-center">
               <button type="button" class="dropdown btn btn-primary btn-sm shadow-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-bars" aria-hidden="true"></i>
+                <i class="fa fa-bars" aria-hidden="true"></i> Pilihan
               </button>
               <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Edit</a>
+                <a class="dropdown-item" href="#">Cetak</a>
                 <a class="dropdown-item" href="#">Hapus</a>
                 <a class="dropdown-item" href="#">Detail</a>
               </div>
+              <button data-toggle="modal" data-target="#konfirmasi" class="btn btn-sm btn-success text-white shadow-none">
+                <i class=" fa fa-check" aria-hidden="true"></i> Selesai
+              </button>
             </td>
           </tr>
 
