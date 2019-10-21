@@ -41,7 +41,9 @@ $(document).ready(function() {
       "Sabtu"
     ],
     weekdaysShort: ["Ahd", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"],
-    closeOnSelect: false,
-    closeOnClear: false
+    min: 0,
+    today: "Hari ini",
+    clear: "Bersihkan",
+    close: "Keluar"
   });
 });
