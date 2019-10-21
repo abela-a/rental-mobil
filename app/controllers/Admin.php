@@ -506,12 +506,12 @@ class Admin extends Controller
   public function tambahPemesanan()
   {
     if ($this->transaksi->tambahDataPemesanan($_POST) > 0) {
-      SweetAlert::setSwalAlert("Pemesanan Berhasil", "Pemesanan baru berhasil ditambahkan! Tolong ingatkan penyewa untuk segera membayar.", "success");
-      header('Location:' . BASEURL . '/admin/transaksi');
+      SweetAlert::setSwalAlert("Pesanan Berhasil", "Pesanan baru berhasil ditambahkan! Tolong ingatkan penyewa untuk segera membayar.", "success");
+      header('Location:' . BASEURL . '/admin/pemesanan');
       exit;
     } else {
-      SweetAlert::setSwalAlert("Pemesanan Gagal", "Pemesanan baru gagal ditambahkan!", "error");
-      header('Location:' . BASEURL . '/admin/transaksi');
+      SweetAlert::setSwalAlert("Pesanan Gagal", "Pesanan baru gagal ditambahkan!", "error");
+      header('Location:' . BASEURL . '/admin/pemesanan');
       exit;
     }
   }
