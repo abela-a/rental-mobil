@@ -22,10 +22,10 @@
 
         <?php
         // TAMPILKAN BARIS
-        $no = 1;
+        $no = 0;
         foreach ($data['sopir'] as $user) : ?>
 
-          <tr>
+          <tr <?php if ($user['IdSopir'] == "SPR000") echo 'class="d-none"' ?>>
             <td><?= $no++ ?></td>
             <td><?= ucfirst($user['NIK']); ?></td>
             <td><?= ucfirst($user['IdSopir']); ?></td>
