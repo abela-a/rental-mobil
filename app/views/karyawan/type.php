@@ -28,9 +28,9 @@
             <td><?= ucfirst($type['IdType']); ?></td>
             <td><?= ucfirst($type['NmType']); ?></td>
             <td><?= ucfirst($type['NmMerk']); ?></td>
-            <td class="text-center">
-              <button class="btn btn-warning shadow-none" data-toggle="modal" data-target="#edit<?= $type['IdType']; ?>"><i class="fas fa-fw fa-edit"></i></button>
-              <button class="btn btn-danger shadow-none" data-toggle="modal" data-target="#hapus<?= $type['IdType']; ?>"><i class="fas fa-fw fa-trash"></i></button>
+            <td class="text-center" style="width:150px">
+              <button class="btn btn-sm btn-warning shadow-none" data-toggle="modal" data-target="#edit<?= $type['IdType']; ?>"><i class="fas fa-fw fa-edit"></i></button>
+              <button class="btn btn-sm btn-danger shadow-none" data-toggle="modal" data-target="#hapus<?= $type['IdType']; ?>"><i class="fas fa-fw fa-trash"></i></button>
             </td>
           </tr>
 

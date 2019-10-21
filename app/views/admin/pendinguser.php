@@ -41,15 +41,15 @@
                   <option value="0" selected>Tidak Aktif</option>
                 </select>
               </td>
-              <td class="text-center">
+              <td class="text-center" style="width:240px">
                 <input type="hidden" name="id" value="<?= $user['id'] ?>">
 
-                <a data-toggle="modal" title="Detail" data-target="#detail<?= $user['id']; ?>" class="btn btn-info text-white shadow-none" title="Detail"><i class="fas fa-fw fa-user"></i></a>
+                <a data-toggle="modal" title="Detail" data-target="#detail<?= $user['id']; ?>" class="btn btn-sm btn-info text-white shadow-none" title="Detail"><i class="fas fa-fw fa-user"></i></a>
 
-                <button class="btn btn-success text-white shadow-none" type="submit" title="Konfirmasi">
+                <button class="btn btn-sm btn-success text-white shadow-none" type="submit" title="Konfirmasi">
                   <i class=" fa fa-check" aria-hidden="true"></i>
                 </button>
-                <a href="<?= BASEURL ?>/admin/hapusPending/<?= $user['id'] ?>" class="btn btn-danger shadow-none tombol-hapus" title="Hapus">
+                <a href="<?= BASEURL ?>/admin/hapusPending/<?= $user['id'] ?>" class="btn btn-sm btn-danger shadow-none tombol-hapus" title="Hapus">
                   <i class="fas fa-fw fa-trash"></i>
                 </a>
               </td>

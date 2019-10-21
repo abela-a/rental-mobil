@@ -28,9 +28,9 @@
             <td><?= $no++ ?></td>
             <td><?= ucfirst($merk['KdMerk']); ?></td>
             <td><?= ucfirst($merk['NmMerk']); ?></td>
-            <td class="text-center">
-              <button class="btn btn-warning shadow-none" data-toggle="modal" data-target="#editMerk<?= ($merk['KdMerk']); ?>"><i class="fas fa-fw fa-edit"></i></button>
-              <button class="btn btn-danger shadow-none" data-toggle="modal" data-target="#hapus<?= $merk['KdMerk']; ?>"><i class="fas fa-fw fa-trash"></i></button>
+            <td class="text-center" style="width:160px">
+              <button class="btn btn-sm btn-warning shadow-none" data-toggle="modal" data-target="#editMerk<?= ($merk['KdMerk']); ?>"><i class="fas fa-fw fa-edit"></i></button>
+              <button class="btn btn-sm btn-danger shadow-none" data-toggle="modal" data-target="#hapus<?= $merk['KdMerk']; ?>"><i class="fas fa-fw fa-trash"></i></button>
             </td>
           </tr>
 

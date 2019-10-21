@@ -29,10 +29,10 @@
             <td><?= ucfirst($user['NIK']); ?></td>
             <td><?= ucfirst($user['Nama']); ?></td>
             <td class="telp"><?= ucfirst($user['NoTelp']); ?></td>
-            <td class="text-center">
-              <button class="btn btn-warning shadow-none" data-toggle="modal" title="Edit" data-target="#edit<?= $user['id']; ?>"><i class="fas fa-fw fa-edit"></i></button>
-              <button class="btn btn-danger shadow-none" data-toggle="modal" title="Hapus" data-target="#hapus<?= $user['id']; ?>"><i class="fas fa-fw fa-trash"></i></button>
-              <button data-toggle="modal" title="Detail" data-target="#detail<?= $user['id']; ?>" class="btn btn-info text-white shadow-none" title="Detail"><i class="fas fa-fw fa-user"></i></button>
+            <td class="text-center" style="width:240px">
+              <button class="btn btn-sm btn-warning shadow-none" data-toggle="modal" title="Edit" data-target="#edit<?= $user['id']; ?>"><i class="fas fa-fw fa-edit"></i></button>
+              <button class="btn btn-sm btn-danger shadow-none" data-toggle="modal" title="Hapus" data-target="#hapus<?= $user['id']; ?>"><i class="fas fa-fw fa-trash"></i></button>
+              <button data-toggle="modal" title="Detail" data-target="#detail<?= $user['id']; ?>" class="btn btn-sm btn-info text-white shadow-none" title="Detail"><i class="fas fa-fw fa-user"></i></button>
             </td>
           </tr>
 

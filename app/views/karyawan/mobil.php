@@ -48,9 +48,10 @@
               </span>
             </td>
             <td>Rp.<span class="uang"><?= $mobil['HargaSewa']; ?></span>,-</td>
-            <td class="text-center">
-              <button class="btn btn-warning shadow-none" data-toggle="modal" data-target="#edit<?= $mobil['id']; ?>"><i class="fas fa-fw fa-edit"></i></button>
-              <button class="btn btn-danger shadow-none" data-toggle="modal" data-target="#hapus<?= $mobil['id']; ?>"><i class="fas fa-fw fa-trash"></i></button>
+
+            <td class="text-center" style="width:150px">
+              <button class="btn btn-sm btn-warning shadow-none" data-toggle="modal" data-target="#edit<?= $mobil['id']; ?>"><i class="fas fa-fw fa-edit"></i></button>
+              <button class="btn btn-sm btn-danger shadow-none" data-toggle="modal" data-target="#hapus<?= $mobil['id']; ?>"><i class="fas fa-fw fa-trash"></i></button>
             </td>
           </tr>
 

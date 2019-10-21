@@ -21,6 +21,9 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 ##### 🔄 Changed
 
+* [ ]  Tabel Sopir dan tabel transaksi
+* [ ]  Button di table menjadi kecil
+
 ##### 📝 Deprecated
 
 ##### ❌ Removed
