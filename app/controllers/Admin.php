@@ -17,6 +17,7 @@ class Admin extends Controller
     $this->pelanggan = $this->model('Pelanggan_model');
     $this->sopir = $this->model('Sopir_model');
     $this->user = $this->model('User_model');
+    $this->transaksi = $this->model('Transaksi_model');
   }
 
   //Untuk menampilkan dashboard pada Admin
@@ -468,11 +469,17 @@ class Admin extends Controller
   }
   public function transaksi()
   {
+    $this->db->query('SELECT * FROM transaksi ORDER BY NoTransaksi DESC LIMIT 1');
+    $latest = $this->db->single();
+
+    $data['autoIdTransaksi'] = $this->admin->autonumber($latest['NoTransaksi'], 3, 5);
+
     $data['judul'] = 'Transaksi';
 
     $data['JmlPending'] = $this->admin->countUserUnactive();
     $data['url'] = $this->admin->parseURL();
     $data['Pelanggan'] = $this->pelanggan->getAllPelanggan();
+    $data['Pengambilan'] = $this->transaksi->getAllPengambilan();
     $data['MobilKosong'] = $this->admin->mobilKosong();
     $data['SopirKosong'] = $this->sopir->SopirKosong();
 
@@ -492,8 +499,16 @@ class Admin extends Controller
     $data['getSopir'] = $this->sopir->SopirKosongById($IdSopir);
     $this->view('get/getSopir', $data);
   }
-  public function tambahTransaksi()
+  public function tambahPengambilan()
   {
-    var_dump($_POST);
+    if ($this->transaksi->tambahDataPengambilan($_POST) > 0) {
+      SweetAlert::setSwalAlert("Pengambilan Berhasil", "Pengambilan baru berhasil ditambahkan! Tolong ingatkan penyewa untuk segera membayar.", "success");
+      header('Location:' . BASEURL . '/admin/transaksi');
+      exit;
+    } else {
+      SweetAlert::setSwalAlert("Pengambilan Gagal", "Pengambilan baru gagal ditambahkan!", "error");
+      header('Location:' . BASEURL . '/admin/transaksi');
+      exit;
+    }
   }
 }

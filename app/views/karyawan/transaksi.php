@@ -12,12 +12,52 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col" class="text-center">Kode Merk</th>
-          <th scope="col" class="text-center">Nama Merk</th>
+          <th scope="col" class="text-center">Kode Transaksi</th>
+          <th scope="col" class="text-center">Identitas Penyewa</th>
+          <th scope="col" class="text-center">Mobil</th>
+          <th scope="col" class="text-center">Tanggal Mulai</th>
+          <th scope="col" class="text-center">Lama Rental</th>
+          <th scope="col" class="text-center">Total Biaya</th>
           <th scope="col" class="text-center">Aksi</th>
         </tr>
       </thead>
       <tbody>
+        <?php
+        // TAMPILKAN BARIS
+        $no = 1;
+        foreach ($data['Pengambilan'] as $pengambilan) : ?>
+
+          <tr>
+            <td><?= $no++ ?></td>
+            <td><?= ucfirst($pengambilan['NoTransaksi']); ?></td>
+            <td><?= ucfirst($pengambilan['Nama']); ?></td>
+            <td>
+              <?= '[ '
+                  . $pengambilan['NoPlat']
+                  . ' ] '
+                  . $pengambilan['NmMerk']
+                  . ' '
+                  . $pengambilan['NmType']
+                ?>
+            </td>
+            <td><?= ucfirst($pengambilan['Tanggal_Pesan']); ?></td>
+            <td><?= ucfirst($pengambilan['LamaRental']); ?> Hari</td>
+            <td>
+              Rp.<span class="uang"><?= ucfirst($pengambilan['Total_Bayar']); ?></span>,-
+            </td>
+            <td class="text-center">
+              <button type="button" class="dropdown btn btn-primary btn-sm shadow-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Edit</a>
+                <a class="dropdown-item" href="#">Hapus</a>
+                <a class="dropdown-item" href="#">Detail</a>
+              </div>
+            </td>
+          </tr>
+
+        <?php endforeach; ?>
       </tbody>
     </table>
   </div>
@@ -33,15 +73,15 @@
 
         <!-- AWAL FORM -->
 
-        <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/tambahTransaksi" method="post" role="form">
+        <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/tambahPengambilan" method="post" role="form">
 
           <div class="form-group">
             <label for="NoTransaksi">Kode Transaksi</label>
-            <input type="text" class="form-control" id="NoTransaksi" name="NoTransaksi" required autocomplete="off">
+            <input type="text" class="form-control" id="NoTransaksi" name="NoTransaksi" required value="<?= $data['autoIdTransaksi'] ?>" readonly>
           </div>
 
           <div class="form-group">
-            <label for="Identitas">Identitas Pemesan</label>
+            <label for="Identitas">Identitas Penyewa</label>
             <select class="browser-default custom-select" name="Identitas" id="Identitas" required>
               <option value="" selected disabled>Pilih Pelanggan</option>
               <?php
@@ -117,7 +157,7 @@
             <div id="showSopir" class="d-none">
               <div class="form-group">
                 <select class="browser-default custom-select" name="Sopir" id="Sopir">
-                  <option value="-" selected disabled>Pilih Sopir</option>
+                  <option value="SPR000" selected>Pilih Sopir</option>
                   <?php
                   foreach ($data['SopirKosong'] as $sopir) :
                     echo '<option value="' . $sopir['IdSopir'] . '">'
