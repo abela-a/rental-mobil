@@ -29,7 +29,17 @@
             <td><?= $no++ ?></td>
             <td><?= ucfirst($user['NIK']); ?></td>
             <td><?= ucfirst($user['IdSopir']); ?></td>
-            <td><?= ucfirst($user['NmSopir']); ?></td>
+            <td>
+              <?= ucfirst($user['NmSopir']); ?>
+              <span class="ml-2 shadow-none badge 
+            <?php if ($user['StatusSopir'] == 'Free') echo 'badge-success';
+              else if ($user['StatusSopir'] == 'Busy') echo 'badge-danger';
+              else echo 'badge-danger';
+              ?>
+            ">
+                <?= ucfirst($user['StatusSopir']); ?>
+              </span>
+            </td>
             <td>
               Rp.<span class="uang"><?= ucfirst($user['TarifPerhari']); ?></span>,-
             </td>
