@@ -33,7 +33,7 @@
               <?= ucfirst($user['NmSopir']); ?>
               <span class="ml-2 shadow-none badge 
             <?php if ($user['StatusSopir'] == 'Free') echo 'badge-success';
-              else if ($user['StatusSopir'] == 'Busy') echo 'badge-danger';
+              else if ($user['StatusSopir'] == 'Booked') echo 'badge-warning';
               else echo 'badge-danger';
               ?>
             ">

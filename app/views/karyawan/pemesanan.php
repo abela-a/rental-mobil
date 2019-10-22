@@ -45,18 +45,23 @@
             <td>
               Rp.<span class="uang"><?= ucfirst($pemesanan['Total_Bayar']); ?></span>,-
             </td>
-            <td class="text-center">
-              <button type="button" class="dropdown btn btn-primary btn-sm shadow-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-bars" aria-hidden="true"></i> Pilihan
+            <td class="text-center" style="width:100px">
+              <button data-toggle="modal" data-target="#konfirmasi" class="btn btn-sm btn-primary text-white shadow-none">
+                <i class=" fa fa-car fa-fw" aria-hidden="true"></i> Ambil
+              </button>
+
+              <button data-toggle="modal" data-target="#selesai" class="btn btn-sm btn-success text-white shadow-none">
+                <i class=" fa fa-check fa-fw" aria-hidden="true"></i> Selesai
+              </button>
+
+              <button type="button" class="dropdown btn grey lighten-2 btn-sm shadow-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-bars fa-fw" aria-hidden="true"></i> Pilihan
               </button>
               <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" href="#">Cetak</a>
                 <a class="dropdown-item" href="#">Hapus</a>
                 <a class="dropdown-item" href="#">Detail</a>
               </div>
-              <button data-toggle="modal" data-target="#konfirmasi" class="btn btn-sm btn-success text-white shadow-none">
-                <i class=" fa fa-check" aria-hidden="true"></i> Selesai
-              </button>
             </td>
           </tr>
 

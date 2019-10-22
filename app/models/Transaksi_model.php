@@ -29,7 +29,7 @@ class Transaksi_model
               StatusSopir = :StatusSopir
               WHERE IdSopir = :id";
     $this->db->query($updateSopir);
-    $this->db->bind('StatusSopir', 'Busy');
+    $this->db->bind('StatusSopir', 'Booked');
     $this->db->bind('id', $data['Sopir']);
     $this->db->execute();
 
