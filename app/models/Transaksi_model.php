@@ -84,4 +84,32 @@ class Transaksi_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+  public function batalkanPesananMobil($data)
+  {
+    // MOBIL
+    $statusMobil = "UPDATE mobil SET 
+              StatusRental = :StatusRental
+              WHERE id = :id";
+    $this->db->query($statusMobil);
+    $this->db->bind('StatusRental', 'Kosong');
+    $this->db->bind('id', $data['statusMobil']);
+    $this->db->execute();
+
+    // SOPIR
+    $statusSopir = "UPDATE sopir SET 
+              StatusSopir = :StatusSopir
+              WHERE IdSopir = :id";
+    $this->db->query($statusSopir);
+    $this->db->bind('StatusSopir', 'Free');
+    $this->db->bind('id', $data['statusSopir']);
+    $this->db->execute();
+
+    $query = 'DELETE FROM transaksi WHERE NoTransaksi = :NoTransaksi';
+    $this->db->query($query);
+    $this->db->bind('NoTransaksi', $data['noBatalTransaksi']);
+
+    $this->db->execute();
+
+    return $this->db->rowCount();
+  }
 }

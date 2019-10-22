@@ -62,10 +62,65 @@
               </button>
               <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" href="#">Cetak</a>
-                <a class="dropdown-item" href="#">Hapus</a>
+                <button class="dropdown-item" data-toggle="modal" data-target="#batal<?= $pemesanan['NoTransaksi'] ?>">Batalkan</button>
               </div>
             </td>
           </tr>
+
+          <!-- MODAL BATAL -->
+          <div class="modal fade center" id="batal<?= $pemesanan['NoTransaksi']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header text-danger text-center">
+                  <h5 class="modal-title h5 w-100">BATALKAN PEMESANAN</h5>
+                </div>
+                <div class="modal-body px-5 grey lighten-5">
+                  <ul class="list-group list-group-flush">
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">No Transaksi</div>
+                      <div class="col" style="font-weight:500"><?= $pemesanan['NoTransaksi'] ?></div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Nama Pemesan</div>
+                      <div class="col" style="font-weight:500"><?= $pemesanan['Nama'] ?></div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Mobil</div>
+                      <div class="col" style="font-weight:500">
+                        <?= '[ '
+                            . $pemesanan['NoPlat']
+                            . ' ] '
+                            . $pemesanan['NmMerk']
+                            . ' '
+                            . $pemesanan['NmType']
+                          ?>
+                      </div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Tanggal Pesan</div>
+                      <div class="col" style="font-weight:500">
+                        <?= $pemesanan['Tanggal_Pesan'] ?>
+                      </div>
+                    </div>
+
+                  </ul>
+                </div>
+                <div class="modal-footer text-center justify-content-center">
+                  <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/batalPesanan" method="post">
+                    <input type="hidden" name="noBatalTransaksi" value="<?= $pemesanan['NoTransaksi'] ?>">
+                    <input type="hidden" name="statusMobil" value="<?= $pemesanan['Id_Mobil'] ?>">
+                    <input type="hidden" name="statusSopir" value="<?= $pemesanan['Id_Sopir'] ?>">
+                    <button type="submit" class="btn btn-danger shadow-none">Ya</button>
+                    <button type="button" class="btn btn-outline-danger shadow-none" data-dismiss="modal">Tidak</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / MODAL BATAL -->
 
           <!-- MODAL AMBIL MOBIL -->
           <div class="modal fade center" id="konfirmasi<?= $pemesanan['NoTransaksi'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

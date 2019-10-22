@@ -527,4 +527,16 @@ class Admin extends Controller
       exit;
     }
   }
+  public function batalPesanan()
+  {
+    if ($this->transaksi->batalkanPesananMobil($_POST) > 0) {
+      SweetAlert::setSwalAlert("Berhasil", "Pesanan mobil berhasil dihapus.", "success");
+      header('Location:' . BASEURL . '/admin/pemesanan');
+      exit;
+    } else {
+      SweetAlert::setSwalAlert("Gagal", "Pesanan mobil gagal dihapus.", "error");
+      header('Location:' . BASEURL . '/admin/pemesanan');
+      exit;
+    }
+  }
 }
