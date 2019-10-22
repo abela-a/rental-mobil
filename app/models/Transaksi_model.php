@@ -54,4 +54,34 @@ class Transaksi_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+  public function konfirmasiAmbilMobil($data)
+  {
+    // MOBIL
+    $statusMobil = "UPDATE mobil SET 
+              StatusRental = :StatusRental
+              WHERE id = :id";
+    $this->db->query($statusMobil);
+    $this->db->bind('StatusRental', 'Jalan');
+    $this->db->bind('id', $data['statusMobil']);
+    $this->db->execute();
+
+    // SOPIR
+    $statusSopir = "UPDATE sopir SET 
+              StatusSopir = :StatusSopir
+              WHERE IdSopir = :id";
+    $this->db->query($statusSopir);
+    $this->db->bind('StatusSopir', 'Busy');
+    $this->db->bind('id', $data['statusSopir']);
+    $this->db->execute();
+
+    // TRANSAKSI
+    $statusTransaksi = "UPDATE transaksi SET 
+              StatusTransaksi = :StatusTransaksi
+              WHERE NoTransaksi = :id";
+    $this->db->query($statusTransaksi);
+    $this->db->bind('StatusTransaksi', 'Mulai');
+    $this->db->bind('id', $data['statusTransaksi']);
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

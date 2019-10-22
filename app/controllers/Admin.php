@@ -515,4 +515,16 @@ class Admin extends Controller
       exit;
     }
   }
+  public function AmbilMobil()
+  {
+    if ($this->transaksi->konfirmasiAmbilMobil($_POST) > 0) {
+      SweetAlert::setSwalAlert("Konfirmasi Berhasil", "Rental mobil mulai berjalan, tolong ingatkan penyewa untuk mengembalikan mobil tepat waktu.", "info");
+      header('Location:' . BASEURL . '/admin/pemesanan');
+      exit;
+    } else {
+      SweetAlert::setSwalAlert("Konfirmasi Gagal", "Konfirmasi pengambilan mobil gagal!", "error");
+      header('Location:' . BASEURL . '/admin/pemesanan');
+      exit;
+    }
+  }
 }

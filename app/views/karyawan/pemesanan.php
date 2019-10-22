@@ -46,9 +46,12 @@
               Rp.<span class="uang"><?= ucfirst($pemesanan['Total_Bayar']); ?></span>,-
             </td>
             <td class="text-center" style="width:100px">
-              <button data-toggle="modal" data-target="#konfirmasi<?= $pemesanan['NoTransaksi'] ?>" class="btn btn-sm btn-primary text-white shadow-none">
-                <i class=" fa fa-car fa-fw" aria-hidden="true"></i> Ambil
-              </button>
+
+              <?php if ($pemesanan['StatusTransaksi'] != "Mulai") : ?>
+                <button data-toggle="modal" data-target="#konfirmasi<?= $pemesanan['NoTransaksi'] ?>" class="btn btn-sm btn-primary text-white shadow-none">
+                  <i class=" fa fa-car fa-fw" aria-hidden="true"></i> Ambil
+                </button>
+              <?php endif; ?>
 
               <button data-toggle="modal" data-target="#selesai" class="btn btn-sm btn-success text-white shadow-none">
                 <i class=" fa fa-check fa-fw" aria-hidden="true"></i> Selesai
@@ -64,7 +67,7 @@
             </td>
           </tr>
 
-          <!-- AWAL HAPUS -->
+          <!-- MODAL AMBIL MOBIL -->
           <div class="modal fade center" id="konfirmasi<?= $pemesanan['NoTransaksi'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -167,13 +170,18 @@
                   </ul>
                 </div>
                 <div class="modal-footer text-center justify-content-center">
-                  <button type="submit" class="btn btn-primary shadow-none">Ya</button>
-                  <button type="button" class="btn btn-outline-primary shadow-none" data-dismiss="modal">Tidak</button>
+                  <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/AmbilMobil" method="post" role="form">
+                    <input type="hidden" name="statusTransaksi" value="<?= $pemesanan['NoTransaksi'] ?>">
+                    <input type="hidden" name="statusMobil" value="<?= $pemesanan['Id_Mobil'] ?>">
+                    <input type="hidden" name="statusSopir" value="<?= $pemesanan['Id_Sopir'] ?>">
+                    <button type="submit" class="btn btn-primary shadow-none">Ya</button>
+                    <button type="button" class="btn btn-outline-primary shadow-none" data-dismiss="modal">Tidak</button>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
-          <!-- AKHIR HAPUS -->
+          <!-- / MODAL AMBIL MOBIL -->
 
         <?php endforeach; ?>
       </tbody>
