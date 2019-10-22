@@ -47,30 +47,30 @@
                   <h4 class="modal-title w-100 h5" id="myModalLabel">DETAIL PELANGGAN</h4>
                 </div>
 
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
 
                   <ul class="list-group list-group-flush">
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <img width="50" src="<?= BASEURL ?>/img/fotouser/<?= $user['Foto'] ?>" class="card-img">
                     </div>
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">Nomor Induk Kependudukan</div>
                       <div class="col" style="font-weight:500"><?= $user['NIK'] ?></div>
                     </div>
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">Nama Pelanggan</div>
                       <div class="col" style="font-weight:500"><?= $user['Nama']; ?></div>
                     </div>
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">Username</div>
                       <div class="col" style="font-weight:500"><?= $user['NamaUser']; ?></div>
                     </div>
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">Jenis Kelamin</div>
                       <div class="col" style="font-weight:500">
                         <?php if ($user['JenisKelamin'] == 'L') {
@@ -81,12 +81,12 @@
                       </div>
                     </div>
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">No Telepon</div>
                       <div class="col telp" style="font-weight:500"><?= $user['NoTelp']; ?></div>
                     </div>
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">Alamat</div>
                       <div class="col" style="font-weight:500"><?= $user['Alamat']; ?></div>
                     </div>

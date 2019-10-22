@@ -61,31 +61,31 @@
                   <h4 class="modal-title w-100 h5" id="myModalLabel">DETAIL SOPIR</h4>
                 </div>
 
-                <div class="modal-body px-5">
+                <div class="modal-body px-5 grey lighten-5">
 
                   <ul class="list-group list-group-flush">
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">ID Sopir</div>
                       <div class="col" style="font-weight:500"><?= $user['IdSopir'] ?></div>
                     </div>
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">Nomor Induk Kependudukan</div>
                       <div class="col" style="font-weight:500"><?= $user['NIK'] ?></div>
                     </div>
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">Nama Sopir</div>
                       <div class="col" style="font-weight:500"><?= $user['NmSopir']; ?></div>
                     </div>
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">NO SIM</div>
                       <div class="col" style="font-weight:500"><?= $user['NoSim']; ?></div>
                     </div>
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">Jenis Kelamin</div>
                       <div class="col" style="font-weight:500">
                         <?php if ($user['JenisKelamin'] == 'L') {
@@ -96,17 +96,17 @@
                       </div>
                     </div>
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">No Telepon</div>
                       <div class="col telp" style="font-weight:500"><?= $user['NoTelp']; ?></div>
                     </div>
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">Alamat</div>
                       <div class="col" style="font-weight:500"><?= $user['Alamat']; ?></div>
                     </div>
 
-                    <div class="row list-group-item">
+                    <div class="row list-group-item grey lighten-5">
                       <div class="col">Tarif / Hari</div>
                       <div class="col" style="font-weight:500;color:red">
                         Rp.<span class="uang"><?= ucfirst($user['TarifPerhari']); ?></span>,-

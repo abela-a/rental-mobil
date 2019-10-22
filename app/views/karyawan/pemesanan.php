@@ -46,7 +46,7 @@
               Rp.<span class="uang"><?= ucfirst($pemesanan['Total_Bayar']); ?></span>,-
             </td>
             <td class="text-center" style="width:100px">
-              <button data-toggle="modal" data-target="#konfirmasi" class="btn btn-sm btn-primary text-white shadow-none">
+              <button data-toggle="modal" data-target="#konfirmasi<?= $pemesanan['NoTransaksi'] ?>" class="btn btn-sm btn-primary text-white shadow-none">
                 <i class=" fa fa-car fa-fw" aria-hidden="true"></i> Ambil
               </button>
 
@@ -60,10 +60,35 @@
               <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" href="#">Cetak</a>
                 <a class="dropdown-item" href="#">Hapus</a>
-                <a class="dropdown-item" href="#">Detail</a>
               </div>
             </td>
           </tr>
+
+          <!-- AWAL HAPUS -->
+          <div class="modal fade center" id="konfirmasi<?= $pemesanan['NoTransaksi'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header text-primary text-center">
+                  <h5 class="modal-title h5 w-100">KONFIRMASI PENGAMBILAN MOBIL</h5>
+                </div>
+                <div class="modal-body px-5 grey lighten-5">
+                  <ul class="list-group list-group-flush">
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">No Transaksi</div>
+                      <div class="col" style="font-weight:500"><?= $pemesanan['NoTransaksi'] ?></div>
+                    </div>
+
+                  </ul>
+                </div>
+                <div class="modal-footer text-center justify-content-center">
+                  <button type="submit" class="btn btn-primary shadow-none">Ya</button>
+                  <button type="button" class="btn btn-outline-primary shadow-none" data-dismiss="modal">Tidak</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- AKHIR HAPUS -->
 
         <?php endforeach; ?>
       </tbody>
