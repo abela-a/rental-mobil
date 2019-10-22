@@ -9,6 +9,8 @@ $(document).ready(function() {
       $("#showSopir")
         .removeClass("d-inline")
         .addClass("d-none");
+      $("#Sopir").val("SPR000");
+      $("#TarifSopirPerhari").val(0);
     }
   });
 

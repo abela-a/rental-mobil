@@ -52,7 +52,6 @@
     // GET SOPIR
     $("#Sopir").change(function() {
       var Sopir = $('#Sopir').val();
-      // $('#tarifSopir').load("<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/getSopir/" + Sopir);
 
       $.get("<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/getSopir/" + Sopir, function(data) {
         $('#tarifSopir').html(data);
