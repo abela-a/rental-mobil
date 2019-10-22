@@ -79,6 +79,91 @@
                       <div class="col" style="font-weight:500"><?= $pemesanan['NoTransaksi'] ?></div>
                     </div>
 
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">No Induk Kependudukan</div>
+                      <div class="col" style="font-weight:500"><?= $pemesanan['NIK'] ?></div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Nama Pemesan</div>
+                      <div class="col" style="font-weight:500"><?= $pemesanan['Nama'] ?></div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Mobil</div>
+                      <div class="col" style="font-weight:500">
+                        <?= '[ '
+                            . $pemesanan['NoPlat']
+                            . ' ] '
+                            . $pemesanan['NmMerk']
+                            . ' '
+                            . $pemesanan['NmType']
+                          ?>
+                      </div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Sopir</div>
+                      <div class="col" style="font-weight:500">
+                        <?= $pemesanan['NmSopir'] ?>
+                      </div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Tanggal Pesan</div>
+                      <div class="col" style="font-weight:500">
+                        <?= $pemesanan['Tanggal_Pesan'] ?>
+                      </div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Tanggal Mulai</div>
+                      <div class="col" style="font-weight:500">
+                        <?= $pemesanan['Tanggal_Pinjam'] ?>
+                      </div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Tanggal Rencana Pengembalian</div>
+                      <div class="col" style="font-weight:500">
+                        <?= $pemesanan['Tanggal_Kembali_Rencana'] ?>
+                      </div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Lama Rental</div>
+                      <div class="col" style="font-weight:500">
+                        <?= $pemesanan['LamaRental'] ?> Hari
+                      </div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Tarif Sopir / Hari</div>
+                      <div class="col" style="font-weight:500">
+                        Rp.
+                        <span class="uang"><?= $pemesanan['TarifPerhari'] ?></span>
+                        ,-
+                      </div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Harga Sewa Mobil / Hari</div>
+                      <div class="col" style="font-weight:500">
+                        Rp.
+                        <span class="uang"><?= $pemesanan['HargaSewa'] ?></span>
+                        ,-
+                      </div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Total Bayar Sementara</div>
+                      <div class="col" style="font-weight:500">
+                        Rp.
+                        <span class="uang"><?= $pemesanan['Total_Bayar'] ?></span>
+                        ,-
+                      </div>
+                    </div>
+
                   </ul>
                 </div>
                 <div class="modal-footer text-center justify-content-center">
