@@ -52,7 +52,26 @@
     // GET SOPIR
     $("#Sopir").change(function() {
       var Sopir = $('#Sopir').val();
-      $('#tarifSopir').load("<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/getSopir/" + Sopir);
+      // $('#tarifSopir').load("<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/getSopir/" + Sopir);
+
+      $.get("<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/getSopir/" + Sopir, function(data) {
+        $('#tarifSopir').html(data);
+
+        var hargaSewaMobil = parseFloat($("#TarifMobilPerhari").val());
+        var lamaRental = parseFloat($("#LamaRental").val());
+        var tarifSopir = parseFloat($("#TarifSopirPerhari").val());
+
+        var bayarMobil = hargaSewaMobil * lamaRental;
+        var bayarSopir = tarifSopir * lamaRental;
+
+        var totalBayar = bayarMobil + bayarSopir;
+
+        console.log(tarifSopir);
+        console.log(bayarMobil);
+        console.log(bayarSopir);
+
+        $("#TotalBayar").val(totalBayar);
+      })
     });
   });
 </script>

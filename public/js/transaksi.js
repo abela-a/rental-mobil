@@ -31,15 +31,4 @@ $(document).ready(function() {
 
     $("#TotalBayar").val(totalBayar);
   });
-
-  // MATH FUNCTION
-  $("#Sopir").change(function() {
-    var hargaSewaMobil = parseFloat($("#TarifMobilPerhari").val());
-    var lamaRental = parseFloat($("#LamaRental").val());
-    var tarifSopir = parseFloat($("#TarifSopirPerhari").val());
-
-    var totalBayar = (hargaSewaMobil + tarifSopir) * lamaRental;
-
-    $("#TotalBayar").val(totalBayar);
-  });
 });

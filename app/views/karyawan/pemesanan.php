@@ -275,7 +275,7 @@
             <div id="showSopir" class="d-none">
               <div class="form-group">
                 <select class="browser-default custom-select" name="Sopir" id="Sopir">
-                  <option value="SPR000" selected>Pilih Sopir</option>
+                  <option selected>Pilih Sopir</option>
                   <?php
                   foreach ($data['SopirKosong'] as $sopir) :
                     echo '<option value="' . $sopir['IdSopir'] . '">'
