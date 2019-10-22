@@ -15,7 +15,7 @@ class Sopir_model
   }
   public function SopirKosong()
   {
-    $this->db->query("SELECT * FROM sopir WHERE StatusSopir = 'Free'");
+    $this->db->query("SELECT * FROM sopir WHERE StatusSopir = 'Free' && IdSopir != 'SPR000'");
     return $this->db->resultSet();
   }
   public function SopirKosongById($IdSopir)
