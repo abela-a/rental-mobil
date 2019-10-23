@@ -76,7 +76,7 @@
                   <h5 class="modal-title h5 w-100">RENTAL SELESAI</h5>
                 </div>
                 <!-- AWAL FORM -->
-                <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/tambahPemesanan" method="post" role="form">
+                <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/pesananSelesai" method="post" role="form">
 
                   <div class="modal-body px-5 grey lighten-5">
 
@@ -230,6 +230,13 @@
                     <button type="submit" class="btn btn-success shadow-none">Selesai</button>
                     <button type="button" class="btn btn-outline-success shadow-none" data-dismiss="modal">Tidak</button>
                   </div>
+
+                  <script>
+                    $(document).ready(function() {
+
+                    });
+                  </script>
+
                 </form>
               </div>
             </div>
