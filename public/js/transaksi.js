@@ -27,8 +27,8 @@ $(document).ready(function() {
     $("#LamaRental").val(lamaRental);
 
     // MATH FUNCTION
-    var hargaSewaMobil = parseFloat($("#TarifMobilPerhari").val());
-    var lamaRental = parseFloat($("#LamaRental").val());
+    var hargaSewaMobil = $("#TarifMobilPerhari").val();
+    var lamaRental = $("#LamaRental").val();
     var totalBayar = hargaSewaMobil * lamaRental;
 
     $("#TotalBayar").val(totalBayar);
@@ -37,7 +37,22 @@ $(document).ready(function() {
   // MOBIL
   $("#Mobil").change(function() {
     var harga = $("option:selected", this).attr("harga");
-    console.log(harga);
-    $("#hargaMobil").val(harga);
+    $("#TarifMobilPerhari").val(harga);
+  });
+
+  $("#Sopir").change(function() {
+    var harga = $("option:selected", this).attr("harga");
+    $("#TarifSopirPerhari").val(harga);
+
+    var hargaSewaMobil = $("#TarifMobilPerhari").val();
+    var lamaRental = $("#LamaRental").val();
+    var tarifSopir = $("#TarifSopirPerhari").val();
+
+    var bayarMobil = hargaSewaMobil * lamaRental;
+    var bayarSopir = tarifSopir * lamaRental;
+
+    var totalBayar = bayarMobil + bayarSopir;
+
+    $("#TotalBayar").val(totalBayar);
   });
 });

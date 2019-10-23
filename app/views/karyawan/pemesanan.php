@@ -466,7 +466,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Rp.</span>
               </div>
-              <input type="text" class="uang form-control" id="hargaMobil" disabled>
+              <input type="text" class="uang form-control" id="TarifMobilPerhari" disabled>
             </div>
           </div>
 
@@ -506,10 +506,10 @@
             <div id="showSopir" class="d-none">
               <div class="form-group">
                 <select class="browser-default custom-select" name="Sopir" id="Sopir">
-                  <option value="SPR000" selected>Pilih Sopir</option>
+                  <option harga="0" value="SPR000" selected>Pilih Sopir</option>
                   <?php
                   foreach ($data['SopirKosong'] as $sopir) :
-                    echo '<option value="' . $sopir['IdSopir'] . '">'
+                    echo '<option harga="' . $sopir['TarifPerhari'] . '" value="' . $sopir['IdSopir'] . '">'
                       . '[ '
                       . $sopir['IdSopir']
                       . ' ] '

@@ -493,11 +493,6 @@ class Admin extends Controller
     $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
-  public function getSopir($IdSopir = '')
-  {
-    $data['getSopir'] = $this->sopir->SopirKosongById($IdSopir);
-    $this->view('get/getSopir', $data);
-  }
   public function tambahPemesanan()
   {
     if ($this->transaksi->tambahDataPemesanan($_POST) > 0) {
