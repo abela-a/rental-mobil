@@ -10,7 +10,7 @@ class Transaksi_model
   }
   public function getAllPemesanan()
   {
-    $this->db->query('SELECT * FROM viewtransaksi ORDER BY NoTransaksi DESC');
+    $this->db->query('SELECT * FROM viewtransaksi WHERE StatusTransaksi != "Selesai" ORDER BY NoTransaksi DESC');
     return $this->db->resultSet();
   }
   public function tambahDataPemesanan($data)
