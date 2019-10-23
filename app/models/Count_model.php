@@ -40,7 +40,7 @@ class Count_model
   }
   public function countPeminjaman()
   {
-    $this->db->query("SELECT * FROM transaksi WHERE StatusTransaksi = 'Proses' ORDER BY NoTransaksi DESC");
+    $this->db->query("SELECT * FROM transaksi WHERE StatusTransaksi != 'Selesai' ORDER BY NoTransaksi DESC");
     $this->db->execute();
     return $this->db->rowCount();
   }
