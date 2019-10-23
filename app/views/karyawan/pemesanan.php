@@ -53,7 +53,7 @@
                 </button>
               <?php endif; ?>
 
-              <button data-toggle="modal" data-target="#selesai" class="btn btn-sm btn-success text-white shadow-none">
+              <button data-toggle="modal" data-target="#selesai<?= $pemesanan['NoTransaksi'] ?>" class="btn btn-sm btn-success text-white shadow-none">
                 <i class=" fa fa-check fa-fw" aria-hidden="true"></i> Selesai
               </button>
 
@@ -66,6 +66,174 @@
               </div>
             </td>
           </tr>
+
+          <!-- MODAL SELESAI -->
+          <div class="modal fade center" id="selesai<?= $pemesanan['NoTransaksi']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header text-success text-center">
+                  <h5 class="modal-title h5 w-100">RENTAL SELESAI</h5>
+                </div>
+                <!-- AWAL FORM -->
+                <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/tambahPemesanan" method="post" role="form">
+
+                  <div class="modal-body px-5 grey lighten-5">
+
+                    <div class="form-group">
+                      <label for="NoTransaksi_Selesai">Kode Transaksi</label>
+                      <input type="text" class="form-control" id="NoTransaksi_selesai" value="<?= $pemesanan['NoTransaksi'] ?>" readonly>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Identitas_Selesai">Penyewa</label>
+                      <input type="text" class="form-control" id="Identitas_selesai" value="<?= $pemesanan['Nama'] ?>" readonly>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Mobil_selesai">Mobil</label>
+                      <input type="text" class="form-control" id="Mobil_selesai" value="<?= '[ ' . $pemesanan['NoPlat'] . ' ] ' . $pemesanan['NmMerk'] . ' ' . $pemesanan['NmType'] ?>" readonly>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Sopir_selesai">Sopir</label>
+                      <input type="text" class="form-control" id="Sopir_selesai" value="<?= $pemesanan['NmSopir'] ?>" readonly>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Tanggal_Pesan_selesai">Tanggal Pesan</label>
+                      <input type="text" class="form-control datepicker" id="Tanggal_Pesan_selesai" disabled data-value="<?= $pemesanan['Tanggal_Pesan'] ?>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Tanggal_Pinjam_selesai">Tanggal Mulai Rental</label>
+                      <input type="text" class="form-control datepicker" id="Tanggal_Pinjam_selesai" disabled data-value="<?= $pemesanan['Tanggal_Pinjam'] ?>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Tanggal_Kembali_selesai">Tanggal Selesai Rental</label>
+                      <input type="text" class="form-control datepicker" id="Tanggal_Kembali_selesai" disabled data-value="<?= $pemesanan['Tanggal_Kembali_Rencana'] ?>">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="LamaRental_selesai">Lama Rental</label>
+                      <div class="input-group" style="width:100px">
+                        <input type="text" class="form-control" id="LamaRental_selesai" readonly value="<?= $pemesanan['LamaRental'] ?>">
+                        <div class="input-group-append">
+                          <span class="input-group-text">Hari</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Tanggal_Kembali_Sebenarnya">Tanggal Dikembalikan</label>
+                      <input type="text" class="form-control datepicker" id="Tanggal_Kembali_Sebenarnya" name="Tanggal_Kembali_Sebenarnya" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="JatuhTempo">Lama Jatuh Tempo</label>
+                      <div class="input-group" style="width:100px">
+                        <input type="text" class="form-control" name="JatuhTempo" id="JatuhTempo" readonly>
+                        <div class="input-group-append">
+                          <span class="input-group-text">Hari</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Kerusakan">Deskripsi Kerusakan</label>
+                      <textarea class="form-control" id="Kerusakan" name="Kerusakan" required autocomplete="off"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="BiayaKerusakan">Biaya Kerusakan</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">Rp.</span>
+                        </div>
+                        <input type="text" class="uang form-control" name="BiayaKerusakan" id="BiayaKerusakan">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="BiayaBBM">Biaya BBM</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">Rp.</span>
+                        </div>
+                        <input type="text" class="uang form-control" name="BiayaBBM" id="BiayaBBM">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Denda">Denda</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">Rp.</span>
+                        </div>
+                        <input type="text" class="uang form-control" name="Denda" id="Denda" readonly>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="TarifMobilPerhari_selesai">Harga Sewa / Hari</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">Rp.</span>
+                        </div>
+                        <input type="text" class="uang form-control" id="TarifMobilPerhari_selesai" readonly value="<?= $pemesanan['HargaSewa'] ?>">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="TarifSopirPerhari_selesai">Tarif Sopir / Hari</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">Rp.</span>
+                        </div>
+                        <input type="text" class="uang form-control" id="TarifSopirPerhari_selesai" readonly value="<?= $pemesanan['TarifPerhari'] ?>">
+                      </div>
+                    </div>
+
+                    <div class="form-group bg-success p-3 rounded text-white mt-4">
+                      <label for="TotalBayar_selesai">Total Bayar</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">Rp.</span>
+                        </div>
+                        <input type="text" class="form-control" id="TotalBayar_selesai" name="TotalBayar_selesai" value="<?= $pemesanan['Total_Bayar'] ?>" readonly>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="JumlahBayar">Jumlah Bayar</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">Rp.</span>
+                        </div>
+                        <input type="text" class="uang form-control" name="JumlahBayar" id="JumlahBayar">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Kembalian">Kembalian</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">Rp.</span>
+                        </div>
+                        <input type="text" class="uang form-control" name="Kembalian" id="Kembalian" readonly>
+                      </div>
+                    </div>
+                    <!-- AKHIR FORM -->
+                  </div>
+                  <div class="modal-footer text-center justify-content-center">
+                    <button type="submit" class="btn btn-success shadow-none">Selesai</button>
+                    <button type="button" class="btn btn-outline-success shadow-none" data-dismiss="modal">Tidak</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- /MODAL SELESAI -->
 
           <!-- MODAL BATAL -->
           <div class="modal fade center" id="batal<?= $pemesanan['NoTransaksi']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -262,7 +430,7 @@
           </div>
 
           <div class="form-group">
-            <label for="Identitas">Identitas Penyewa</label>
+            <label for="Identitas">Penyewa</label>
             <select class="browser-default custom-select" name="Identitas" id="Identitas" required>
               <option value="" selected disabled>Pilih Pelanggan</option>
               <?php
