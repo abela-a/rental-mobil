@@ -51,11 +51,11 @@
                 <button data-toggle="modal" data-target="#konfirmasi<?= $pemesanan['NoTransaksi'] ?>" class="btn btn-sm btn-primary text-white shadow-none">
                   <i class=" fa fa-car fa-fw" aria-hidden="true"></i> Ambil
                 </button>
+              <?php else : ?>
+                <button data-toggle="modal" data-target="#selesai<?= $pemesanan['NoTransaksi'] ?>" class="btn btn-sm btn-success text-white shadow-none">
+                  <i class=" fa fa-check fa-fw" aria-hidden="true"></i> Selesai
+                </button>
               <?php endif; ?>
-
-              <button data-toggle="modal" data-target="#selesai<?= $pemesanan['NoTransaksi'] ?>" class="btn btn-sm btn-success text-white shadow-none">
-                <i class=" fa fa-check fa-fw" aria-hidden="true"></i> Selesai
-              </button>
 
               <button type="button" class="dropdown btn grey lighten-2 btn-sm shadow-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-bars fa-fw" aria-hidden="true"></i> Pilihan
@@ -140,6 +140,16 @@
                     </div>
 
                     <div class="form-group">
+                      <label for="Denda">Denda</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">Rp.</span>
+                        </div>
+                        <input type="text" class="uang form-control" name="Denda" id="Denda" readonly>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
                       <label for="Kerusakan">Deskripsi Kerusakan</label>
                       <textarea class="form-control" id="Kerusakan" name="Kerusakan" required autocomplete="off"></textarea>
                     </div>
@@ -161,16 +171,6 @@
                           <span class="input-group-text" id="basic-addon1">Rp.</span>
                         </div>
                         <input type="text" class="uang form-control" name="BiayaBBM" id="BiayaBBM">
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="Denda">Denda</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1">Rp.</span>
-                        </div>
-                        <input type="text" class="uang form-control" name="Denda" id="Denda" readonly>
                       </div>
                     </div>
 
