@@ -33,4 +33,11 @@ $(document).ready(function() {
 
     $("#TotalBayar").val(totalBayar);
   });
+
+  // MOBIL
+  $("#Mobil").change(function() {
+    var harga = $("option:selected", this).attr("harga");
+    console.log(harga);
+    $("#hargaMobil").val(harga);
+  });
 });

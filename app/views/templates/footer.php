@@ -43,12 +43,6 @@
       $('#type').load("<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/getType/" + merk);
     });
 
-    // GET MOBIL
-    $("#Mobil").change(function() {
-      var mobil = $('#Mobil').val();
-      $('#hargaSewaRental').load("<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/getMobil/" + mobil);
-    });
-
     // GET SOPIR
     $("#Sopir").change(function() {
       var Sopir = $('#Sopir').val();

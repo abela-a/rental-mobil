@@ -447,7 +447,7 @@
               <option value="" selected disabled>Pilih Mobil</option>
               <?php
               foreach ($data['MobilKosong'] as $mobil) :
-                echo '<option value="' . $mobil['id'] . '">'
+                echo '<option harga="' . $mobil['HargaSewa'] . '" value="' . $mobil['id'] . '">'
                   . '[ '
                   . $mobil['NoPlat']
                   . ' ] '
@@ -466,7 +466,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Rp.</span>
               </div>
-              <input type="text" class="uang form-control" disabled>
+              <input type="text" class="uang form-control" id="hargaMobil" disabled>
             </div>
           </div>
 
