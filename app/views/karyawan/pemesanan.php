@@ -62,7 +62,8 @@
               </button>
               <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" href="#">Cetak</a>
-                <button class="dropdown-item" data-toggle="modal" data-target="#batal<?= $pemesanan['NoTransaksi'] ?>">Batalkan</button>
+
+                <button class="dropdown-item <?php if ($pemesanan['StatusTransaksi'] != "Proses") echo 'disabled' ?>" data-toggle="modal" data-target="#batal<?= $pemesanan['NoTransaksi'] ?>">Batalkan</button>
               </div>
             </td>
           </tr>
@@ -81,7 +82,7 @@
 
                     <div class="form-group">
                       <label for="NoTransaksi_Selesai">Kode Transaksi</label>
-                      <input type="text" class="form-control" id="NoTransaksi_selesai" value="<?= $pemesanan['NoTransaksi'] ?>" readonly>
+                      <input type="text" class="form-control" name="NoTransaksi_selesai" id="NoTransaksi_selesai" value="<?= $pemesanan['NoTransaksi'] ?>" readonly>
                     </div>
 
                     <div class="form-group">
@@ -111,7 +112,7 @@
 
                     <div class="form-group">
                       <label for="Tanggal_Kembali_selesai">Tanggal Selesai Rental</label>
-                      <input type="text" class="form-control datepicker" id="Tanggal_Kembali_selesai" disabled data-value="<?= $pemesanan['Tanggal_Kembali_Rencana'] ?>">
+                      <input type="text" class="form-control datepicker" id="Tanggal_Kembali_selesai" name="Tanggal_Kembali_selesai" data-value="<?= $pemesanan['Tanggal_Kembali_Rencana'] ?>">
                     </div>
 
                     <div class="form-group">
@@ -126,7 +127,7 @@
 
                     <div class="form-group">
                       <label for="Tanggal_Kembali_Sebenarnya">Tanggal Dikembalikan</label>
-                      <input type="text" class="form-control datepicker" id="Tanggal_Kembali_Sebenarnya" name="Tanggal_Kembali_Sebenarnya" required>
+                      <input type="text" class="Tanggal_Kembali_Sebenarnya form-control datepicker" id="Tanggal_Kembali_Sebenarnya" name="Tanggal_Kembali_Sebenarnya" required>
                     </div>
 
                     <div class="form-group">
@@ -200,7 +201,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">Rp.</span>
                         </div>
-                        <input type="text" class="form-control" id="TotalBayar_selesai" name="TotalBayar_selesai" value="<?= $pemesanan['Total_Bayar'] ?>" readonly>
+                        <input type="text" class="form-control uang" id="TotalBayar_selesai" name="TotalBayar_selesai" value="<?= $pemesanan['Total_Bayar'] ?>" readonly>
                       </div>
                     </div>
 

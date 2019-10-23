@@ -40,6 +40,7 @@ $(document).ready(function() {
     $("#TarifMobilPerhari").val(harga);
   });
 
+  // SOPIR
   $("#Sopir").change(function() {
     var harga = $("option:selected", this).attr("harga");
     $("#TarifSopirPerhari").val(harga);
