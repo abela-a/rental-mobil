@@ -52,7 +52,7 @@
                   <i class=" fa fa-car fa-fw" aria-hidden="true"></i> Ambil
                 </button>
               <?php else : ?>
-                <button data-toggle="modal" data-target="#selesai<?= $pemesanan['NoTransaksi'] ?>" class="btn btn-sm btn-success text-white shadow-none">
+                <button data-toggle="modal" data-target="#selesai<?= $pemesanan['NoTransaksi'] ?>" class="btn btn-sm btn-success text-white shadow-none tombol_selesai">
                   <i class=" fa fa-check fa-fw" aria-hidden="true"></i> Selesai
                 </button>
               <?php endif; ?>
@@ -69,7 +69,7 @@
           </tr>
 
           <!-- MODAL SELESAI -->
-          <div class="modal fade center" id="selesai<?= $pemesanan['NoTransaksi']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade center selesai" id="selesai<?= $pemesanan['NoTransaksi']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header text-success text-center">
@@ -127,7 +127,7 @@
 
                     <div class="form-group">
                       <label for="Tanggal_Kembali_Sebenarnya">Tanggal Dikembalikan</label>
-                      <input type="text" class="Tanggal_Kembali_Sebenarnya form-control datepicker" id="Tanggal_Kembali_Sebenarnya" name="Tanggal_Kembali_Sebenarnya" required>
+                      <input type="text" class="Tanggal_Kembali_Sebenarnya form-control datepicker" data-value="2019-10-31" id="Tanggal_Kembali_Sebenarnya" name="Tanggal_Kembali_Sebenarnya" required>
                     </div>
 
                     <div class="form-group">
@@ -146,7 +146,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">Rp.</span>
                         </div>
-                        <input type="text" class="uang form-control" name="Denda" id="Denda" readonly>
+                        <input type="text" class="form-control" name="Denda" id="Denda" readonly>
                       </div>
                     </div>
 
@@ -161,7 +161,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">Rp.</span>
                         </div>
-                        <input type="text" class="uang form-control" name="BiayaKerusakan" id="BiayaKerusakan">
+                        <input type="text" class="uang form-control" name="BiayaKerusakan" id="BiayaKerusakan" value="0">
                       </div>
                     </div>
 
@@ -171,7 +171,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">Rp.</span>
                         </div>
-                        <input type="text" class="uang form-control" name="BiayaBBM" id="BiayaBBM">
+                        <input type="text" class="uang form-control" name="BiayaBBM" id="BiayaBBM" value="0">
                       </div>
                     </div>
 
@@ -195,33 +195,35 @@
                       </div>
                     </div>
 
-                    <div class="form-group bg-success p-3 rounded text-white mt-4">
-                      <label for="TotalBayar_selesai">Total Bayar</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1">Rp.</span>
+                    <div class="card border-success p-3 text-white mt-4">
+                      <div class="form-group">
+                        <label for="TotalBayar_selesai" class="text-success">Total Bayar</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Rp.</span>
+                          </div>
+                          <input type="text" class="totalBiaya form-control" id="TotalBayar_selesai" name="TotalBayar_selesai" value="<?= $pemesanan['Total_Bayar'] ?>" readonly>
                         </div>
-                        <input type="text" class="form-control uang" id="TotalBayar_selesai" name="TotalBayar_selesai" value="<?= $pemesanan['Total_Bayar'] ?>" readonly>
                       </div>
-                    </div>
 
-                    <div class="form-group">
-                      <label for="JumlahBayar">Jumlah Bayar</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1">Rp.</span>
+                      <div class="form-group">
+                        <label for="JumlahBayar" class="text-success">Jumlah Bayar</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Rp.</span>
+                          </div>
+                          <input type="text" class="uang form-control" name="JumlahBayar" id="JumlahBayar">
                         </div>
-                        <input type="text" class="uang form-control" name="JumlahBayar" id="JumlahBayar">
                       </div>
-                    </div>
 
-                    <div class="form-group">
-                      <label for="Kembalian">Kembalian</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1">Rp.</span>
+                      <div class="form-group">
+                        <label for="Kembalian" class="text-success">Kembalian</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Rp.</span>
+                          </div>
+                          <input type="text" class="uang form-control" name="Kembalian" id="Kembalian" readonly>
                         </div>
-                        <input type="text" class="uang form-control" name="Kembalian" id="Kembalian" readonly>
                       </div>
                     </div>
                     <!-- AKHIR FORM -->
@@ -230,12 +232,6 @@
                     <button type="submit" class="btn btn-success shadow-none">Selesai</button>
                     <button type="button" class="btn btn-outline-success shadow-none" data-dismiss="modal">Tidak</button>
                   </div>
-
-                  <script>
-                    $(document).ready(function() {
-
-                    });
-                  </script>
 
                 </form>
               </div>
@@ -540,8 +536,8 @@
             </div>
           </div>
 
-          <div class="form-group bg-primary p-3 rounded text-white mt-4">
-            <label for="TotalBayar">Total Bayar Sementara</label>
+          <div class="form-group card border-primary p-3 text-white mt-4">
+            <label for="TotalBayar" class="text-primary">Total Bayar Sementara</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Rp.</span>

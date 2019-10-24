@@ -14,6 +14,20 @@ $(document).ready(function() {
     }
   });
 
+  // MOBIL
+  $("#Mobil").change(function() {
+    var harga = $("option:selected", this).attr("harga");
+    $("#TarifMobilPerhari").val(harga);
+    total();
+  });
+
+  // SOPIR
+  $("#Sopir").change(function() {
+    var harga = $("option:selected", this).attr("harga");
+    $("#TarifSopirPerhari").val(harga);
+    total();
+  });
+
   // RANGE DATE
   $("#Tanggal_Kembali").change(function() {
     var tanggalMulai = $("input[name='Tanggal_Pinjam_submit']").val();
@@ -26,25 +40,10 @@ $(document).ready(function() {
 
     $("#LamaRental").val(lamaRental);
 
-    // MATH FUNCTION
-    var hargaSewaMobil = $("#TarifMobilPerhari").val();
-    var lamaRental = $("#LamaRental").val();
-    var totalBayar = hargaSewaMobil * lamaRental;
-
-    $("#TotalBayar").val(totalBayar);
+    total();
   });
 
-  // MOBIL
-  $("#Mobil").change(function() {
-    var harga = $("option:selected", this).attr("harga");
-    $("#TarifMobilPerhari").val(harga);
-  });
-
-  // SOPIR
-  $("#Sopir").change(function() {
-    var harga = $("option:selected", this).attr("harga");
-    $("#TarifSopirPerhari").val(harga);
-
+  function total() {
     var hargaSewaMobil = $("#TarifMobilPerhari").val();
     var lamaRental = $("#LamaRental").val();
     var tarifSopir = $("#TarifSopirPerhari").val();
@@ -53,7 +52,99 @@ $(document).ready(function() {
     var bayarSopir = tarifSopir * lamaRental;
 
     var totalBayar = bayarMobil + bayarSopir;
-
     $("#TotalBayar").val(totalBayar);
+  }
+
+  $("#Tanggal_Kembali, #LamaRental, #Tanggal_Pinjam").change(function() {
+    total();
+  });
+
+  $(".tombol_selesai").on("click", function() {
+    $(".selesai").on("show.bs.modal", function() {
+      var tanggalRencana = $(
+        "input[name='Tanggal_Kembali_selesai_submit']",
+        this
+      ).val();
+      var tanggalSebenarnya = $(
+        "input[name='Tanggal_Kembali_Sebenarnya_submit']",
+        this
+      ).val();
+
+      var tanggalRencana = moment(tanggalRencana);
+      var tanggalSebenarnya = moment(tanggalSebenarnya);
+
+      var JatuhTempo = tanggalSebenarnya.diff(tanggalRencana, "days");
+      $("#JatuhTempo", this).val(JatuhTempo);
+
+      var Denda = JatuhTempo * 50000;
+      $("#Denda", this)
+        .val(Denda)
+        .mask("0.000.000.000", { reverse: true });
+
+      var totalSementara = parseFloat(
+        $("#TotalBayar_selesai", this)
+          .val()
+          .replace(/\D/g, "")
+      );
+
+      var hasilDenda = Denda + totalSementara;
+      $("#TotalBayar_selesai", this)
+        .val(hasilDenda)
+        .mask("0.000.000.000", { reverse: true });
+
+      $("#BiayaKerusakan", this).keyup(function() {
+        window.BiayaKerusakan = parseFloat(
+          $(this)
+            .val()
+            .replace(/\D/g, "")
+        );
+        TotalAkhir();
+        TotalAkhirPelanggan();
+      });
+
+      $("#BiayaBBM", this).keyup(function() {
+        window.BiayaBBM = parseFloat(
+          $(this)
+            .val()
+            .replace(/\D/g, "")
+        );
+        TotalAkhir();
+        TotalAkhirPelanggan();
+      });
+
+      function TotalAkhir() {
+        totalAkhirBayar = parseFloat(
+          totalSementara + Denda + BiayaKerusakan + BiayaBBM
+        );
+
+        $("#TotalBayar_selesai", ".selesai")
+          .val(totalAkhirBayar)
+          .mask("0.000.000.000", { reverse: true });
+      }
+
+      function TotalAkhirPelanggan() {
+        totalAkhirBayar = parseFloat(
+          $("#TotalBayar_selesai", ".selesai").val()
+        );
+
+        totalPelanggan = JumlahBayar - totalAkhirBayar;
+
+        $("#Kembalian", ".selesai")
+          .val(totalPelanggan)
+          .mask("0.000.000.000", { reverse: true });
+      }
+
+      $("#JumlahBayar", this).keyup(function() {
+        TotalAkhir();
+
+        JumlahBayar = parseFloat(
+          $(this)
+            .val()
+            .replace(/\D/g, "")
+        );
+
+        TotalAkhirPelanggan();
+      });
+    });
   });
 });
