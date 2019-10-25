@@ -66,7 +66,7 @@ $(document).ready(function() {
         this
       ).val();
       var tanggalSebenarnya = $(
-        "input[name='Tanggal_Kembali_Sebenarnya_submit']",
+        "input[name='Tanggal_Sebenarnya_submit']",
         this
       ).val();
 

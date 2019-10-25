@@ -112,4 +112,61 @@ class Transaksi_model
 
     return $this->db->rowCount();
   }
+  public function pesananMobilSelesai($data)
+  {
+    $BBM = preg_replace('/\D/', '', $data['BiayaBBM']);
+    $Kerusakan = preg_replace('/\D/', '', $data['BiayaKerusakan']);
+    $Denda = preg_replace('/\D/', '', $data['Denda']);
+    $Total = preg_replace('/\D/', '', $data['TotalBayar_selesai']);
+    $Bayar = preg_replace('/\D/', '', $data['JumlahBayar']);
+    $Kembalian = preg_replace('/\D/', '', $data['Kembalian']);
+
+    // MOBIL
+    $updateMobil = "UPDATE mobil SET 
+              StatusRental = :StatusRental
+              WHERE id = :id";
+    $this->db->query($updateMobil);
+    $this->db->bind('StatusRental', 'Kosong');
+    $this->db->bind('id', $data['Mobil']);
+    $this->db->execute();
+
+    // SOPIR
+    $updateSopir = "UPDATE sopir SET 
+              StatusSopir = :StatusSopir
+              WHERE IdSopir = :id";
+    $this->db->query($updateSopir);
+    $this->db->bind('StatusSopir', 'Free');
+    $this->db->bind('id', $data['Sopir']);
+    $this->db->execute();
+
+    // TRANSAKSI
+    $RentalSelesai = "UPDATE transaksi SET
+                      Tanggal_Kembali_Sebenarnya = :Sebenarnya,
+                      LamaDenda = :LamaDenda,
+                      Kerusakan  = :Kerusakan,
+                      BiayaBBM = :BBM,
+                      BiayaKerusakan = :Rusak,
+                      Denda = :Denda,
+                      Total_Bayar = :Total,
+                      Jumlah_Bayar = :Bayar,
+                      Kembalian = :Kembalian,
+                      StatusTransaksi = :StatusTransaksi
+                      WHERE NoTransaksi = :NoTransaksi";
+    $this->db->query($RentalSelesai);
+
+    $this->db->bind('Sebenarnya', date('Y-m-d'));
+    $this->db->bind('LamaDenda', $data['JatuhTempo']);
+    $this->db->bind('Kerusakan', $data['Kerusakan']);
+    $this->db->bind('BBM', $BBM);
+    $this->db->bind('Rusak', $Kerusakan);
+    $this->db->bind('Denda', $Denda);
+    $this->db->bind('Total', $Total);
+    $this->db->bind('Bayar', $Bayar);
+    $this->db->bind('Kembalian', $Kembalian);
+    $this->db->bind('StatusTransaksi', 'Selesai');
+    $this->db->bind('NoTransaksi', $data['NoTransaksi_selesai']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

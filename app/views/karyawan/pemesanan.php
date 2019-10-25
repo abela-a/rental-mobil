@@ -85,6 +85,9 @@
                       <input type="text" class="form-control" name="NoTransaksi_selesai" id="NoTransaksi_selesai" value="<?= $pemesanan['NoTransaksi'] ?>" readonly>
                     </div>
 
+                    <input type="hidden" value="<?= $pemesanan['Id_Mobil'] ?>" name="Mobil">
+                    <input type="hidden" value="<?= $pemesanan['Id_Sopir'] ?>" name="Sopir">
+
                     <div class="form-group">
                       <label for="Identitas_Selesai">Penyewa</label>
                       <input type="text" class="form-control" id="Identitas_selesai" value="<?= $pemesanan['Nama'] ?>" readonly>
@@ -127,7 +130,7 @@
 
                     <div class="form-group">
                       <label for="Tanggal_Kembali_Sebenarnya">Tanggal Dikembalikan</label>
-                      <input type="text" class="Tanggal_Kembali_Sebenarnya form-control datepicker" data-value="2019-10-31" id="Tanggal_Kembali_Sebenarnya" name="Tanggal_Kembali_Sebenarnya" required>
+                      <input type="text" class="form-control datepicker" id="Tanggal_Sebenarnya" name="Tanggal_Sebenarnya" data-value="[<?= date('Y-m-d') ?>]" disabled>
                     </div>
 
                     <div class="form-group">
