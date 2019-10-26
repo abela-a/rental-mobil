@@ -520,11 +520,11 @@ class Admin extends Controller
   public function batalPesanan()
   {
     if ($this->transaksi->batalkanPesananMobil($_POST) > 0) {
-      SweetAlert::setSwalAlert("Berhasil", "Pesanan mobil berhasil dihapus.", "success");
+      SweetAlert::setSwalAlert("Berhasil", "Pesanan mobil berhasil dibatalkan.", "success");
       header('Location:' . BASEURL . '/admin/pemesanan');
       exit;
     } else {
-      SweetAlert::setSwalAlert("Gagal", "Pesanan mobil gagal dihapus.", "error");
+      SweetAlert::setSwalAlert("Gagal", "Pesanan mobil gagal dibatalkan.", "error");
       header('Location:' . BASEURL . '/admin/pemesanan');
       exit;
     }
