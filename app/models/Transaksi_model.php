@@ -10,7 +10,7 @@ class Transaksi_model
   }
   public function getAllPemesanan()
   {
-    $this->db->query('SELECT * FROM viewtransaksi WHERE StatusTransaksi != "Selesai" ORDER BY NoTransaksi DESC');
+    $this->db->query('SELECT * FROM viewtransaksi WHERE StatusTransaksi != "Selesai" AND StatusTransaksi != "Batal" ORDER BY NoTransaksi DESC');
     return $this->db->resultSet();
   }
   public function tambahDataPemesanan($data)
@@ -104,8 +104,11 @@ class Transaksi_model
     $this->db->bind('id', $data['statusSopir']);
     $this->db->execute();
 
-    $query = 'DELETE FROM transaksi WHERE NoTransaksi = :NoTransaksi';
-    $this->db->query($query);
+    $batal = 'UPDATE transaksi SET 
+              StatusTransaksi = :StatusTransaksi
+              WHERE NoTransaksi = :NoTransaksi';
+    $this->db->query($batal);
+    $this->db->bind('StatusTransaksi', 'Batal');
     $this->db->bind('NoTransaksi', $data['noBatalTransaksi']);
 
     $this->db->execute();
