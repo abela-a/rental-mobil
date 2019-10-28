@@ -174,7 +174,7 @@ class Transaksi_model
   }
   public function getAllTransaksi()
   {
-    $this->db->query('SELECT * FROM viewtransaksi WHERE StatusTransaksi != "Arsip" ORDER BY NoTransaksi DESC');
+    $this->db->query('SELECT * FROM viewtransaksi WHERE StatusTransaksi ORDER BY NoTransaksi DESC');
     return $this->db->resultSet();
   }
 }
