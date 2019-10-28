@@ -172,4 +172,9 @@ class Transaksi_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+  public function getAllTransaksi()
+  {
+    $this->db->query('SELECT * FROM viewtransaksi WHERE StatusTransaksi = "Selesai" ORDER BY NoTransaksi DESC');
+    return $this->db->resultSet();
+  }
 }
