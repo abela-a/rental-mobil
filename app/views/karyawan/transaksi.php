@@ -70,7 +70,7 @@
           </tr>
 
 
-          <!-- MODAL AMBIL MOBIL -->
+          <!-- MODAL DETAIL -->
           <div class="modal fade center" id="detail<?= $Transaksi['NoTransaksi'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -239,18 +239,11 @@
                   </ul>
                 </div>
                 <div class="modal-footer text-center justify-content-center">
-                  <form action="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/AmbilMobil" method="post" role="form">
-                    <input type="hidden" name="statusTransaksi" value="<?= $Transaksi['NoTransaksi'] ?>">
-                    <input type="hidden" name="statusMobil" value="<?= $Transaksi['Id_Mobil'] ?>">
-                    <input type="hidden" name="statusSopir" value="<?= $Transaksi['Id_Sopir'] ?>">
-                    <button type="submit" class="btn btn-primary shadow-none">Ya</button>
-                    <button type="button" class="btn btn-outline-primary shadow-none" data-dismiss="modal">Tidak</button>
-                  </form>
                 </div>
               </div>
             </div>
           </div>
-          <!-- / MODAL AMBIL MOBIL -->
+          <!-- / MODAL DETAIL -->
 
         <?php endforeach; ?>
       </tbody>
