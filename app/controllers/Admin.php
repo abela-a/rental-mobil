@@ -555,4 +555,42 @@ class Admin extends Controller
     $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
+  public function arsip_transaksi()
+  {
+    $data['judul'] = 'Arsip Transaksi';
+
+    $data['url'] = $this->admin->parseURL();
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['Transaksi'] = $this->transaksi->getAllArsipTransaksi();
+
+    $this->view('templates/header', $data);
+    $this->view('templates/navadmin', $data);
+    $this->view('karyawan/arsip_transaksi', $data);
+    $this->view('templates/footerdashboard');
+    $this->view('templates/footer');
+  }
+  public function konfirmasiArsip($NoTransaksi)
+  {
+    if ($this->transaksi->arsipkanTransaksi($NoTransaksi) > 0) {
+      SweetAlert::setSwalAlert("Berhasil", "Transaksi berhasil diarsipkan!", "success");
+      header('Location:' . BASEURL . '/admin/transaksi');
+      exit;
+    } else {
+      SweetAlert::setSwalAlert("Gagal", "Transaksi gagal diarsipkan!", "error");
+      header('Location:' . BASEURL . '/admin/transaksi');
+      exit;
+    }
+  }
+  public function batalArsip($NoTransaksi)
+  {
+    if ($this->transaksi->batalkanArsipTransaksi($NoTransaksi) > 0) {
+      SweetAlert::setSwalAlert("Berhasil", "Transaksi berhasil dikembalikan!", "success");
+      header('Location:' . BASEURL . '/admin/arsip_transaksi');
+      exit;
+    } else {
+      SweetAlert::setSwalAlert("Gagal", "Transaksi gagal dikembalikan!", "error");
+      header('Location:' . BASEURL . '/admin/arsip_transaksi');
+      exit;
+    }
+  }
 }

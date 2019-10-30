@@ -174,7 +174,34 @@ class Transaksi_model
   }
   public function getAllTransaksi()
   {
-    $this->db->query('SELECT * FROM viewtransaksi WHERE StatusTransaksi ORDER BY NoTransaksi DESC');
+    $this->db->query('SELECT * FROM viewtransaksi WHERE Arsip = 0 ORDER BY NoTransaksi DESC');
     return $this->db->resultSet();
+  }
+  public function getAllArsipTransaksi()
+  {
+    $this->db->query('SELECT * FROM viewtransaksi WHERE Arsip = 1 ORDER BY NoTransaksi DESC');
+    return $this->db->resultSet();
+  }
+  public function arsipkanTransaksi($NoTransaksi)
+  {
+    $updateMobil = "UPDATE transaksi SET 
+              Arsip = :Arsip
+              WHERE NoTransaksi = :NoTransaksi";
+    $this->db->query($updateMobil);
+    $this->db->bind('Arsip', 1);
+    $this->db->bind('NoTransaksi', $NoTransaksi);
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+  public function batalkanArsipTransaksi($NoTransaksi)
+  {
+    $updateMobil = "UPDATE transaksi SET 
+              Arsip = :Arsip
+              WHERE NoTransaksi = :NoTransaksi";
+    $this->db->query($updateMobil);
+    $this->db->bind('Arsip', 0);
+    $this->db->bind('NoTransaksi', $NoTransaksi);
+    $this->db->execute();
+    return $this->db->rowCount();
   }
 }

@@ -64,7 +64,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <button class="dropdown-item" data-toggle="modal" data-target="#detail<?= $Transaksi['NoTransaksi'] ?>">Detail</button>
-                <a class="dropdown-item" href="<?= BASEURL ?>/<?= $_SESSION['Login']['Role'] ?>/konfirmasiArsip/<?= $Transaksi['NoTransaksi'] ?>">Arsipkan</a>
+                <a class="dropdown-item" href="<?= BASEURL ?>/<?= $_SESSION['Login']['Role'] ?>/batalArsip/<?= $Transaksi['NoTransaksi'] ?>">Batal arsipkan</a>
               </div>
             </td>
           </tr>
