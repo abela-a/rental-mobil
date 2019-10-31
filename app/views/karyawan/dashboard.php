@@ -53,39 +53,45 @@
           <?php foreach ($data['MobilKosong'] as $mk) : ?>
             <tr class="text-center">
               <td><?= $mk['NoPlat']; ?></td>
-              <td><?= $mk['NmMerk']; ?></td>
-              <td><?= $mk['NmType']; ?></td>
+              <td><?= $mk['NmMerk']; ?> <?= $mk['NmType']; ?></td>
               <td>
                 Rp.<span class="uang"><?= $mk['HargaSewa']; ?></span>,-
-              </td>
-              <td>
-                <a href="" class="btn btn-success btn-sm shadow-none">PESAN</a>
               </td>
             </tr>
           <?php endforeach; ?>
         </table>
+        <div class="clearfix mr-4">
+          <a href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/mobil" class="btn btn-sm btn-outline-primary shadow-none float-right">Selengkapnya</a>
+        </div>
       </div>
     </div>
     <!-- USER UNACTIVE -->
     <div class="col-md-5">
       <div class="bg-white shadow-sm rounded pt-5 pb-4">
-        <h1 class="h4 text-center">Pelanggan Baru</h1>
+        <h1 class="h4 text-center">User Belum Aktif</h1>
 
         <div class="d-flex justify-content-center">
           <div class="hr mb-4 mt-2"></div>
         </div>
-        <table class="table table-hover table-borderless">
-          <?php if ($_SESSION['Login']['RoleId'] == 1)
-            foreach ($data['UserUn'] as $Un) : ?>
-            <tr class="text-center">
-              <td><?= $Un['NIK'] ?> </td>
-              <td><?= $Un['Nama'] ?> </td>
-              <td>
-                <a href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/pending" class="btn btn-success btn-sm shadow-none">Lihat</a>
-              </td>
-            </tr>
-          <?php endforeach; ?>
-        </table>
+        <?php if ($_SESSION['Login']['RoleId'] == 1) :
+          foreach ($data['UserUn'] as $Un) : ?>
+            <table class="table table-hover table-borderless">
+              <tr class="text-center">
+                <td><?= $Un['NIK'] ?> </td>
+                <td><?= $Un['Nama'] ?> </td>
+                <td><?= $Un['NoTelp'] ?> </td>
+              </tr>
+            <?php endforeach; ?>
+            </table>
+            <div class="clearfix mr-4">
+              <a href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/pending" class="btn btn-sm btn-outline-primary shadow-none float-right">Selengkapnya</a>
+            </div>
+          <?php else : ?>
+            <div class="text-center">
+              Maaf, Menu ini hanya dapat diakses oleh
+              <p class="shadow-none badge badge-danger">Admin.</p>
+            </div>
+          <?php endif; ?>
       </div>
     </div>
   </div>

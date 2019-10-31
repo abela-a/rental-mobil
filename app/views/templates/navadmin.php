@@ -5,7 +5,7 @@ if (!isset($_SESSION['Login'])) {
   exit;
 } else {
   if ($_SESSION['Login']['RoleId'] !== '1') {
-    SweetAlert::setSwalAlert("Perhatian", "Anda bukan admin", "danger");
+    SweetAlert::setSwalAlert("Perhatian", "Anda bukan admin", "error");
     header('Location:' . BASEURL . '/' . strtolower($_SESSION['Login']['Role']));
     exit;
   }
