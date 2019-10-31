@@ -50,4 +50,10 @@ class Count_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+  public function countProsesTransaksi()
+  {
+    $this->db->query("SELECT * FROM transaksi WHERE StatusTransaksi = 'Proses' ORDER BY NoTransaksi DESC");
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

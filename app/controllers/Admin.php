@@ -30,6 +30,7 @@ class Admin extends Controller
     $data['JmlKaryawan'] = $this->count->countKaryawan();
     $data['JmlPelanggan'] = $this->count->countPelanggan();
     $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['JmlMobil'] = $this->count->countMobil();
     $data['JmlSopir'] = $this->count->countSopir();
     $data['JmlPeminjaman'] = $this->count->countPeminjaman();
@@ -52,6 +53,7 @@ class Admin extends Controller
     $data['judul'] = 'Merk';
 
     $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $data['merk'] = $this->merk->getAllMerk();
@@ -106,6 +108,7 @@ class Admin extends Controller
     $data['judul'] = 'Tipe';
 
     $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $data['type'] = $this->type->getAllType();
@@ -161,6 +164,7 @@ class Admin extends Controller
     $data['judul'] = 'Mobil';
 
     $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $data['mobil'] = $this->mobil->getAllMobil();
@@ -220,6 +224,7 @@ class Admin extends Controller
     $data['judul'] = 'Karyawan';
 
     $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $data['karyawan'] = $this->karyawan->getAllKaryawan();
@@ -273,6 +278,7 @@ class Admin extends Controller
     $data['judul'] = 'Pelanggan';
 
     $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $data['pelanggan'] = $this->pelanggan->getAllPelanggan();
@@ -330,6 +336,7 @@ class Admin extends Controller
     $data['judul'] = 'Sopir';
 
     $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $data['sopir'] = $this->sopir->getAllSopir();
@@ -384,6 +391,7 @@ class Admin extends Controller
 
     $data['pending'] = $this->admin->getUserUnactive();
     $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $this->view('templates/header', $data);
@@ -425,6 +433,7 @@ class Admin extends Controller
     $data['role'] = $this->admin->getUserRole();
     $data['roleOption'] = $this->admin->getRoleOption();
     $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $this->view('templates/header', $data);
@@ -451,6 +460,7 @@ class Admin extends Controller
 
     $data['userProfile'] = $this->user->getUserProfileById($id);
     $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $this->view('templates/header', $data);
@@ -481,6 +491,7 @@ class Admin extends Controller
     $data['judul'] = 'Pemesanan';
 
     $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
     $data['Pelanggan'] = $this->pelanggan->getAllPelanggan();
     $data['Pemesanan'] = $this->transaksi->getAllPemesanan();
@@ -547,6 +558,7 @@ class Admin extends Controller
 
     $data['url'] = $this->admin->parseURL();
     $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['Transaksi'] = $this->transaksi->getAllTransaksi();
 
     $this->view('templates/header', $data);
@@ -561,6 +573,7 @@ class Admin extends Controller
 
     $data['url'] = $this->admin->parseURL();
     $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['Transaksi'] = $this->transaksi->getAllArsipTransaksi();
 
     $this->view('templates/header', $data);

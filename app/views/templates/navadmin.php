@@ -100,9 +100,21 @@ if (!isset($_SESSION['Login'])) {
           echo 'nav-dashboard-active rounded' ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-dollar-sign fa-fw mr-1"></i>
           Transaksi
+          <?php if ($data['JmlProses'] > 0) echo
+            '<span class="ml-1 badge badge-danger shadow-none">
+              ' . $data['JmlProses'] . '
+              </span>'
+          ?>
         </a>
         <div class="dropdown-menu dropdown-primary">
-          <a class="dropdown-item <?php if ($data['judul'] == 'Pemesanan') echo 'active' ?>" href="<?= BASEURL ?>/admin/pemesanan">Pemesanan</a>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Pemesanan') echo 'active' ?>" href="<?= BASEURL ?>/admin/pemesanan">
+            Pemesanan
+            <?php if ($data['JmlProses'] > 0) echo
+              '<span class="badge badge-danger shadow-none float-right">
+              ' . $data['JmlProses'] . '
+              </span>'
+            ?>
+          </a>
           <a class="dropdown-item <?php if ($data['judul'] == 'Transaksi') echo 'active' ?>" href="<?= BASEURL ?>/admin/transaksi">Transaksi</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item <?php if ($data['judul'] == 'Arsip Transaksi') echo 'active' ?>" href="<?= BASEURL ?>/admin/arsip_transaksi">Arsip Transaksi</a>
@@ -121,7 +133,7 @@ if (!isset($_SESSION['Login'])) {
           <i class="fas fa-users fa-fw mr-3"></i>
           Data Akun
           <?php if ($data['JmlPending'] > 0) echo
-            '<span class="ml-1 badge badge-danger">
+            '<span class="ml-1 badge badge-danger shadow-none">
               ' . $data['JmlPending'] . '
               </span>'
           ?>
@@ -133,7 +145,7 @@ if (!isset($_SESSION['Login'])) {
           <a class="dropdown-item <?php if ($data['judul'] == 'Akun Pending') echo 'active' ?>" href="<?= BASEURL ?>/admin/pending">
             Akun Pending
             <?php if ($data['JmlPending'] > 0) echo
-              '<span class="badge badge-danger float-right">
+              '<span class="badge badge-danger shadow-none float-right">
               ' . $data['JmlPending'] . '
               </span>'
             ?>
