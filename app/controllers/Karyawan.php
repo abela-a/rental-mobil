@@ -214,7 +214,7 @@ class Karyawan extends Controller
   }
 
   //Metode Karyawan
-  public function karyawan()
+  public function daftarkaryawan()
   {
     $data['judul'] = 'Karyawan';
 

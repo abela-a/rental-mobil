@@ -5,7 +5,7 @@ if (!isset($_SESSION['Login'])) {
   exit;
 } else {
   if ($_SESSION['Login']['RoleId'] !== '2' && $_SESSION['Login']['RoleId'] !== '1') {
-    SweetAlert::setSwalAlert("Perhatian", "Anda bukan admin", "danger");
+    SweetAlert::setSwalAlert("Perhatian", "Anda bukan karyawan", "error");
     header('Location:' . BASEURL . '/' . strtolower($_SESSION['Login']['Role']));
     exit;
   }
@@ -121,7 +121,7 @@ if (!isset($_SESSION['Login'])) {
         </a>
         <div class="dropdown-menu dropdown-primary">
           <a class="dropdown-item <?php if ($data['judul'] == 'Pelanggan') echo 'active' ?>" href="<?= BASEURL ?>/karyawan/pelanggan">Pelanggan</a>
-          <a class="dropdown-item <?php if ($data['judul'] == 'Karyawan') echo 'active' ?>" href="<?= BASEURL ?>/karyawan/karyawan">Karyawan</a>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Karyawan') echo 'active' ?>" href="<?= BASEURL ?>/karyawan/daftarkaryawan">Karyawan</a>
         </div>
       </li>
 
