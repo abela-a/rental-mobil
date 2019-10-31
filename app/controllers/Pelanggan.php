@@ -12,11 +12,13 @@ class Pelanggan extends Controller
     $this->admin = $this->model('Admin_model');
     $this->user = $this->model('User_model');
     $this->count = $this->model('Count_model');
+    $this->transaksi = $this->model('Transaksi_model');
   }
 
   public function index()
   {
     $data['judul'] = 'Riwayat Transaksi';
+    $data['riwayatTransaksi'] = $this->transaksi->riwayatTransaksiByNIK($_SESSION['Login']['NIK']);
 
     $this->view('templates/header', $data);
     $this->view('templates/navpelanggan', $data);
@@ -24,11 +26,11 @@ class Pelanggan extends Controller
     $this->view('templates/footer');
   }
 
-  public function userProfile($id)
+  public function userProfile()
   {
     $data['judul'] = 'Profile';
 
-    $data['userProfile'] = $this->user->getUserProfileById($id);
+    $data['userProfile'] = $this->user->getUserProfileById($_SESSION['Login']['Id']);
     $data['JmlPending'] = $this->count->countUserUnactive();
     $data['url'] = $this->admin->parseURL();
 

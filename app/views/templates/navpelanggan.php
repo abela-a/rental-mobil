@@ -41,7 +41,7 @@ if (!isset($_SESSION['Login'])) {
               </a>
 
               <div class="dropdown-menu dropdown-warning dropdown-menu-right" aria-labelledby="mobil">
-                <a class="dropdown-item" href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] . '/userProfile' . '/' . $_SESSION['Login']['Id'] ?>">
+                <a class="dropdown-item" href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] . '/userProfile' ?>">
                   Edit Profile
                 </a>
                 <a class="dropdown-item" href="<?= BASEURL ?>/auth/SignOut">Logout</a>

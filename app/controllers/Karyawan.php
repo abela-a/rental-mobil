@@ -22,7 +22,7 @@ class Karyawan extends Controller
   }
 
   //Untuk menampilkan dashboard pada Admin
-  public function index($id = "")
+  public function index()
   {
     $data['judul'] = 'Dashboard';
 
@@ -36,8 +36,6 @@ class Karyawan extends Controller
     $data['JmlTransaksi'] = $this->count->countTransaksi();
     $data['MobilKosong'] = $this->mobil->mobilKosong();
     $data['url'] = $this->admin->parseURL();
-
-    $data['userProfile'] = $this->user->getUserProfileById($id);
 
     $this->view('templates/header', $data);
     $this->view('templates/navkaryawan', $data);
@@ -340,11 +338,11 @@ class Karyawan extends Controller
     }
   }
 
-  public function userProfile($id)
+  public function userProfile()
   {
     $data['judul'] = 'Profile';
 
-    $data['userProfile'] = $this->user->getUserProfileById($id);
+    $data['userProfile'] = $this->user->getUserProfileById($_SESSION['Login']['Id']);
     $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 

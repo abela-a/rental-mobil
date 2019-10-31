@@ -60,6 +60,7 @@ class Auth extends Controller
           $_SESSION['Login'] = [
             'Id' => $UserData['id'],
             'Nama' => $UserData['Nama'],
+            'NIK' => $UserData['NIK'],
             'Role' => $UserData['role'],
             'RoleId' => $UserData['RoleId'],
             'Foto' => $UserData['Foto']
