@@ -73,25 +73,25 @@
         <div class="d-flex justify-content-center">
           <div class="hr mb-4 mt-2"></div>
         </div>
-        <?php if ($_SESSION['Login']['RoleId'] == 1) :
-          foreach ($data['UserUn'] as $Un) : ?>
-            <table class="table table-hover table-borderless">
+        <?php if ($_SESSION['Login']['RoleId'] == 1) : ?>
+          <table class="table table-hover table-borderless">
+            <?php foreach ($data['UserUn'] as $Un) : ?>
               <tr class="text-center">
                 <td><?= $Un['NIK'] ?> </td>
                 <td><?= $Un['Nama'] ?> </td>
                 <td><?= $Un['NoTelp'] ?> </td>
               </tr>
             <?php endforeach; ?>
-            </table>
-            <div class="clearfix mr-4">
-              <a href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/pending" class="btn btn-sm btn-outline-primary shadow-none float-right">Selengkapnya</a>
-            </div>
-          <?php else : ?>
-            <div class="text-center">
-              Maaf, Menu ini hanya dapat diakses oleh
-              <p class="shadow-none badge badge-danger">Admin.</p>
-            </div>
-          <?php endif; ?>
+          </table>
+          <div class="clearfix mr-4">
+            <a href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] ?>/pending" class="btn btn-sm btn-outline-primary shadow-none float-right">Selengkapnya</a>
+          </div>
+        <?php else : ?>
+          <div class="text-center">
+            Maaf, Menu ini hanya dapat diakses oleh
+            <p class="shadow-none badge badge-danger">Admin.</p>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>
