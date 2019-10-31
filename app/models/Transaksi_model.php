@@ -35,8 +35,8 @@ class Transaksi_model
 
     // TRANSAKSI
     $query = 'INSERT INTO transaksi 
-    (NoTransaksi, NIK, Id_Mobil, Tanggal_Pesan, Tanggal_Pinjam, Tanggal_Kembali_Rencana, LamaRental, Id_Sopir, Total_Bayar, StatusTransaksi) 
-    VALUES(:NoTransaksi, :NIK, :Id_Mobil, :Tanggal_Pesan, :Tanggal_Pinjam, :Tanggal_Kembali_Rencana, :LamaRental, :Id_Sopir, :Total_Bayar, :StatusTransaksi)';
+    (NoTransaksi, NIK, Id_Mobil, Tanggal_Pesan, Tanggal_Pinjam, Tanggal_Kembali_Rencana, LamaRental, Id_Sopir, Total_Bayar, StatusTransaksi, Arsip) 
+    VALUES(:NoTransaksi, :NIK, :Id_Mobil, :Tanggal_Pesan, :Tanggal_Pinjam, :Tanggal_Kembali_Rencana, :LamaRental, :Id_Sopir, :Total_Bayar, :StatusTransaksi, :Arsip)';
 
     $this->db->query($query);
 
@@ -50,6 +50,7 @@ class Transaksi_model
     $this->db->bind('Id_Sopir', $data['Sopir']);
     $this->db->bind('Total_Bayar', $data['TotalBayar']);
     $this->db->bind('StatusTransaksi', "Proses");
+    $this->db->bind('Arsip', 0);
 
     $this->db->execute();
     return $this->db->rowCount();
