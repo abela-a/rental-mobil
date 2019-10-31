@@ -426,7 +426,7 @@ class Karyawan extends Controller
   public function pesananSelesai()
   {
     if ($this->transaksi->pesananMobilSelesai($_POST) > 0) {
-      SweetAlert::setSwalAlert("Rental Selesai", "Rental mobil telah selesai, untuk melihat riwayat silahkan ke Arsip Transaksi", "success");
+      SweetAlert::setSwalAlert("Rental Selesai", "Rental mobil telah selesai, untuk melihat riwayat silahkan ke Transaksi", "success");
       header('Location:' . BASEURL . '/karyawan/pemesanan');
       exit;
     } else {
