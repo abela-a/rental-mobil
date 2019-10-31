@@ -1,11 +1,11 @@
 <?php
 if (!isset($_SESSION['Login'])) {
-  Flasher::setFlash('Anda harus login terlebih dahulu', 'danger');
+  SweetAlert::setSwalAlert("Perhatian", "Anda harus login terlebih dahulu", "warning");
   header('Location:' . BASEURL . '/auth');
   exit;
 } else {
   if ($_SESSION['Login']['RoleId'] !== '1') {
-    Flasher::setFlash('Anda bukan admin', 'danger');
+    SweetAlert::setSwalAlert("Perhatian", "Anda bukan admin", "danger");
     header('Location:' . BASEURL . '/' . strtolower($_SESSION['Login']['Role']));
     exit;
   }
