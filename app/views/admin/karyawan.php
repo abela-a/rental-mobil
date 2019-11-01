@@ -19,9 +19,7 @@
           <th scope="col" class="text-center">NIK</th>
           <th scope="col" class="text-center">Nama</th>
           <th scope="col" class="text-center">No Telp</th>
-          <?php if ($_SESSION['Login']['RoleId'] == 1) : ?>
-            <th scope="col" class="text-center">Aksi</th>
-          <?php endif; ?>
+          <th scope="col" class="text-center">Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -36,77 +34,78 @@
             <td><?= ucfirst($user['NIK']); ?></td>
             <td><?= ucfirst($user['Nama']); ?></td>
             <td class="telp"><?= ucfirst($user['NoTelp']); ?></td>
-            <?php if ($_SESSION['Login']['RoleId'] == 1) : ?>
-              <td class="text-center" style="width:240px">
+            <td class="text-center" style="width:240px">
+              <?php if ($_SESSION['Login']['RoleId'] == 1) : ?>
                 <button class="btn btn-sm btn-warning shadow-none" data-toggle="modal" title="Edit" data-target="#edit<?= $user['id']; ?>"><i class="fas fa-fw fa-edit"></i></button>
                 <button class="btn btn-sm btn-danger shadow-none" data-toggle="modal" title="Hapus" data-target="#hapus<?= $user['id']; ?>"><i class="fas fa-fw fa-trash"></i></button>
                 <button data-toggle="modal" title="Detail" data-target="#detail<?= $user['id']; ?>" class="btn btn-sm btn-info text-white shadow-none" title="Detail"><i class="fas fa-fw fa-user"></i></button>
-              </td>
-            <?php endif; ?>
+              <?php else : ?>
+                <button data-toggle="modal" title="Detail" data-target="#detail<?= $user['id']; ?>" class="btn btn-sm btn-info text-white shadow-none" title="Detail"><i class="fas fa-fw fa-user"></i> Detail Karyawan</button>
+              <?php endif; ?>
+            </td>
           </tr>
 
-          <?php if ($_SESSION['Login']['RoleId'] == 1) : ?>
-            <!-- MODAL DETAIL -->
-            <div class="modal fade right" id="detail<?= $user['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <!-- MODAL DETAIL -->
+          <div class="modal fade right" id="detail<?= $user['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
-              <div class="modal-dialog modal-full-height modal-right" role="document">
+            <div class="modal-dialog modal-full-height modal-right" role="document">
 
-                <div class="modal-content">
+              <div class="modal-content">
 
-                  <div class="modal-header text-center text-primary">
-                    <h4 class="modal-title w-100 h5" id="myModalLabel">DETAIL KARYAWAN</h4>
-                  </div>
+                <div class="modal-header text-center text-primary">
+                  <h4 class="modal-title w-100 h5" id="myModalLabel">DETAIL KARYAWAN</h4>
+                </div>
 
-                  <div class="modal-body px-5 grey lighten-5">
+                <div class="modal-body px-5 grey lighten-5">
 
-                    <ul class="list-group list-group-flush">
+                  <ul class="list-group list-group-flush">
 
-                      <div class="row list-group-item grey lighten-5">
-                        <img width="50" src="<?= BASEURL ?>/img/fotouser/<?= $user['Foto'] ?>" class="card-img">
+                    <div class="row list-group-item grey lighten-5">
+                      <img width="50" src="<?= BASEURL ?>/img/fotouser/<?= $user['Foto'] ?>" class="card-img">
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Nomor Induk Kependudukan</div>
+                      <div class="col" style="font-weight:500"><?= $user['NIK'] ?></div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Nama Karyawan</div>
+                      <div class="col" style="font-weight:500"><?= $user['Nama']; ?></div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Username</div>
+                      <div class="col" style="font-weight:500"><?= $user['NamaUser']; ?></div>
+                    </div>
+
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Jenis Kelamin</div>
+                      <div class="col" style="font-weight:500">
+                        <?php if ($user['JenisKelamin'] == 'L') {
+                            echo 'Laki-laki';
+                          } else {
+                            echo 'Perempuan';
+                          } ?>
                       </div>
+                    </div>
 
-                      <div class="row list-group-item grey lighten-5">
-                        <div class="col">Nomor Induk Kependudukan</div>
-                        <div class="col" style="font-weight:500"><?= $user['NIK'] ?></div>
-                      </div>
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">No Telepon</div>
+                      <div class="col telp" style="font-weight:500"><?= $user['NoTelp']; ?></div>
+                    </div>
 
-                      <div class="row list-group-item grey lighten-5">
-                        <div class="col">Nama Karyawan</div>
-                        <div class="col" style="font-weight:500"><?= $user['Nama']; ?></div>
-                      </div>
-
-                      <div class="row list-group-item grey lighten-5">
-                        <div class="col">Username</div>
-                        <div class="col" style="font-weight:500"><?= $user['NamaUser']; ?></div>
-                      </div>
-
-                      <div class="row list-group-item grey lighten-5">
-                        <div class="col">Jenis Kelamin</div>
-                        <div class="col" style="font-weight:500">
-                          <?php if ($user['JenisKelamin'] == 'L') {
-                                echo 'Laki-laki';
-                              } else {
-                                echo 'Perempuan';
-                              } ?>
-                        </div>
-                      </div>
-
-                      <div class="row list-group-item grey lighten-5">
-                        <div class="col">No Telepon</div>
-                        <div class="col telp" style="font-weight:500"><?= $user['NoTelp']; ?></div>
-                      </div>
-
-                      <div class="row list-group-item grey lighten-5">
-                        <div class="col">Alamat</div>
-                        <div class="col" style="font-weight:500"><?= $user['Alamat']; ?></div>
-                      </div>
-                    </ul>
-                  </div>
+                    <div class="row list-group-item grey lighten-5">
+                      <div class="col">Alamat</div>
+                      <div class="col" style="font-weight:500"><?= $user['Alamat']; ?></div>
+                    </div>
+                  </ul>
                 </div>
               </div>
             </div>
-            <!-- AKHIR MODAL DETAIL -->
-
+          </div>
+          <!-- AKHIR MODAL DETAIL -->
+          <?php if ($_SESSION['Login']['RoleId'] == 1) : ?>
             <!-- AWAL MODAL EDIT-->
             <div class="modal fade" id="edit<?= $user['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="edituUserLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">

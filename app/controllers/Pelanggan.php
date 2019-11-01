@@ -12,6 +12,9 @@ class Pelanggan extends Controller
     $this->admin = $this->model('Admin_model');
     $this->user = $this->model('User_model');
     $this->count = $this->model('Count_model');
+    $this->sopir = $this->model('Sopir_model');
+    $this->karyawan = $this->model('Karyawan_model');
+    $this->pelanggan = $this->model('Pelanggan_model');
     $this->transaksi = $this->model('Transaksi_model');
   }
 
@@ -51,5 +54,46 @@ class Pelanggan extends Controller
       header('Location:' . BASEURL . '/karyawan/userprofile/' . $_SESSION['Login']['Id']);
       exit;
     }
+  }
+  public function daftarSopir()
+  {
+    $data['judul'] = 'Daftar Sopir';
+
+    $data['url'] = $this->admin->parseURL();
+
+    $data['sopir'] = $this->sopir->getAllSopir();
+
+    $this->view('templates/header', $data);
+    $this->view('templates/navpelanggan', $data);
+    $this->view('karyawan/sopir', $data);
+    $this->view('templates/footerdashboard');
+    $this->view('templates/footer');
+  }
+  public function daftarKaryawan()
+  {
+    $data['judul'] = 'Daftar Karyawan';
+
+    $data['url'] = $this->admin->parseURL();
+
+    $data['karyawan'] = $this->karyawan->getAllKaryawan();
+
+    $this->view('templates/header', $data);
+    $this->view('templates/navpelanggan', $data);
+    $this->view('admin/karyawan', $data);
+    $this->view('templates/footerdashboard');
+    $this->view('templates/footer');
+  }
+  public function daftarPelanggan()
+  {
+    $data['judul'] = 'Daftar Pelanggan';
+
+    $data['url'] = $this->admin->parseURL();
+
+    $data['pelanggan'] = $this->pelanggan->getAllPelanggan();
+    $this->view('templates/header', $data);
+    $this->view('templates/navpelanggan', $data);
+    $this->view('karyawan/pelanggan', $data);
+    $this->view('templates/footerdashboard');
+    $this->view('templates/footer');
   }
 }

@@ -77,23 +77,23 @@ if (!isset($_SESSION['Login'])) {
       <li class="nav-item mr-2">
         <a class="nav-link <?php if ($data['judul'] == 'Daftar Sopir') echo 'nav-dashboard-active rounded' ?>" href="<?= BASEURL ?>/pelanggan/daftarsopir">
           <i class="fas fa-user-tie fa-fw mr-1"></i>
-          Data Sopir
+          Daftar Sopir
         </a>
       </li>
 
       <li class="nav-item dropdown mr-2">
         <a class="nav-link dropdown-toggle
         <?php if (
-          $data['judul'] == 'Pelanggan' ||
-          $data['judul'] == 'Karyawan'
+          $data['judul'] == 'Daftar Pelanggan' ||
+          $data['judul'] == 'Daftar Karyawan'
         )
           echo 'nav-dashboard-active rounded' ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-users fa-fw mr-3"></i>
           Informasi Akun
         </a>
         <div class="dropdown-menu dropdown-primary">
-          <a class="dropdown-item <?php if ($data['judul'] == 'Pelanggan') echo 'active' ?>" href="<?= BASEURL ?>/pelanggan/daftarpelanggan">Pelanggan</a>
-          <a class="dropdown-item <?php if ($data['judul'] == 'Karyawan') echo 'active' ?>" href="<?= BASEURL ?>/pelanggan/daftarpelanggan">Karyawan</a>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Daftar Pelanggan') echo 'active' ?>" href="<?= BASEURL ?>/pelanggan/daftarpelanggan">Pelanggan</a>
+          <a class="dropdown-item <?php if ($data['judul'] == 'Daftar Karyawan') echo 'active' ?>" href="<?= BASEURL ?>/pelanggan/daftarkaryawan">Karyawan</a>
         </div>
       </li>
 
