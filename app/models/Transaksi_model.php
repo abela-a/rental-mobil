@@ -205,4 +205,10 @@ class Transaksi_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+  public function riwayatTransaksiByNIK($NIK)
+  {
+    $this->db->query('SELECT * FROM viewtransaksi WHERE NIK = :NIK ORDER BY NoTransaksi DESC');
+    $this->db->bind("NIK", $NIK);
+    return $this->db->resultSet();
+  }
 }
