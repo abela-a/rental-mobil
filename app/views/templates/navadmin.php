@@ -169,7 +169,7 @@ if (!isset($_SESSION['Login'])) {
         <div class="dropdown-menu dropdown-primary">
           <a class="dropdown-item" href="#">Transaksi</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Kendaraan</a>
+          <a class="dropdown-item" href="#">Mobil</a>
           <a class="dropdown-item" href="#">Sopir</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Karyawan</a>
