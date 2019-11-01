@@ -153,6 +153,7 @@ if (!isset($_SESSION['Login'])) {
           <a class="dropdown-item" href="#">Transaksi</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Kendaraan</a>
+          <a class="dropdown-item" href="#">Sopir</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Karyawan</a>
           <a class="dropdown-item" href="#">Pelanggan</a>
