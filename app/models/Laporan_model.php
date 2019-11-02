@@ -28,4 +28,9 @@ class Laporan_model
     $this->db->query("SELECT * FROM sopir WHERE IdSopir != 'SPR000' ORDER BY id DESC");
     return $this->db->resultSet();
   }
+  public function getLaporanKaryawan()
+  {
+    $this->db->query('SELECT * FROM users WHERE roleId = 2 AND IsActive = 1 ORDER BY id DESC');
+    return $this->db->resultSet();
+  }
 }
