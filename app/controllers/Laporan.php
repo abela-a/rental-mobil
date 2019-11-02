@@ -54,4 +54,16 @@ class Laporan extends Controller
     $this->view('laporan/laporan_kendaraan', $data);
     $this->view('templates/footer');
   }
+  public function sopir()
+  {
+    $data['judul'] = 'Laporan Sopir';
+
+    $data['laporanSopir'] = $this->laporan->getLaporanSopir();
+
+    $this->view('templates/header', $data);
+    $this->view('templates/navlaporan', $data);
+    $this->view('laporan/head_laporan');
+    $this->view('laporan/laporan_sopir', $data);
+    $this->view('templates/footer');
+  }
 }

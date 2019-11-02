@@ -23,4 +23,9 @@ class Laporan_model
     $this->db->query("SELECT * FROM viewMobil ORDER BY id DESC");
     return $this->db->resultSet();
   }
+  public function getLaporanSopir()
+  {
+    $this->db->query("SELECT * FROM sopir WHERE IdSopir != 'SPR000' ORDER BY id DESC");
+    return $this->db->resultSet();
+  }
 }
