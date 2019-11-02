@@ -33,7 +33,7 @@
             <td><?= $Sopir['NoSim'] ?></td>
             <td><?= $Sopir['NmSopir'] ?></td>
             <td><?= $Sopir['JenisKelamin'] ?></td>
-            <td><?= $Sopir['NoTelp'] ?></td>
+            <td class="telp"><?= $Sopir['NoTelp'] ?></td>
             <td><?= $Sopir['Alamat'] ?></td>
             <td>
               Rp.<span class="uang"><?= ucfirst($Sopir['TarifPerhari']); ?></span>,-
