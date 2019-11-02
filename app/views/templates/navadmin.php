@@ -161,20 +161,11 @@ if (!isset($_SESSION['Login'])) {
         </a>
       </li>
 
-      <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item mr-2">
+        <a class="nav-link <?php if ($data['judul'] == 'Laporan') echo 'nav-dashboard-active rounded' ?>" href="<?= BASEURL ?>/laporan">
           <i class="fas fa-print fa-fw mr-1"></i>
           Laporan
         </a>
-        <div class="dropdown-menu dropdown-primary">
-          <a class="dropdown-item" href="#">Transaksi</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Mobil</a>
-          <a class="dropdown-item" href="#">Sopir</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Karyawan</a>
-          <a class="dropdown-item" href="#">Pelanggan</a>
-        </div>
       </li>
 
     </ul>
