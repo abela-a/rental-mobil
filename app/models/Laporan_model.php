@@ -13,4 +13,9 @@ class Laporan_model
     $this->db->query('SELECT * FROM viewtransaksi WHERE Arsip = 0 AND StatusTransaksi != "Proses" AND StatusTransaksi != "Mulai" ORDER BY NoTransaksi DESC');
     return $this->db->resultSet();
   }
+  public function getLaporanArsipTransaksi()
+  {
+    $this->db->query('SELECT * FROM viewtransaksi WHERE Arsip = 1 ORDER BY NoTransaksi DESC');
+    return $this->db->resultSet();
+  }
 }

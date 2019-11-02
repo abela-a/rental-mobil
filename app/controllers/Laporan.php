@@ -30,4 +30,16 @@ class Laporan extends Controller
     $this->view('laporan/laporan_transaksi', $data);
     $this->view('templates/footer');
   }
+  public function arsip_transaksi()
+  {
+    $data['judul'] = 'Laporan Arsip Transaksi';
+
+    $data['laporanArsipTransaksi'] = $this->laporan->getLaporanArsipTransaksi();
+
+    $this->view('templates/header', $data);
+    $this->view('templates/navlaporan', $data);
+    $this->view('laporan/head_laporan', $data);
+    $this->view('laporan/laporan_arsip_transaksi', $data);
+    $this->view('templates/footer');
+  }
 }
