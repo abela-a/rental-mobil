@@ -26,7 +26,7 @@ class Laporan extends Controller
 
     $this->view('templates/header', $data);
     $this->view('templates/navlaporan', $data);
-    $this->view('laporan/head_laporan', $data);
+    $this->view('laporan/head_laporan');
     $this->view('laporan/laporan_transaksi', $data);
     $this->view('templates/footer');
   }
@@ -38,8 +38,20 @@ class Laporan extends Controller
 
     $this->view('templates/header', $data);
     $this->view('templates/navlaporan', $data);
-    $this->view('laporan/head_laporan', $data);
+    $this->view('laporan/head_laporan');
     $this->view('laporan/laporan_arsip_transaksi', $data);
+    $this->view('templates/footer');
+  }
+  public function kendaraan()
+  {
+    $data['judul'] = 'Laporan Kendaraan';
+
+    $data['laporanKendaraan'] = $this->laporan->getLaporanKendaraan();
+
+    $this->view('templates/header', $data);
+    $this->view('templates/navlaporan', $data);
+    $this->view('laporan/head_laporan');
+    $this->view('laporan/laporan_kendaraan', $data);
     $this->view('templates/footer');
   }
 }

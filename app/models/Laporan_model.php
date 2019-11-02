@@ -18,4 +18,9 @@ class Laporan_model
     $this->db->query('SELECT * FROM viewtransaksi WHERE Arsip = 1 ORDER BY NoTransaksi DESC');
     return $this->db->resultSet();
   }
+  public function getLaporanKendaraan()
+  {
+    $this->db->query("SELECT * FROM viewMobil ORDER BY id DESC");
+    return $this->db->resultSet();
+  }
 }

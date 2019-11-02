@@ -5,8 +5,8 @@
       Tekan tombol <span class="badge badge-light shadow-none">CTRL + P</span> untuk mencetak.
     </div>
   </div>
-  <div class="table-responsive bg-white">
-    <table class="table-bordered" cellpadding="7">
+  <div class="table-responsive">
+    <table class="table-bordered bg-white" cellpadding="7">
       <thead class="grey lighten-5">
         <tr class="text-center">
           <th rowspan="2" class="align-middle">#</th>
