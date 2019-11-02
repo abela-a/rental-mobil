@@ -33,4 +33,9 @@ class Laporan_model
     $this->db->query('SELECT * FROM users WHERE roleId = 2 AND IsActive = 1 ORDER BY id DESC');
     return $this->db->resultSet();
   }
+  public function getLaporanPelanggan()
+  {
+    $this->db->query("SELECT * FROM users WHERE roleId = 3 AND IsActive = 1 ORDER BY id DESC");
+    return $this->db->resultSet();
+  }
 }
