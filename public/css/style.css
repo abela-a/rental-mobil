@@ -195,7 +195,10 @@ MEDIA PRINT
   body {
     background-color: #fff !important;
   }
-  #head-laporan {
+  #print {
     display: block !important;
+  }
+  #print-kwitansi {
+    margin-top: -40px;
   }
 }

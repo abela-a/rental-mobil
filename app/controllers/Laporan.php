@@ -90,4 +90,16 @@ class Laporan extends Controller
     $this->view('laporan/laporan_pelanggan', $data);
     $this->view('templates/footer');
   }
+  public function kwitansi($NoTransaksi)
+  {
+    $data['judul'] = 'Laporan Kwitansi - ' . $NoTransaksi;
+
+    $data['laporanKwitansi'] = $this->laporan->getLaporanKwitansiById($NoTransaksi);
+
+    $this->view('templates/header', $data);
+    $this->view('templates/navlaporan', $data);
+    $this->view('laporan/head_kwitansi');
+    $this->view('laporan/laporan_kwitansi', $data);
+    $this->view('templates/footer');
+  }
 }

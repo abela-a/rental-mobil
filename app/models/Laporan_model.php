@@ -38,4 +38,10 @@ class Laporan_model
     $this->db->query("SELECT * FROM users WHERE roleId = 3 AND IsActive = 1 ORDER BY id DESC");
     return $this->db->resultSet();
   }
+  public function getLaporanKwitansiById($NoTransaksi)
+  {
+    $this->db->query("SELECT * FROM viewtransaksi WHERE NoTransaksi = :NoTransaksi");
+    $this->db->bind('NoTransaksi', $NoTransaksi);
+    return $this->db->single();
+  }
 }

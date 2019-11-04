@@ -61,7 +61,7 @@
                 <i class="fa fa-bars fa-fw" aria-hidden="true"></i> Pilihan
               </button>
               <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Cetak</a>
+                <a class="dropdown-item" href="<?= BASEURL ?>/laporan/kwitansi/<?= $pemesanan['NoTransaksi'] ?>">Cetak</a>
 
                 <button class="dropdown-item <?php if ($pemesanan['StatusTransaksi'] != "Proses") echo 'disabled' ?>" data-toggle="modal" data-target="#batal<?= $pemesanan['NoTransaksi'] ?>">Batalkan</button>
               </div>

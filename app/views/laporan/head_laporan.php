@@ -1,4 +1,4 @@
-<div class="container d-none" id="head-laporan">
+<div class="container d-none" id="print">
   <div class="clearfix mt-3 mb-5">
     <div class="float-left">
       <span>
@@ -8,7 +8,7 @@
       </span>
     </div>
     <div class="float-right">
-      <?= date('D, d-M-Y') ?>
+      <?= date('l, d F Y') ?>
     </div>
   </div>
 </div>
