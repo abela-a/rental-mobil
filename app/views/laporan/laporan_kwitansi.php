@@ -152,7 +152,14 @@
       </div>
       <div class="row mt-2">
         <div class="col text-center">
-          <?= $_SESSION['Login']['Role'] ?> <br>
+          <?php
+          if ($_SESSION['Login']['RoleId'] == 1 || $_SESSION['Login']['RoleId'] == 2) {
+            echo $_SESSION['Login']['Role'];
+          } else {
+            echo 'Karyawan';
+          }
+          ?>
+          <br>
           Abidzar Car Rental
           <br><br>
           <h1>
@@ -174,7 +181,15 @@
             <?php endif; ?>
           </h1>
           <br>
-          (<b><?= $_SESSION['Login']['Nama'] ?></b>)
+          (<b>
+            <?php
+            if ($_SESSION['Login']['RoleId'] == 1 || $_SESSION['Login']['RoleId'] == 2) {
+              echo $_SESSION['Login']['Nama'];
+            } else {
+              echo '....................................';
+            }
+            ?>
+          </b>)
         </div>
         <div class="col text-center">
         </div>

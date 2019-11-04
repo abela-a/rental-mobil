@@ -56,7 +56,7 @@
               <button class="btn grey lighten-2 btn-sm shadow-none" data-toggle="modal" data-target="#detail<?= $Transaksi['NoTransaksi'] ?>">
                 <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
               </button>
-              <a class="btn btn-info btn-sm shadow-none" href="#">
+              <a class="btn btn-info btn-sm shadow-none" href="<?= BASEURL ?>/laporan/kwitansi/<?= $Transaksi['NoTransaksi'] ?>">
                 <i class="fa fa-print fa-fw" aria-hidden="true"></i>
               </a>
             </td>
