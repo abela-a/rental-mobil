@@ -35,7 +35,7 @@ class Admin extends Controller
     $data['JmlSopir'] = $this->count->countSopir();
     $data['JmlPeminjaman'] = $this->count->countPeminjaman();
     $data['JmlTransaksi'] = $this->count->countTransaksi();
-    $data['MobilKosong'] = $this->mobil->mobilKosong();
+    $data['MobilKosong'] = $this->mobil->mobilKosongLimit();
     $data['JmlMobilKosong'] = $this->count->countMobilKosong();
     $data['JmlMobilDipesan'] = $this->count->countMobilDipesan();
     $data['JmlMobilJalan'] = $this->count->countMobilJalan();

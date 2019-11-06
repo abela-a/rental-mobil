@@ -24,6 +24,11 @@ class Mobil_model
     $this->db->query("SELECT * FROM viewmobil WHERE StatusRental = 'Kosong'");
     return $this->db->resultSet();
   }
+  public function mobilKosongLimit()
+  {
+    $this->db->query("SELECT * FROM viewmobil WHERE StatusRental = 'Kosong' LIMIT 10");
+    return $this->db->resultSet();
+  }
   public function getMerkOption()
   {
     $this->db->query("SELECT DISTINCT * FROM merk");
