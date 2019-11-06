@@ -14,9 +14,51 @@ class Count_model
     $this->db->execute();
     return $this->db->rowCount();
   }
+  public function countMobilKosong()
+  {
+    $this->db->query("SELECT * FROM mobil WHERE StatusRental = :StatusRental");
+    $this->db->bind('StatusRental', 'Kosong');
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+  public function countMobilDipesan()
+  {
+    $this->db->query("SELECT * FROM mobil WHERE StatusRental = :StatusRental");
+    $this->db->bind('StatusRental', 'Dipesan');
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+  public function countMobilJalan()
+  {
+    $this->db->query("SELECT * FROM mobil WHERE StatusRental = :StatusRental");
+    $this->db->bind('StatusRental', 'Jalan');
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
   public function countSopir()
   {
     $this->db->query("SELECT * FROM sopir WHERE IdSopir != 'SPR000'");
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+  public function countSopirFree()
+  {
+    $this->db->query("SELECT * FROM sopir WHERE StatusSopir = :StatusSopir AND IdSopir != 'SPR000'");
+    $this->db->bind('StatusSopir', 'Free');
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+  public function countSopirBooked()
+  {
+    $this->db->query("SELECT * FROM sopir WHERE StatusSopir = :StatusSopir AND IdSopir != 'SPR000'");
+    $this->db->bind('StatusSopir', 'Booked');
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+  public function countSopirBusy()
+  {
+    $this->db->query("SELECT * FROM sopir WHERE StatusSopir = :StatusSopir AND IdSopir != 'SPR000'");
+    $this->db->bind('StatusSopir', 'Busy');
     $this->db->execute();
     return $this->db->rowCount();
   }

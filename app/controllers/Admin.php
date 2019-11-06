@@ -36,6 +36,12 @@ class Admin extends Controller
     $data['JmlPeminjaman'] = $this->count->countPeminjaman();
     $data['JmlTransaksi'] = $this->count->countTransaksi();
     $data['MobilKosong'] = $this->mobil->mobilKosong();
+    $data['JmlMobilKosong'] = $this->count->countMobilKosong();
+    $data['JmlMobilDipesan'] = $this->count->countMobilDipesan();
+    $data['JmlMobilJalan'] = $this->count->countMobilJalan();
+    $data['JmlSopirFree'] = $this->count->countSopirFree();
+    $data['JmlSopirBooked'] = $this->count->countSopirBooked();
+    $data['JmlSopirBusy'] = $this->count->countSopirBusy();
     $data['url'] = $this->admin->parseURL();
 
     $this->view('templates/header', $data);
