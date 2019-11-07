@@ -183,6 +183,11 @@ class Transaksi_model
     $this->db->query('SELECT * FROM viewtransaksi WHERE Arsip = 1 ORDER BY NoTransaksi DESC');
     return $this->db->resultSet();
   }
+  public function getTransaksiLimit()
+  {
+    $this->db->query('SELECT * FROM viewtransaksi WHERE Arsip = 0 AND StatusTransaksi = "Proses" OR StatusTransaksi = "Mulai" ORDER BY NoTransaksi DESC LIMIT 5');
+    return $this->db->resultSet();
+  }
   public function arsipkanTransaksi($NoTransaksi)
   {
     $updateMobil = "UPDATE transaksi SET 

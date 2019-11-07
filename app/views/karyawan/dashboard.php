@@ -44,13 +44,38 @@
     <!-- LATEST TRANSAKSI -->
     <div class="col-md-3">
       <div class="bg-white shadow-sm rounded p-4">
-        <h1 class="h4 text-center">Transaksi</h1>
+        <h1 class="h4 text-center">Pemesanan</h1>
 
         <div class="d-flex justify-content-center">
           <div class="hr mb-4 mt-2"></div>
         </div>
 
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit voluptates odio sint eius tenetur distinctio pariatur recusandae, saepe quidem cupiditate sunt labore ea dignissimos provident fugit dicta? Voluptatem, eius perspiciatis.
+        <?php foreach ($data['LatestTransaksi'] as $lt) : ?>
+          <div class="item-transaksi">
+            <div class="font-weight-bold text-primary">
+              <?= $lt['NoTransaksi'] ?>
+            </div>
+            <div class="font-weight-bolder"><?= $lt['Nama'] ?></div>
+            <div>
+              <i class="fas fa-user-tie fa-fw mr-1"></i>
+              <span class="badge badge-light shadow-none">
+                <?php
+                  if ($lt['Id_Sopir'] == 'SPR000') {
+                    echo "Tanpa Sopir";
+                  } else {
+                    echo $lt['Id_Sopir'];
+                  }
+                  ?>
+              </span>
+            </div>
+            <div>
+              <i class="fas fa-car fa-fw mr-1"></i>
+              <span class="badge badge-light shadow-none"><?= $lt['NoPlat'] ?></span>
+            </div>
+            <hr class="my-2">
+          </div>
+        <?php endforeach; ?>
+
       </div>
     </div>
     <!-- MOBIL KOSONG -->

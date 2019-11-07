@@ -41,6 +41,7 @@ class Karyawan extends Controller
     $data['JmlSopirFree'] = $this->count->countSopirFree();
     $data['JmlSopirBooked'] = $this->count->countSopirBooked();
     $data['JmlSopirBusy'] = $this->count->countSopirBusy();
+    $data['LatestTransaksi'] = $this->transaksi->getTransaksiLimit();
     $data['url'] = $this->admin->parseURL();
 
     $this->view('templates/header', $data);
