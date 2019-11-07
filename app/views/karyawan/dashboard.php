@@ -72,6 +72,14 @@
               <i class="fas fa-car fa-fw mr-1"></i>
               <span class="badge badge-light shadow-none"><?= $lt['NoPlat'] ?></span>
             </div>
+            <div>
+              <i class="fas fa-info-circle fa-fw mr-1"></i>
+              <?php if ($lt['StatusTransaksi'] == 'Proses') : ?>
+                <span class="badge badge-primary shadow-none"><?= $lt['StatusTransaksi'] ?></span>
+              <?php else : ?>
+                <span class="badge badge-danger shadow-none"><?= $lt['StatusTransaksi'] ?></span>
+              <?php endif ?>
+            </div>
             <hr class="my-2">
           </div>
         <?php endforeach; ?>
