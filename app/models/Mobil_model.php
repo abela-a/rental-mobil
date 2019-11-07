@@ -86,14 +86,16 @@ class Mobil_model
   {
     $fotoMobil = $this->uploadGambarMobil();
     $hargaSewa = preg_replace('/\D/', '', $data['HargaSewa']);
-    $query = "INSERT INTO mobil VALUES('', :NoPlat, :KdMerk, :IdType, :StatusRental, :HargaSewa, :FotoMobil)";
+    $query = "INSERT INTO mobil VALUES('', :NoPlat, :KdMerk, :IdType, :StatusRental, :HargaSewa, :JenisMobil, :Transmisi, :FotoMobil)";
 
     $this->db->query($query);
 
     $this->db->bind('NoPlat', $data['NoPlat']);
     $this->db->bind('KdMerk', $data['KdMerk']);
     $this->db->bind('IdType', $data['IdType']);
-    $this->db->bind('StatusRental', $data['StatusRental']);
+    $this->db->bind('StatusRental', 'Kosong');
+    $this->db->bind('JenisMobil', $data['JenisMobil']);
+    $this->db->bind('Transmisi', $data['Transmisi']);
     $this->db->bind('HargaSewa', $hargaSewa);
     $this->db->bind('FotoMobil', $fotoMobil);
 
@@ -127,6 +129,8 @@ class Mobil_model
               NoPlat = :NoPlat,
               KdMerk = :KdMerk,
               IdType = :IdType, 
+              JenisMobil = :JenisMobil,
+              Transmisi = :Transmisi,
               HargaSewa = :HargaSewa
               WHERE id = :id";
       $this->db->query($query);
@@ -134,6 +138,8 @@ class Mobil_model
       $this->db->bind('NoPlat', $data['NoPlat']);
       $this->db->bind('KdMerk', $data['KdMerk']);
       $this->db->bind('IdType', $data['IdType']);
+      $this->db->bind('JenisMobil', $data['JenisMobil']);
+      $this->db->bind('Transmisi', $data['Transmisi']);
       $this->db->bind('HargaSewa', $hargaSewa);
       $this->db->bind('id', $data['id']);
 
@@ -153,7 +159,9 @@ class Mobil_model
       $query = "UPDATE mobil SET 
               NoPlat = :NoPlat,
               KdMerk = :KdMerk,
-              IdType = :IdType, 
+              IdType = :IdType,
+              JenisMobil = :JenisMobil,
+              Transmisi = :Transmisi,
               HargaSewa = :HargaSewa,
               FotoMobil = :FotoMobil
               WHERE id = :id";
@@ -162,6 +170,8 @@ class Mobil_model
       $this->db->bind('NoPlat', $data['NoPlat']);
       $this->db->bind('KdMerk', $data['KdMerk']);
       $this->db->bind('IdType', $data['IdType']);
+      $this->db->bind('JenisMobil', $data['JenisMobil']);
+      $this->db->bind('Transmisi', $data['Transmisi']);
       $this->db->bind('HargaSewa', $hargaSewa);
       $this->db->bind('FotoMobil', $fotoMobil);
       $this->db->bind('id', $data['id']);
