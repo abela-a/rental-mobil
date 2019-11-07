@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-11-01 12:53:21
+Date: 2019-11-07 20:03:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -59,8 +59,8 @@ CREATE TABLE `mobil` (
 -- ----------------------------
 -- Records of mobil
 -- ----------------------------
-INSERT INTO `mobil` VALUES ('23', 'DD 2727 IL', 'HND', 'JZZ', 'Jalan', '350000', 'FotoMobil-1568728004-17-Sep-2019.png');
-INSERT INTO `mobil` VALUES ('28', 'DD 1321 XY', 'HND', 'JZZ', 'Kosong', '275000', 'FotoMobil-1569814624-30-Sep-2019.jpg');
+INSERT INTO `mobil` VALUES ('23', 'DD 2727 IL', 'HND', 'JZZ', 'Dipesan', '350000', 'FotoMobil-1568728004-17-Sep-2019.png');
+INSERT INTO `mobil` VALUES ('28', 'DD 1321 XY', 'HND', 'JZZ', 'Jalan', '275000', 'FotoMobil-1569814624-30-Sep-2019.jpg');
 INSERT INTO `mobil` VALUES ('29', 'DD 7878 AH', 'TYT', 'AGY', 'Kosong', '215000', 'FotoMobil-1571185117-16-Oct-2019.jpg');
 INSERT INTO `mobil` VALUES ('30', 'DD 2727 AN', 'SZK', 'ER3', 'Kosong', '280000', 'FotoMobil-1571830355-23-Oct-2019.jpg');
 
@@ -80,7 +80,7 @@ CREATE TABLE `sopir` (
   `TarifPerhari` double(10,0) DEFAULT NULL,
   `StatusSopir` enum('Busy','Booked','Free') DEFAULT NULL,
   PRIMARY KEY (`id`,`IdSopir`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of sopir
@@ -88,7 +88,8 @@ CREATE TABLE `sopir` (
 INSERT INTO `sopir` VALUES ('3', 'SPR001', '172040', 'Muh. Rafly Hisyam', 'Dekat Fajar', '089672708681', 'L', '789876545678', '120000', 'Free');
 INSERT INTO `sopir` VALUES ('4', 'SPR002', '172043', 'Muhammad Atma Nugraha', 'Dg. Ramang City', '087282828270', 'L', '72131231231', '150000', 'Free');
 INSERT INTO `sopir` VALUES ('5', 'SPR003', '172069', 'Wahyudi', 'Dekat Nur', '086578771654', 'L', '092019201', '130000', 'Free');
-INSERT INTO `sopir` VALUES ('7', 'SPR000', '-', '-', '-', '-', 'L', '-', '0', 'Busy');
+INSERT INTO `sopir` VALUES ('7', 'SPR000', '-', '-', '-', '-', 'L', '-', '0', 'Booked');
+INSERT INTO `sopir` VALUES ('8', 'SPR004', '102910', 'Yunita', 'Jl. jalan ki sama saya', '081182002233', 'P', '1221322', '350000', 'Busy');
 
 -- ----------------------------
 -- Table structure for `transaksi`
@@ -125,9 +126,11 @@ INSERT INTO `transaksi` VALUES ('TRS00001', '0017093660', '30', '2019-10-25', '2
 INSERT INTO `transaksi` VALUES ('TRS00002', '172037', '30', '2019-10-26', '2019-10-26', '2019-10-27', null, '1', null, null, 'SPR003', null, null, null, '430000', null, null, 'Batal', '1');
 INSERT INTO `transaksi` VALUES ('TRS00003', '172037', '23', '2019-10-27', '2019-10-27', '2019-10-28', '2019-10-29', '1', '1', 'Hilang bannya satu', 'SPR002', '156000', '935000', '50000', '1791000', '1800000', '9000', 'Selesai', '0');
 INSERT INTO `transaksi` VALUES ('TRS00004', '172060', '28', '2019-10-28', '2019-10-28', '2019-10-29', '2019-10-29', '1', '0', 'ceper langsung', 'SPR001', '45000', '100000', '0', '600000', '600000', '0', 'Selesai', '0');
-INSERT INTO `transaksi` VALUES ('TRS00005', '172004', '30', '2019-10-29', '2019-10-29', '2019-10-31', null, '2', null, null, 'SPR003', null, null, null, '860000', null, null, 'Batal', '1');
-INSERT INTO `transaksi` VALUES ('TRS00006', '172004', '23', '2019-10-31', '2019-10-31', '2019-11-01', '2019-10-31', '1', '-1', 'Tak ada yang rusak', 'SPR001', '45000', '0', '50000', '420000', '420000', '0', 'Selesai', '0');
-INSERT INTO `transaksi` VALUES ('TRS00007', '172037', '23', '2019-10-31', '2019-11-01', '2019-11-02', null, '1', null, null, 'SPR000', null, null, null, '350000', null, null, 'Mulai', '0');
+INSERT INTO `transaksi` VALUES ('TRS00005', '172004', '30', '2019-10-29', '2019-10-29', '2019-10-31', null, '2', null, null, 'SPR003', null, null, null, '860000', null, null, 'Batal', '0');
+INSERT INTO `transaksi` VALUES ('TRS00006', '172004', '23', '2019-10-31', '2019-10-31', '2019-11-01', '2019-10-31', '1', '0', 'Tak ada yang rusak', 'SPR001', '45000', '0', '50000', '420000', '420000', '0', 'Selesai', '0');
+INSERT INTO `transaksi` VALUES ('TRS00007', '172037', '23', '2019-10-31', '2019-11-01', '2019-11-02', '2019-11-06', '1', '4', 'Aman terkendali.', 'SPR000', '53000', '0', '200000', '603000', '610000', '7000', 'Selesai', '0');
+INSERT INTO `transaksi` VALUES ('TRS00008', '172037', '28', '2019-11-06', '2019-11-06', '2019-11-07', null, '1', null, null, 'SPR004', null, null, null, '625000', null, null, 'Mulai', '0');
+INSERT INTO `transaksi` VALUES ('TRS00009', '172004', '23', '2019-11-07', '2019-11-07', '2019-11-08', null, '1', null, null, 'SPR000', null, null, null, '350000', null, null, 'Proses', '0');
 
 -- ----------------------------
 -- Table structure for `type`
