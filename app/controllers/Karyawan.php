@@ -293,7 +293,13 @@ class Karyawan extends Controller
     $this->db->query('SELECT * FROM sopir ORDER BY IdSopir DESC LIMIT 1');
     $latest = $this->db->single();
 
-    $data['autoIdSopir'] = $this->admin->autonumber($latest['IdSopir'], 3, 3);
+    if ($latest) {
+      $data['autoIdSopir'] = $this->admin->autonumber($latest['IdSopir'], 3, 3);
+    } else {
+      $this->db->query("INSERT INTO sopir VALUES ('','SPR000','-','-','-','-','L','-',0,'Free')");
+      $this->db->execute();
+      $data['autoIdSopir'] = 'SPR001';
+    }
 
     $data['judul'] = 'Sopir';
 
@@ -376,7 +382,11 @@ class Karyawan extends Controller
     $this->db->query('SELECT * FROM transaksi ORDER BY NoTransaksi DESC LIMIT 1');
     $latest = $this->db->single();
 
-    $data['autoIdTransaksi'] = $this->admin->autonumber($latest['NoTransaksi'], 3, 5);
+    if ($latest) {
+      $data['autoIdTransaksi'] = $this->admin->autonumber($latest['NoTransaksi'], 3, 5);
+    } else {
+      $data['autoIdTransaksi'] = 'TRS00001';
+    }
 
     $data['judul'] = 'Pemesanan';
 
