@@ -134,6 +134,7 @@
                         <option value="" selected disabled>Pilih Transmisi Mobil</option>
                         <option <?php if ($mobil['Transmisi'] == 'Matic') echo 'selected' ?>>Matic</option>
                         <option <?php if ($mobil['JenisMobil'] == 'Manual') echo 'selected' ?>>Manual</option>
+                        <option <?php if ($mobil['JenisMobil'] == 'CVT') echo 'selected' ?>>CVT</option>
                       </select>
                     </div>
 
@@ -266,6 +267,7 @@
               <option value="" selected disabled>Pilih Jenis Transmisi</option>
               <option>Matic</option>
               <option>Manual</option>
+              <option>CVT</option>
             </select>
           </div>
 
