@@ -88,7 +88,7 @@
     </div>
     <!-- MOBIL KOSONG -->
     <div class="col-md-5">
-      <div class="bg-white shadow-sm rounded py-4">
+      <div class="bg-white shadow-sm rounded py-4 px-3">
         <h1 class="h4 text-center">Daftar Mobil Siap Rental</h1>
 
         <div class="d-flex justify-content-center">
