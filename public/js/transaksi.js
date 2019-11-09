@@ -52,7 +52,10 @@ $(document).ready(function() {
     var bayarSopir = tarifSopir * lamaRental;
 
     var totalBayar = bayarMobil + bayarSopir;
-    $("#TotalBayar").val(totalBayar);
+
+    if(!isNaN(totalBayar)){
+      $("#TotalBayar").val(totalBayar);
+    }
   }
 
   $("#Tanggal_Kembali, #LamaRental, #Tanggal_Pinjam").change(function() {
