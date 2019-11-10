@@ -34,7 +34,9 @@
                 <a data-target="#Register" data-toggle="modal" class="btn btn-warning">Daftar</a>
                 <a data-target="#Login" data-toggle="modal" class="btn btn-outline-white">login</a>
               <?php else : ?>
-                <a class="btn indigo accent-2" href="<?= BASEURL; ?>">Pesan Mobil</a>
+                <?php if ($_SESSION['Login']['Role'] == 'Pelanggan') : ?>
+                  <a class="btn indigo accent-2" href="<?= BASEURL; ?>/pelanggan/daftarmobil">Pesan Mobil</a>
+                <?php endif; ?>
               <?php endif; ?>
             </div>
           </div>

@@ -18,16 +18,21 @@
           <li class="nav-item mr-3 nav-active">
             <a class="nav-link py-3" href="<?= BASEURL ?>">Home</a>
           </li>
-          <!-- MOBIL -->
-          <li class="nav-item mr-3">
-            <a class="nav-link py-3" href="#daftar-mobil">Daftar Mobil</a>
-          </li>
+          <?php if (isset($_SESSION['Login'])) : ?>
+            <?php if ($_SESSION['Login']['Role'] == 'Pelanggan') : ?>
+              <!-- MOBIL -->
+              <li class="nav-item mr-3">
+                <a class="nav-link py-3" href="<?= BASEURL ?>/pelanggan/daftarmobil">Daftar Mobil</a>
+              </li>
+            <?php endif; ?>
+          <?php endif; ?>
           <!-- ABOUT -->
           <li class="nav-item mr-3 dropdown">
             <a class="nav-link py-3 dropdown-toggle" id="mobil" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About
             </a>
             <div class="dropdown-menu dropdown-warning" aria-labelledby="mobil">
               <a class="dropdown-item" href="#alasan">Mengapa Memilih Kami?</a>
+              <a class="dropdown-item" href="#daftar-mobil">Mobil Apa Saja?</a>
               <a class="dropdown-item" href="#">Layanan Kami</a>
               <a class="dropdown-item" href="#">Kontak Kami</a>
               <a class="dropdown-item" href="#">FAQ</a>
