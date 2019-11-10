@@ -27,9 +27,6 @@ if (!isset($_SESSION['Login'])) {
       </button>
       <div class="collapse navbar-collapse ml-4" id="navResponsive">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <input class="form-control form-control-sm" type="text" placeholder="Cari..." style="width:300px">
-          </li>
         </ul>
         <ul class="navbar-nav nav-flex-icons">
           <?php
