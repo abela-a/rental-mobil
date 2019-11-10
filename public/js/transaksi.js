@@ -53,7 +53,7 @@ $(document).ready(function() {
 
     var totalBayar = bayarMobil + bayarSopir;
 
-    if(!isNaN(totalBayar)){
+    if (!isNaN(totalBayar)) {
       $("#TotalBayar").val(totalBayar);
     }
   }
