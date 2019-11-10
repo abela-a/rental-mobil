@@ -36,6 +36,8 @@
               <?php else : ?>
                 <?php if ($_SESSION['Login']['Role'] == 'Pelanggan') : ?>
                   <a class="btn indigo accent-2" href="<?= BASEURL; ?>/pelanggan/daftarmobil">Pesan Mobil</a>
+                <?php else : ?>
+                  <a class="btn indigo accent-2" href="<?= BASEURL; ?>/<?= $_SESSION['Login']['Role'] ?>/dashboard">Dashboard</a>
                 <?php endif; ?>
               <?php endif; ?>
             </div>
