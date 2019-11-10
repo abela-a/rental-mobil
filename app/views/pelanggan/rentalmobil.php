@@ -31,7 +31,7 @@
                 <?= $mobil['HargaSewa']; ?>
               </span> ,- / Hari</li>
           </ul>
-          <div class="card-body">
+          <div class="card-body mr-2">
             <button data-toggle="modal" data-target="#rental<?= $mobil['id'] ?>" class="card-link btn btn-primary shadow-none btn-block tombol-reservasi">Pesan Sekarang</button>
           </div>
         </div>
