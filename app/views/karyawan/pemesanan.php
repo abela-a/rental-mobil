@@ -559,5 +559,4 @@
     </div>
   </div>
 </div>
-</div>
 <!-- AKHIR MODAL-->
