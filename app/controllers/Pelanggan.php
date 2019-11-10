@@ -58,11 +58,21 @@ class Pelanggan extends Controller
   }
   public function daftarMobil()
   {
+    $this->db->query('SELECT * FROM transaksi ORDER BY NoTransaksi DESC LIMIT 1');
+    $latest = $this->db->single();
+
+    if ($latest) {
+      $data['autoIdTransaksi'] = $this->admin->autonumber($latest['NoTransaksi'], 3, 5);
+    } else {
+      $data['autoIdTransaksi'] = 'TRS00001';
+    }
+
     $data['judul'] = 'Daftar Mobil';
 
     $data['url'] = $this->admin->parseURL();
 
     $data['mobil'] = $this->mobil->getAllMobil();
+    $data['SopirKosong'] = $this->sopir->SopirKosong();
 
     $this->view('templates/header', $data);
     $this->view('templates/navpelanggan', $data);
@@ -110,5 +120,9 @@ class Pelanggan extends Controller
     $this->view('karyawan/pelanggan', $data);
     $this->view('templates/footerdashboard');
     $this->view('templates/footer');
+  }
+  public function reservasi()
+  {
+    var_dump($_POST);
   }
 }
