@@ -16,6 +16,7 @@ class Pelanggan extends Controller
     $this->karyawan = $this->model('Karyawan_model');
     $this->pelanggan = $this->model('Pelanggan_model');
     $this->transaksi = $this->model('Transaksi_model');
+    $this->mobil = $this->model('Mobil_model');
   }
 
   public function index()
@@ -54,6 +55,20 @@ class Pelanggan extends Controller
       header('Location:' . BASEURL . '/karyawan/userprofile/' . $_SESSION['Login']['Id']);
       exit;
     }
+  }
+  public function daftarMobil()
+  {
+    $data['judul'] = 'Daftar Mobil';
+
+    $data['url'] = $this->admin->parseURL();
+
+    $data['mobil'] = $this->mobil->getAllMobil();
+
+    $this->view('templates/header', $data);
+    $this->view('templates/navpelanggan', $data);
+    $this->view('pelanggan/rentalmobil', $data);
+    $this->view('templates/footerdashboard');
+    $this->view('templates/footer');
   }
   public function daftarSopir()
   {
