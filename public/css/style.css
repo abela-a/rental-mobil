@@ -195,4 +195,9 @@ MEDIA PRINT
   #print-kwitansi {
     margin-top: -40px;
   }
+  table,
+  table tr td,
+  table tr th {
+    font-size: 10px;
+  }
 }
