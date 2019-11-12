@@ -76,7 +76,7 @@ class Pelanggan extends Controller
 
     $this->view('templates/header', $data);
     $this->view('templates/navpelanggan', $data);
-    $this->view('pelanggan/rentalmobil', $data);
+    $this->view('pelanggan/daftarmobil', $data);
     $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
