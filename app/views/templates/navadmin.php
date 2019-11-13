@@ -1,11 +1,11 @@
 <?php
 if (!isset($_SESSION['Login'])) {
-  Flasher::setFlash('Anda harus login terlebih dahulu', 'danger');
+  SweetAlert::setSwalAlert("Perhatian", "Anda harus login terlebih dahulu", "warning");
   header('Location:' . BASEURL . '/auth');
   exit;
 } else {
   if ($_SESSION['Login']['RoleId'] !== '1') {
-    Flasher::setFlash('Anda bukan admin', 'danger');
+    SweetAlert::setSwalAlert("Perhatian", "Anda bukan admin", "error");
     header('Location:' . BASEURL . '/' . strtolower($_SESSION['Login']['Role']));
     exit;
   }
@@ -27,9 +27,6 @@ if (!isset($_SESSION['Login'])) {
       </button>
       <div class="collapse navbar-collapse ml-4" id="navResponsive">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <input class="form-control form-control-sm" type="text" placeholder="Cari..." style="width:300px">
-          </li>
         </ul>
         <ul class="navbar-nav nav-flex-icons">
           <?php
@@ -47,7 +44,7 @@ if (!isset($_SESSION['Login'])) {
               </a>
 
               <div class="dropdown-menu dropdown-warning dropdown-menu-right" aria-labelledby="mobil">
-                <a class="dropdown-item" href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] . '/userProfile' . '/' . $_SESSION['Login']['Id'] ?>">
+                <a class="dropdown-item" href="<?= BASEURL . '/' . $_SESSION['Login']['Role'] . '/userProfile' ?>">
                   Edit Profile
                 </a>
                 <a class="dropdown-item" href="<?= BASEURL ?>/auth/SignOut">Logout</a>
@@ -94,16 +91,28 @@ if (!isset($_SESSION['Login'])) {
         <a class="nav-link dropdown-toggle
         <?php if (
           $data['judul'] == 'Transaksi' ||
-          $data['judul'] == 'Transaksi Selesai' ||
+          $data['judul'] == 'Pemesanan' ||
           $data['judul'] == 'Arsip Transaksi'
         )
           echo 'nav-dashboard-active rounded' ?>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-dollar-sign fa-fw mr-1"></i>
           Transaksi
+          <?php if ($data['JmlProses'] > 0) echo
+            '<span class="ml-1 badge badge-danger shadow-none">
+              ' . $data['JmlProses'] . '
+              </span>'
+          ?>
         </a>
         <div class="dropdown-menu dropdown-primary">
+          <a class="dropdown-item <?php if ($data['judul'] == 'Pemesanan') echo 'active' ?>" href="<?= BASEURL ?>/admin/pemesanan">
+            Pemesanan
+            <?php if ($data['JmlProses'] > 0) echo
+              '<span class="badge badge-danger shadow-none float-right">
+              ' . $data['JmlProses'] . '
+              </span>'
+            ?>
+          </a>
           <a class="dropdown-item <?php if ($data['judul'] == 'Transaksi') echo 'active' ?>" href="<?= BASEURL ?>/admin/transaksi">Transaksi</a>
-          <a class="dropdown-item <?php if ($data['judul'] == 'Transaksi Selesai') echo 'active' ?>" href="<?= BASEURL ?>/admin/transaksi_selesai">Transaksi Selesai</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item <?php if ($data['judul'] == 'Arsip Transaksi') echo 'active' ?>" href="<?= BASEURL ?>/admin/arsip_transaksi">Arsip Transaksi</a>
         </div>
@@ -121,7 +130,7 @@ if (!isset($_SESSION['Login'])) {
           <i class="fas fa-users fa-fw mr-3"></i>
           Data Akun
           <?php if ($data['JmlPending'] > 0) echo
-            '<span class="ml-1 badge badge-danger">
+            '<span class="ml-1 badge badge-danger shadow-none">
               ' . $data['JmlPending'] . '
               </span>'
           ?>
@@ -133,7 +142,7 @@ if (!isset($_SESSION['Login'])) {
           <a class="dropdown-item <?php if ($data['judul'] == 'Akun Pending') echo 'active' ?>" href="<?= BASEURL ?>/admin/pending">
             Akun Pending
             <?php if ($data['JmlPending'] > 0) echo
-              '<span class="badge badge-danger float-right">
+              '<span class="badge badge-danger shadow-none float-right">
               ' . $data['JmlPending'] . '
               </span>'
             ?>
@@ -149,19 +158,11 @@ if (!isset($_SESSION['Login'])) {
         </a>
       </li>
 
-      <li class="nav-item dropdown mr-2">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item mr-2">
+        <a class="nav-link <?php if ($data['judul'] == 'Laporan') echo 'nav-dashboard-active rounded' ?>" href="<?= BASEURL ?>/laporan">
           <i class="fas fa-print fa-fw mr-1"></i>
           Laporan
         </a>
-        <div class="dropdown-menu dropdown-primary">
-          <a class="dropdown-item" href="#">Transaksi</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Kendaraan</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Karyawan</a>
-          <a class="dropdown-item" href="#">Pelanggan</a>
-        </div>
       </li>
 
     </ul>

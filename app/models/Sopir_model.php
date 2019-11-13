@@ -13,11 +13,22 @@ class Sopir_model
     $this->db->query("SELECT * FROM sopir ORDER BY id DESC");
     return $this->db->resultSet();
   }
+  public function SopirKosong()
+  {
+    $this->db->query("SELECT * FROM sopir WHERE StatusSopir = 'Free' && IdSopir != 'SPR000'");
+    return $this->db->resultSet();
+  }
+  public function SopirKosongById($IdSopir)
+  {
+    $this->db->query("SELECT * FROM sopir WHERE IdSopir = :IdSopir");
+    $this->db->bind('IdSopir', $IdSopir);
+    return $this->db->single();
+  }
   public function tambahDataSopir($data)
   {
     $NoTelp = preg_replace('/\D/', '', $data['NoTelp']);
     $tarif = preg_replace('/\D/', '', $data['TarifPerhari']);
-    $query = 'INSERT INTO sopir VALUES("", :IdSopir, :NIK, :NmSopir, :Alamat, :NoTelp, :JenisKelamin, :NoSim, :TarifPerhari)';
+    $query = 'INSERT INTO sopir VALUES("", :IdSopir, :NIK, :NmSopir, :Alamat, :NoTelp, :JenisKelamin, :NoSim, :TarifPerhari, :StatusSopir)';
 
     $this->db->query($query);
 
@@ -29,6 +40,7 @@ class Sopir_model
     $this->db->bind('JenisKelamin', $data['JenisKelamin']);
     $this->db->bind('NoSim', $data['NoSim']);
     $this->db->bind('TarifPerhari', $tarif);
+    $this->db->bind('StatusSopir', 'Free');
 
     $this->db->execute();
     return $this->db->rowCount();

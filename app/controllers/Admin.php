@@ -17,22 +17,33 @@ class Admin extends Controller
     $this->pelanggan = $this->model('Pelanggan_model');
     $this->sopir = $this->model('Sopir_model');
     $this->user = $this->model('User_model');
+    $this->count = $this->model('Count_model');
+    $this->transaksi = $this->model('Transaksi_model');
   }
 
   //Untuk menampilkan dashboard pada Admin
-  public function index($id = "")
+  public function index()
   {
     $data['judul'] = 'Dashboard';
 
     $data['UserUn'] = $this->admin->getUserUnactive();
-    $data['JmlKaryawan'] = $this->admin->countKaryawan();
-    $data['JmlPelanggan'] = $this->admin->countPelanggan();
-    $data['JmlPending'] = $this->admin->countUserUnactive();
-    $data['JmlMobil'] = $this->admin->countMobil();
-    $data['MobilKosong'] = $this->admin->mobilKosong();
+    $data['JmlKaryawan'] = $this->count->countKaryawan();
+    $data['JmlPelanggan'] = $this->count->countPelanggan();
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
+    $data['JmlMobil'] = $this->count->countMobil();
+    $data['JmlSopir'] = $this->count->countSopir();
+    $data['JmlPeminjaman'] = $this->count->countPeminjaman();
+    $data['JmlTransaksi'] = $this->count->countTransaksi();
+    $data['MobilKosong'] = $this->mobil->mobilKosongLimit();
+    $data['JmlMobilKosong'] = $this->count->countMobilKosong();
+    $data['JmlMobilDipesan'] = $this->count->countMobilDipesan();
+    $data['JmlMobilJalan'] = $this->count->countMobilJalan();
+    $data['JmlSopirFree'] = $this->count->countSopirFree();
+    $data['JmlSopirBooked'] = $this->count->countSopirBooked();
+    $data['JmlSopirBusy'] = $this->count->countSopirBusy();
+    $data['LatestTransaksi'] = $this->transaksi->getTransaksiLimit();
     $data['url'] = $this->admin->parseURL();
-
-    $data['userProfile'] = $this->user->getUserProfileById($id);
 
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
@@ -46,7 +57,8 @@ class Admin extends Controller
   {
     $data['judul'] = 'Merk';
 
-    $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $data['merk'] = $this->merk->getAllMerk();
@@ -100,7 +112,8 @@ class Admin extends Controller
   {
     $data['judul'] = 'Tipe';
 
-    $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $data['type'] = $this->type->getAllType();
@@ -155,7 +168,8 @@ class Admin extends Controller
   {
     $data['judul'] = 'Mobil';
 
-    $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $data['mobil'] = $this->mobil->getAllMobil();
@@ -164,13 +178,13 @@ class Admin extends Controller
     $this->view('templates/header', $data);
     $this->view('templates/navadmin', $data);
     $this->view('karyawan/mobil', $data);
-    $this->view('templates/footer');
     $this->view('templates/footerdashboard');
+    $this->view('templates/footer');
   }
   public function getType($KdMerk = '')
   {
     $data['typeOption'] = $this->mobil->getTypeOption($KdMerk);
-    $this->view('karyawan/getType', $data);
+    $this->view('get/getType', $data);
   }
   public function tambahMobil()
   {
@@ -214,7 +228,8 @@ class Admin extends Controller
   {
     $data['judul'] = 'Karyawan';
 
-    $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $data['karyawan'] = $this->karyawan->getAllKaryawan();
@@ -267,7 +282,8 @@ class Admin extends Controller
   {
     $data['judul'] = 'Pelanggan';
 
-    $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $data['pelanggan'] = $this->pelanggan->getAllPelanggan();
@@ -320,11 +336,18 @@ class Admin extends Controller
     $this->db->query('SELECT * FROM sopir ORDER BY IdSopir DESC LIMIT 1');
     $latest = $this->db->single();
 
-    $data['autoIdSopir'] = $this->admin->autonumber($latest['IdSopir'], 3, 3);
+    if ($latest) {
+      $data['autoIdSopir'] = $this->admin->autonumber($latest['IdSopir'], 3, 3);
+    } else {
+      $this->db->query("INSERT INTO sopir VALUES ('','SPR000','-','-','-','-','L','-',0,'Free')");
+      $this->db->execute();
+      $data['autoIdSopir'] = 'SPR001';
+    }
 
     $data['judul'] = 'Sopir';
 
-    $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $data['sopir'] = $this->sopir->getAllSopir();
@@ -378,7 +401,8 @@ class Admin extends Controller
     $data['judul'] = 'Akun Pending';
 
     $data['pending'] = $this->admin->getUserUnactive();
-    $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $this->view('templates/header', $data);
@@ -419,7 +443,8 @@ class Admin extends Controller
 
     $data['role'] = $this->admin->getUserRole();
     $data['roleOption'] = $this->admin->getRoleOption();
-    $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $this->view('templates/header', $data);
@@ -440,12 +465,13 @@ class Admin extends Controller
       exit;
     }
   }
-  public function userProfile($id)
+  public function userProfile()
   {
     $data['judul'] = 'Profile';
 
-    $data['userProfile'] = $this->user->getUserProfileById($id);
-    $data['JmlPending'] = $this->admin->countUserUnactive();
+    $data['userProfile'] = $this->user->getUserProfileById($_SESSION['Login']['Id']);
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
     $data['url'] = $this->admin->parseURL();
 
     $this->view('templates/header', $data);
@@ -463,6 +489,135 @@ class Admin extends Controller
     } else {
       SweetAlert::setSwalAlert("Gagal", "Profile gagal diubah", "error");
       header('Location:' . BASEURL . '/admin/userprofile/' . $_SESSION['Login']['Id']);
+      exit;
+    }
+  }
+  public function pemesanan()
+  {
+    $this->db->query('SELECT * FROM transaksi ORDER BY NoTransaksi DESC LIMIT 1');
+    $latest = $this->db->single();
+
+    if ($latest) {
+      $data['autoIdTransaksi'] = $this->admin->autonumber($latest['NoTransaksi'], 3, 5);
+    } else {
+      $data['autoIdTransaksi'] = 'TRS00001';
+    }
+
+    $data['judul'] = 'Pemesanan';
+
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
+    $data['url'] = $this->admin->parseURL();
+    $data['Pelanggan'] = $this->pelanggan->getAllPelanggan();
+    $data['Pemesanan'] = $this->transaksi->getAllPemesanan();
+    $data['MobilKosong'] = $this->mobil->mobilKosong();
+    $data['SopirKosong'] = $this->sopir->SopirKosong();
+
+    $this->view('templates/header', $data);
+    $this->view('templates/navadmin', $data);
+    $this->view('karyawan/pemesanan', $data);
+    $this->view('templates/footerdashboard');
+    $this->view('templates/footer');
+  }
+  public function tambahPemesanan()
+  {
+    if ($this->transaksi->tambahDataPemesanan($_POST) > 0) {
+      SweetAlert::setSwalAlert("Pesanan Berhasil", "Pesanan baru berhasil ditambahkan! Tolong ingatkan penyewa untuk segera membayar.", "success");
+      header('Location:' . BASEURL . '/admin/pemesanan');
+      exit;
+    } else {
+      SweetAlert::setSwalAlert("Pesanan Gagal", "Pesanan baru gagal ditambahkan!", "error");
+      header('Location:' . BASEURL . '/admin/pemesanan');
+      exit;
+    }
+  }
+  public function AmbilMobil()
+  {
+    if ($this->transaksi->konfirmasiAmbilMobil($_POST) > 0) {
+      SweetAlert::setSwalAlert("Konfirmasi Berhasil", "Rental mobil mulai berjalan, tolong ingatkan penyewa untuk mengembalikan mobil tepat waktu.", "info");
+      header('Location:' . BASEURL . '/admin/pemesanan');
+      exit;
+    } else {
+      SweetAlert::setSwalAlert("Konfirmasi Gagal", "Konfirmasi pengambilan mobil gagal!", "error");
+      header('Location:' . BASEURL . '/admin/pemesanan');
+      exit;
+    }
+  }
+  public function batalPesanan()
+  {
+    if ($this->transaksi->batalkanPesananMobil($_POST) > 0) {
+      SweetAlert::setSwalAlert("Berhasil", "Pesanan mobil berhasil dibatalkan.", "success");
+      header('Location:' . BASEURL . '/admin/pemesanan');
+      exit;
+    } else {
+      SweetAlert::setSwalAlert("Gagal", "Pesanan mobil gagal dibatalkan.", "error");
+      header('Location:' . BASEURL . '/admin/pemesanan');
+      exit;
+    }
+  }
+  public function pesananSelesai()
+  {
+    if ($this->transaksi->pesananMobilSelesai($_POST) > 0) {
+      SweetAlert::setSwalAlert("Rental Selesai", "Rental mobil telah selesai, untuk melihat riwayat silahkan ke Transaksi", "success");
+      header('Location:' . BASEURL . '/admin/pemesanan');
+      exit;
+    } else {
+      SweetAlert::setSwalAlert("Rental Selesai Gagal", "Rental mobil belum selesai.", "error");
+      header('Location:' . BASEURL . '/admin/pemesanan');
+      exit;
+    }
+  }
+  public function transaksi()
+  {
+    $data['judul'] = 'Transaksi';
+
+    $data['url'] = $this->admin->parseURL();
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
+    $data['Transaksi'] = $this->transaksi->getAllTransaksi();
+
+    $this->view('templates/header', $data);
+    $this->view('templates/navadmin', $data);
+    $this->view('karyawan/transaksi', $data);
+    $this->view('templates/footerdashboard');
+    $this->view('templates/footer');
+  }
+  public function arsip_transaksi()
+  {
+    $data['judul'] = 'Arsip Transaksi';
+
+    $data['url'] = $this->admin->parseURL();
+    $data['JmlPending'] = $this->count->countUserUnactive();
+    $data['JmlProses'] = $this->count->countProsesTransaksi();
+    $data['Transaksi'] = $this->transaksi->getAllArsipTransaksi();
+
+    $this->view('templates/header', $data);
+    $this->view('templates/navadmin', $data);
+    $this->view('karyawan/arsip_transaksi', $data);
+    $this->view('templates/footerdashboard');
+    $this->view('templates/footer');
+  }
+  public function konfirmasiArsip($NoTransaksi)
+  {
+    if ($this->transaksi->arsipkanTransaksi($NoTransaksi) > 0) {
+      SweetAlert::setSwalAlert("Berhasil", "Transaksi berhasil diarsipkan!", "success");
+      header('Location:' . BASEURL . '/admin/transaksi');
+      exit;
+    } else {
+      SweetAlert::setSwalAlert("Gagal", "Transaksi gagal diarsipkan!", "error");
+      header('Location:' . BASEURL . '/admin/transaksi');
+      exit;
+    }
+  }
+  public function batalArsip($NoTransaksi)
+  {
+    if ($this->transaksi->batalkanArsipTransaksi($NoTransaksi) > 0) {
+      SweetAlert::setSwalAlert("Berhasil", "Transaksi berhasil dikembalikan!", "success");
+      header('Location:' . BASEURL . '/admin/arsip_transaksi');
+      exit;
+    } else {
+      SweetAlert::setSwalAlert("Gagal", "Transaksi gagal dikembalikan!", "error");
+      header('Location:' . BASEURL . '/admin/arsip_transaksi');
       exit;
     }
   }

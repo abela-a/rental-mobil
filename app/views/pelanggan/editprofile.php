@@ -131,7 +131,7 @@
 
           <div class="form-group">
             <label for="JenisKelamin">Jenis Kelamin</label>
-            <select class="custom-select" name="JenisKelamin" id="JenisKelamin">
+            <select class="browser-default custom-select" name="JenisKelamin" id="JenisKelamin">
               <option value="L" <?php if ($data['userProfile']['JenisKelamin'] == 'L') {
                                   echo 'selected';
                                 } ?>>Laki-laki</option>

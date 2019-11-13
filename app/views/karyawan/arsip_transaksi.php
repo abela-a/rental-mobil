@@ -1,3 +1,4 @@
+<!-- TOMBOL -->
 <div class="container" id="main-menu">
   <div class="row mb-4">
     <div class="col-md clear-fix">
@@ -11,6 +12,7 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col" class="text-center">Kode Transaksi</th>
+          <th scope="col" class="text-center">Identitas Penyewa</th>
           <th scope="col" class="text-center">Mobil</th>
           <th scope="col" class="text-center">Tanggal Mulai</th>
           <th scope="col" class="text-center">Lama Rental</th>
@@ -22,7 +24,7 @@
         <?php
         // TAMPILKAN BARIS
         $no = 1;
-        foreach ($data['riwayatTransaksi'] as $Transaksi) : ?>
+        foreach ($data['Transaksi'] as $Transaksi) : ?>
 
           <tr>
             <td><?= $no++ ?></td>
@@ -38,6 +40,7 @@
                 <?= ucfirst($Transaksi['StatusTransaksi']); ?>
               </span>
             </td>
+            <td><?= ucfirst($Transaksi['Nama']); ?></td>
             <td>
               <?= '[ '
                   . $Transaksi['NoPlat']
@@ -53,14 +56,19 @@
               Rp.<span class="uang"><?= ucfirst($Transaksi['Total_Bayar']); ?></span>,-
             </td>
             <td class="text-center" style="width:50px">
-              <button class="btn grey lighten-2 btn-sm shadow-none" data-toggle="modal" data-target="#detail<?= $Transaksi['NoTransaksi'] ?>">
+              <button type="button" class="dropdown btn grey lighten-2 btn-sm shadow-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
               </button>
               <a class="btn btn-info btn-sm shadow-none" href="<?= BASEURL ?>/laporan/kwitansi/<?= $Transaksi['NoTransaksi'] ?>">
                 <i class="fa fa-print fa-fw" aria-hidden="true"></i>
               </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <button class="dropdown-item" data-toggle="modal" data-target="#detail<?= $Transaksi['NoTransaksi'] ?>">Detail</button>
+                <a class="dropdown-item" href="<?= BASEURL ?>/<?= $_SESSION['Login']['Role'] ?>/batalArsip/<?= $Transaksi['NoTransaksi'] ?>">Batal arsipkan</a>
+              </div>
             </td>
           </tr>
+
 
           <!-- MODAL DETAIL -->
           <div class="modal fade center" id="detail<?= $Transaksi['NoTransaksi'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

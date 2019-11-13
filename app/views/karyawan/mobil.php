@@ -16,6 +16,7 @@
           <th scope="col" class="text-center">No Polisi</th>
           <th scope="col" class="text-center">Foto</th>
           <th scope="col" class="text-center">Mobil</th>
+          <th scope="col" class="text-center">Informasi</th>
           <th scope="col" class="text-center">Harga Sewa</th>
           <th scope="col" class="text-center">Aksi</th>
         </tr>
@@ -32,25 +33,32 @@
             <td><?= ucfirst($mobil['NoPlat']); ?></td>
             <td class="text-center">
               <a data-toggle="modal" data-target="#foto<?= $mobil['id']; ?>">
-                <img class="img-thumbnail" width="100" src="<?= BASEURL ?>/img/fotomobil/<?= $mobil['FotoMobil']; ?>">
+                <img class="" width="100" src="<?= BASEURL ?>/img/fotomobil/<?= $mobil['FotoMobil']; ?>">
               </a>
             </td>
             <td>
               <?= ucfirst($mobil['NmMerk']); ?>
               <?= ucfirst($mobil['NmType']); ?>
-              <span class="ml-2 shadow-none badge 
+            </td>
+            <td>
+              <h6>
+                <span class="ml-2 shadow-none badge 
             <?php if ($mobil['StatusRental'] == 'Kosong') echo 'badge-success';
               else if ($mobil['StatusRental'] == 'Dipesan') echo 'badge-warning';
               else echo 'badge-danger';
               ?>
             ">
-                <?= ucfirst($mobil['StatusRental']); ?>
-              </span>
+                  <?= ucfirst($mobil['StatusRental']); ?>
+                </span>
+                <span class="badge indigo shadow-none"><?= $mobil['JenisMobil'] ?></span>
+                <span class="badge badge-light shadow-none"><?= $mobil['Transmisi'] ?></span>
+              </h6>
             </td>
             <td>Rp.<span class="uang"><?= $mobil['HargaSewa']; ?></span>,-</td>
-            <td class="text-center">
-              <button class="btn btn-warning shadow-none" data-toggle="modal" data-target="#edit<?= $mobil['id']; ?>"><i class="fas fa-fw fa-edit"></i></button>
-              <button class="btn btn-danger shadow-none" data-toggle="modal" data-target="#hapus<?= $mobil['id']; ?>"><i class="fas fa-fw fa-trash"></i></button>
+
+            <td class="text-center" style="width:150px">
+              <button class="btn btn-sm btn-warning shadow-none" data-toggle="modal" data-target="#edit<?= $mobil['id']; ?>"><i class="fas fa-fw fa-edit"></i></button>
+              <button class="btn btn-sm btn-danger shadow-none" data-toggle="modal" data-target="#hapus<?= $mobil['id']; ?>"><i class="fas fa-fw fa-trash"></i></button>
             </td>
           </tr>
 
@@ -105,6 +113,29 @@
                       <label for="IdType">Tipe</label>
                       <input type="hidden" name="IdType" value="<?= $mobil['IdType']; ?>">
                       <input type="text" class="form-control" id="NmType" name="NmType" required autocomplete="off" value="<?= $mobil['NmType'] ?>" readonly>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="JenisMobil">Jenis Mobil</label>
+                      <select class="browser-default custom-select" name="JenisMobil" id="JenisMobil">
+                        <option value="" selected disabled>Pilih Jenis Mobil</option>
+                        <option <?php if ($mobil['JenisMobil'] == 'MPV') echo 'selected' ?>>MPV</option>
+                        <option <?php if ($mobil['JenisMobil'] == 'City') echo 'selected' ?>>City</option>
+                        <option <?php if ($mobil['JenisMobil'] == 'Sedan') echo 'selected' ?>>Sedan</option>
+                        <option <?php if ($mobil['JenisMobil'] == 'SUV') echo 'selected' ?>>SUV</option>
+                        <option <?php if ($mobil['JenisMobil'] == 'Double Cabin') echo 'selected' ?>>Double Cabin</option>
+                        <option <?php if ($mobil['JenisMobil'] == 'Other') echo 'selected' ?>>Other</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Transmisi">Jenis Transmisi</label>
+                      <select class="browser-default custom-select" name="Transmisi" id="Transmisi">
+                        <option value="" selected disabled>Pilih Transmisi Mobil</option>
+                        <option <?php if ($mobil['Transmisi'] == 'Matic') echo 'selected' ?>>Matic</option>
+                        <option <?php if ($mobil['JenisMobil'] == 'Manual') echo 'selected' ?>>Manual</option>
+                        <option <?php if ($mobil['JenisMobil'] == 'CVT') echo 'selected' ?>>CVT</option>
+                      </select>
                     </div>
 
                     <div class="form-group">
@@ -217,7 +248,28 @@
             </select>
           </div>
 
-          <input type="hidden" name="StatusRental" value="Kosong">
+          <div class="form-group">
+            <label for="JenisMobil">Jenis Mobil</label>
+            <select class="browser-default custom-select" name="JenisMobil" id="JenisMobil">
+              <option value="" selected disabled>Pilih Jenis Mobil</option>
+              <option>MPV</option>
+              <option>City</option>
+              <option>Sedan</option>
+              <option>SUV</option>
+              <option>Double Cabin</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="Transmisi">Jenis Transmisi</label>
+            <select class="browser-default custom-select" name="Transmisi" id="Transmisi">
+              <option value="" selected disabled>Pilih Jenis Transmisi</option>
+              <option>Matic</option>
+              <option>Manual</option>
+              <option>CVT</option>
+            </select>
+          </div>
 
           <div class="form-group">
             <label for="HargaSewa">Harga Sewa</label>

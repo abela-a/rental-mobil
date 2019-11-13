@@ -13,6 +13,28 @@ class Mobil_model
     $this->db->query("SELECT * FROM viewMobil ORDER BY id DESC");
     return $this->db->resultSet();
   }
+  public function getMobilById($IdMobil)
+  {
+    $this->db->query("SELECT DISTINCT * FROM mobil WHERE id = :IdMobil");
+    $this->db->bind('IdMobil', $IdMobil);
+    return $this->db->single();
+  }
+  public function getMobilRentalById($IdMobil)
+  {
+    $this->db->query("SELECT * FROM viewMobil WHERE id = :IdMobil");
+    $this->db->bind('IdMobil', $IdMobil);
+    return $this->db->single();
+  }
+  public function mobilKosong()
+  {
+    $this->db->query("SELECT * FROM viewmobil WHERE StatusRental = 'Kosong'");
+    return $this->db->resultSet();
+  }
+  public function mobilKosongLimit()
+  {
+    $this->db->query("SELECT * FROM viewmobil WHERE StatusRental = 'Kosong' LIMIT 10");
+    return $this->db->resultSet();
+  }
   public function getMerkOption()
   {
     $this->db->query("SELECT DISTINCT * FROM merk");
@@ -70,14 +92,16 @@ class Mobil_model
   {
     $fotoMobil = $this->uploadGambarMobil();
     $hargaSewa = preg_replace('/\D/', '', $data['HargaSewa']);
-    $query = "INSERT INTO mobil VALUES('', :NoPlat, :KdMerk, :IdType, :StatusRental, :HargaSewa, :FotoMobil)";
+    $query = "INSERT INTO mobil VALUES('', :NoPlat, :KdMerk, :IdType, :StatusRental, :HargaSewa, :JenisMobil, :Transmisi, :FotoMobil)";
 
     $this->db->query($query);
 
     $this->db->bind('NoPlat', $data['NoPlat']);
     $this->db->bind('KdMerk', $data['KdMerk']);
     $this->db->bind('IdType', $data['IdType']);
-    $this->db->bind('StatusRental', $data['StatusRental']);
+    $this->db->bind('StatusRental', 'Kosong');
+    $this->db->bind('JenisMobil', $data['JenisMobil']);
+    $this->db->bind('Transmisi', $data['Transmisi']);
     $this->db->bind('HargaSewa', $hargaSewa);
     $this->db->bind('FotoMobil', $fotoMobil);
 
@@ -111,6 +135,8 @@ class Mobil_model
               NoPlat = :NoPlat,
               KdMerk = :KdMerk,
               IdType = :IdType, 
+              JenisMobil = :JenisMobil,
+              Transmisi = :Transmisi,
               HargaSewa = :HargaSewa
               WHERE id = :id";
       $this->db->query($query);
@@ -118,6 +144,8 @@ class Mobil_model
       $this->db->bind('NoPlat', $data['NoPlat']);
       $this->db->bind('KdMerk', $data['KdMerk']);
       $this->db->bind('IdType', $data['IdType']);
+      $this->db->bind('JenisMobil', $data['JenisMobil']);
+      $this->db->bind('Transmisi', $data['Transmisi']);
       $this->db->bind('HargaSewa', $hargaSewa);
       $this->db->bind('id', $data['id']);
 
@@ -137,7 +165,9 @@ class Mobil_model
       $query = "UPDATE mobil SET 
               NoPlat = :NoPlat,
               KdMerk = :KdMerk,
-              IdType = :IdType, 
+              IdType = :IdType,
+              JenisMobil = :JenisMobil,
+              Transmisi = :Transmisi,
               HargaSewa = :HargaSewa,
               FotoMobil = :FotoMobil
               WHERE id = :id";
@@ -146,6 +176,8 @@ class Mobil_model
       $this->db->bind('NoPlat', $data['NoPlat']);
       $this->db->bind('KdMerk', $data['KdMerk']);
       $this->db->bind('IdType', $data['IdType']);
+      $this->db->bind('JenisMobil', $data['JenisMobil']);
+      $this->db->bind('Transmisi', $data['Transmisi']);
       $this->db->bind('HargaSewa', $hargaSewa);
       $this->db->bind('FotoMobil', $fotoMobil);
       $this->db->bind('id', $data['id']);

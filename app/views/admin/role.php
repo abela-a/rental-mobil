@@ -36,9 +36,9 @@
                   <?php endforeach; ?>
                 </select>
               </td>
-              <td class="text-center">
+              <td class="text-center" style="width:100px">
                 <input type="hidden" name="id" value="<?= $user['id'] ?>">
-                <button class="btn btn-success text-white shadow-none" type="submit" title="Update Role">
+                <button class="btn btn-sm btn-success text-white shadow-none" type="submit" title="Update Role">
                   <i class=" fa fa-check" aria-hidden="true"></i>
                 </button>
               </td>
