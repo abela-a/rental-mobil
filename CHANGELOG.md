@@ -10,28 +10,21 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 > Berikut fitur-fitur yang akan **ditambahkan**, **fix** bug yang akan dilakukan, **perubahan** yang akan disimpan, dan **penghapusan** fitur yang akan dilakukan dikemudian hari.
 
-## **[1.1.0]** - [Tanggal Selesai]
+## **[1.2.0]** - [Tanggal Selesai]
 
 ##### ✅ Added
 
-* [ ]  Sistem Transaksi
 * [ ]  Section Daftar Mobil
 * [ ]  Section Layanan
 * [ ]  Section Testimonial
 
 ##### 🔄 Changed
 
-* [ ]  Tabel Sopir dan tabel transaksi
-* [ ]  Button di table menjadi kecil
-
 ##### 📝 Deprecated
 
 ##### ❌ Removed
 
 ##### 🔨 Fixed
-
-* [ ]  Role Karyawan
-* [ ]  Role Pelanggan
 
 ****
 
@@ -40,6 +33,40 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 > Versi yang yang telah dapat dipakai. Dan semoga fiturnya sudah tidak mempunyai bug.
 
 🔥 [Download Latest Version](https://gitlab.com/abela-a/RentalMobil/-/releases)
+
+## **[1.1.0]** - [2019-11-13]
+
+##### ✅ Added
+
+- Sistem Transaksi
+  - Pemesanan
+  - Transaksi
+  - Arsip Transaksi
+  - Pemesanan Online
+- Laporan
+- Kwitansi
+- Dashboard
+  - Status Aplikasi
+  - Stepper Latest Transaksi
+
+##### 🔄 Changed
+
+- Tabel Sopir, tabel transaksi, dan tabel mobil
+  - JenisMobil dan Transmisi @ tabel mobil
+- Method GET User Profile menjadi SESSION
+- Button di table menjadi kecil
+
+##### 📝 Deprecated
+
+##### ❌ Removed
+
+##### 🔨 Fixed
+
+- Role Karyawan
+- Role Pelanggan
+- SweetAlert
+- Autonumber, jika tabel sebelumnya kosong
+- Select jenis kelamin @ editprofile
 
 ## **[1.0.0]** - [2019-10-19]
 

@@ -18,7 +18,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 2. Multiusers
 3. Multiroles
 4. Dashboard dan Homepage
-5. Manajemen Transaksi (Coming Soon)
+5. Manajemen Transaksi
 6. Manajemen Karyawan, Pelanggan, Role, Sopir dan Akun Baru
 7. Manajemen Merk, Type, dan Data Mobil
 8. Mengubah foto profile user
@@ -82,7 +82,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 
 ## Cara Mengatur Aplikasi
 
-1. Coming Soon
+1. Coming Soon :)
 
 ## Database dan Tabel
 
@@ -113,6 +113,8 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 | IdType       | varchar | 10     | -                           |
 | StatusRental | enum    | 0      | Kosong, Jalan, Dipesan      |
 | HargaSewa    | double  | 10     | -                           |
+| JenisMobil   | varchar | 20     | -                           |
+| Transmisi    | enum    | 0      | Manual, Matic, CVT          |
 | FotoMobil    | varchar | 100    | -                           |
 
 ### Tabel users
@@ -151,30 +153,31 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 | JenisKelamin | enum    | 0      | Laki-laki, Perempuan        |
 | NoSim        | char    | 20     | -                           |
 | TarifPerhari | double  | 10     | -                           |
+| StatusSopir  | enum    | 0      | Busy, Booked, Free          |
 
 ### Tabel transaksi
 
-| Name              | Type    | Lenght | Attribute   |
-| ----------------- | ------- | ------ | ----------- |
-| NoTransaksi       | int     | 11     | primary_key |
-| NIK               | char    | 13     | -           |
-| NoPlat            | varchar | 10     | -           |
-| TglPesan          | date    | 0      | -           |
-| TglPinjam         | date    | 0      | -           |
-| JamPinjam         | time    | 0      | -           |
-| TglKembaliRencana | date    | 0      | -           |
-| JamKembaliRencana | time    | 0      | -           |
-| TglKembaliReal    | date    | 0      | -           |
-| JamKembaliReal    | time    | 0      | -           |
-| Kerusakan         | text    | 0      | -           |
-| Denda             | double  | 11     | -           |
-| BiayaKerusakan    | double  | 11     | -           |
-| BiayaBBM          | double  | 11     | -           |
-| IdSopir           | char    | 6      | -           |
-| BiayaSopir        | double  | 11     | -           |
-| Total             | double  | 11     | -           |
-| status            | enum    | 0      | ""          |
-| new               | char    | 1      | -           |
+| Name                       | Type   | Lenght | Attribute                            |
+| -------------------------- | ------ | ------ | ------------------------------------ |
+| NoTransaksi                | int    | 11     | primary_key                          |
+| NIK                        | char   | 13     | -                                    |
+| Id_Mobil                   | int    | 3      | -                                    |
+| Tanggal_Pesan              | date   | 0      | -                                    |
+| Tanggal_Pinjam             | date   | 0      | -                                    |
+| Tanggal_Kembali_Rencana    | date   | 0      | -                                    |
+| Tanggal_Kembali_Sebenarnya | date   | 0      | -                                    |
+| LamaRental                 | int    | 3      | -                                    |
+| LamaDenda                  | int    | 3      | -                                    |
+| Kerusakan                  | text   | 0      | -                                    |
+| IdSopir                    | char   | 6      | -                                    |
+| BiayaBBM                   | double | 11     | -                                    |
+| BiayaKerusakan             | double | 11     | -                                    |
+| Denda                      | double | 11     | -                                    |
+| Total_Bayar                | double | 11     | -                                    |
+| Jumlah_Bayar               | double | 11     | -                                    |
+| Kembalian                  | double | 11     | -                                    |
+| StatusTransaksi            | enum   | 0      | Proses, Mulai, Batal, Arsip, Selesai |
+| Arsip                      | int    | 1      |                                      |
 
 ## Changelog
 
