@@ -146,6 +146,14 @@ class Pelanggan extends Controller
   }
   public function reservasi()
   {
-    var_dump($_POST);
+    if ($this->transaksi->tambahDataPemesanan($_POST) > 0) {
+      SweetAlert::setSwalAlert("Pesanan Berhasil", "Pesanan baru berhasil ditambahkan! Silahkan datang ke lokasi untuk membayar dan mengambil mobil.", "success");
+      header('Location:' . BASEURL . '/pelanggan');
+      exit;
+    } else {
+      SweetAlert::setSwalAlert("Pesanan Gagal", "Pesanan baru gagal ditambahkan!", "error");
+      header('Location:' . BASEURL . '/pelanggan');
+      exit;
+    }
   }
 }
