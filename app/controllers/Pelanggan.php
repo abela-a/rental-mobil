@@ -123,8 +123,18 @@ class Pelanggan extends Controller
   }
   public function rentalmobil($IdMobil)
   {
+    $this->db->query('SELECT * FROM transaksi ORDER BY NoTransaksi DESC LIMIT 1');
+    $latest = $this->db->single();
+
+    if ($latest) {
+      $data['autoIdTransaksi'] = $this->admin->autonumber($latest['NoTransaksi'], 3, 5);
+    } else {
+      $data['autoIdTransaksi'] = 'TRS00001';
+    }
+
     $data['judul'] = 'Rental Mobil';
 
+    $data['SopirKosong'] = $this->sopir->SopirKosong();
     $data['mobilrental'] = $this->mobil->getMobilRentalById($IdMobil);
     $data['url'] = $this->admin->parseURL();
 
