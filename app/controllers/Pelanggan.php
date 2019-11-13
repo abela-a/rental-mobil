@@ -121,6 +121,19 @@ class Pelanggan extends Controller
     $this->view('templates/footerdashboard');
     $this->view('templates/footer');
   }
+  public function rentalmobil($IdMobil)
+  {
+    $data['judul'] = 'Rental Mobil';
+
+    $data['mobilrental'] = $this->mobil->getMobilRentalById($IdMobil);
+    $data['url'] = $this->admin->parseURL();
+
+    $this->view('templates/header', $data);
+    $this->view('templates/navpelanggan', $data);
+    $this->view('pelanggan/rentalmobil', $data);
+    $this->view('templates/footerdashboard');
+    $this->view('templates/footer');
+  }
   public function reservasi()
   {
     var_dump($_POST);

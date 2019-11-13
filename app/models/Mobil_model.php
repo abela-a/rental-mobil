@@ -19,6 +19,12 @@ class Mobil_model
     $this->db->bind('IdMobil', $IdMobil);
     return $this->db->single();
   }
+  public function getMobilRentalById($IdMobil)
+  {
+    $this->db->query("SELECT * FROM viewMobil WHERE id = :IdMobil");
+    $this->db->bind('IdMobil', $IdMobil);
+    return $this->db->single();
+  }
   public function mobilKosong()
   {
     $this->db->query("SELECT * FROM viewmobil WHERE StatusRental = 'Kosong'");
