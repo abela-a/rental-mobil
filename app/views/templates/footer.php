@@ -32,7 +32,6 @@
 <script src="<?= BASEURL; ?>/js/datepicker_sett.js"></script>
 <!--TRANSAKSI -->
 <script src="<?= BASEURL; ?>/js/transaksi.js"></script>
-<script src="<?= BASEURL; ?>/js/reservasi.js"></script>
 <!-- MY SCRIPT -->
 <script src="<?= BASEURL; ?>/js/script.js"></script>
 <!-- GET -->
