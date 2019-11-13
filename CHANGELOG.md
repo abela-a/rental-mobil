@@ -10,13 +10,12 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 > Berikut fitur-fitur yang akan **ditambahkan**, **fix** bug yang akan dilakukan, **perubahan** yang akan disimpan, dan **penghapusan** fitur yang akan dilakukan dikemudian hari.
 
-## **[1.2.0]** - [Tanggal Selesai]
+## **[1.1.1]** - [Tanggal Selesai]
 
 ##### ✅ Added
 
 * [ ]  Section Daftar Mobil
 * [ ]  Section Layanan
-* [ ]  Section Testimonial
 
 ##### 🔄 Changed
 
