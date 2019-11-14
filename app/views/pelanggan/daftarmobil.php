@@ -5,10 +5,10 @@
       </button>
     </div>
   </div>
-  <div class="bg-white shadow-sm rounded pt-5 pb-4 px-5">
+  <div class="pt-2">
     <div class="card-columns">
       <?php foreach ($data['mobil'] as $mobil) : ?>
-        <div class="card mb-4">
+        <div class="card shadow-sm mb-4">
           <img class=" p-4 card-img-top" src="<?= BASEURL ?>/img/fotomobil/<?= $mobil['FotoMobil']; ?>">
           <div class="card-body">
             <h5 class="card-title"><?= $mobil['NmMerk'] . ' ' . $mobil['NmType'] ?></h5>
