@@ -8,9 +8,9 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 
 ## Screenshot
 
-![Homepage](/uploads/d5197ae9f8916d411feb73ff6a00111a/Homepage.png)
+![Homepage](/uploads/9264cde97a1dd116e81316e838559a28/Homepage.png)
 
-![Dashboard](/uploads/ad1a22f7d52b235d427f72fbc6ee0fd2/Dashboard.png)
+![Dashboard](/uploads/a18c43332b06a042f27d0eb6983b3056/Dashboard.gif)
 
 ## Fitur
 
@@ -24,7 +24,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 8. Mengubah foto profile user
 9. ... dll
 
-## Cara Install
+## Cara Install dan Mengatur Aplikasi
 
 1. Download aplikasi penyedia web server. *Saran saya Anda dapat menggunakan XAMPP.*
 2. Instal XAMPP / Aplikasi web server.
@@ -79,10 +79,6 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
    ```
 8. Buka browser Anda dan arahkan ke url `localhost/nama_aplikasi_anda/public`.
 9. Jika tidak ada error, maka Anda sudah siap untuk mengatur aplikasi. `;)`
-
-## Cara Mengatur Aplikasi
-
-1. Coming Soon :)
 
 ## Database dan Tabel
 
