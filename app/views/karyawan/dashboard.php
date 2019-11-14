@@ -51,13 +51,13 @@
         </div>
 
         <?php foreach ($data['LatestTransaksi'] as $lt) : ?>
-          <div class="item-transaksi">
+          <div class="item-transaksi mt-3">
             <div class="font-weight-bold text-primary">
               <?= $lt['NoTransaksi'] ?>
             </div>
             <div class="font-weight-bolder"><?= $lt['Nama'] ?></div>
             <div>
-              <i class="fas fa-user-tie fa-fw mr-1"></i>
+              <span class="badge badge-light shadow-none"><?= $lt['NoPlat'] ?></span>
               <span class="badge badge-light shadow-none">
                 <?php
                   if ($lt['Id_Sopir'] == 'SPR000') {
@@ -67,20 +67,12 @@
                   }
                   ?>
               </span>
-            </div>
-            <div>
-              <i class="fas fa-car fa-fw mr-1"></i>
-              <span class="badge badge-light shadow-none"><?= $lt['NoPlat'] ?></span>
-            </div>
-            <div>
-              <i class="fas fa-info-circle fa-fw mr-1"></i>
               <?php if ($lt['StatusTransaksi'] == 'Proses') : ?>
                 <span class="badge badge-primary shadow-none"><?= $lt['StatusTransaksi'] ?></span>
               <?php else : ?>
                 <span class="badge badge-danger shadow-none"><?= $lt['StatusTransaksi'] ?></span>
               <?php endif ?>
             </div>
-            <hr class="my-2">
           </div>
         <?php endforeach; ?>
 
