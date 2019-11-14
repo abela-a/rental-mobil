@@ -8,6 +8,26 @@ class Transaksi_model
   {
     $this->db = new Database;
   }
+  public function autonumber($id_terakhir, $panjang_kode, $panjang_angka)
+  {
+    // mengambil nilai kode ex: KNS0015 hasil KNS
+    $kode = substr($id_terakhir, 0, $panjang_kode);
+
+    // mengambil nilai angka
+    // ex: KNS0015 hasilnya 0015
+    $angka = substr($id_terakhir, $panjang_kode, $panjang_angka);
+
+    // menambahkan nilai angka dengan 1
+    // kemudian memberikan string 0 agar panjang string angka menjadi 4
+    // ex: angka baru = 6 maka ditambahkan strig 0 tiga kali
+    // sehingga menjadi 0006
+    $angka_baru = str_repeat("0", $panjang_angka - strlen($angka + 1)) . ($angka + 1);
+
+    // menggabungkan kode dengan nilai angka baru
+    $id_baru = $kode . $angka_baru;
+
+    return $id_baru;
+  }
   public function getAllPemesanan()
   {
     $this->db->query('SELECT * FROM viewtransaksi WHERE StatusTransaksi != "Selesai" AND StatusTransaksi != "Batal" ORDER BY NoTransaksi DESC');
@@ -33,6 +53,16 @@ class Transaksi_model
     $this->db->bind('id', $data['Sopir']);
     $this->db->execute();
 
+    // AUTO NO TRANSAKSI
+    $this->db->query('SELECT * FROM transaksi ORDER BY NoTransaksi DESC LIMIT 1');
+    $latest = $this->db->single();
+
+    if ($latest) {
+      $autoNoTransaksi = $this->autonumber($latest['NoTransaksi'], 3, 5);
+    } else {
+      $autoNoTransaksi = 'TRS00001';
+    }
+
     // TRANSAKSI
     $query = 'INSERT INTO transaksi 
     (NoTransaksi, NIK, Id_Mobil, Tanggal_Pesan, Tanggal_Pinjam, Tanggal_Kembali_Rencana, LamaRental, Id_Sopir, Total_Bayar, StatusTransaksi, Arsip) 
@@ -40,7 +70,7 @@ class Transaksi_model
 
     $this->db->query($query);
 
-    $this->db->bind('NoTransaksi', $data['NoTransaksi']);
+    $this->db->bind('NoTransaksi', $autoNoTransaksi);
     $this->db->bind('NIK', $data['Identitas']);
     $this->db->bind('Id_Mobil', $data['Mobil']);
     $this->db->bind('Tanggal_Pesan', $data['Tanggal_Pesan_submit']);
