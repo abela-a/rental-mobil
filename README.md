@@ -110,7 +110,7 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 | id           | int     | 3      | auto_increment, primary_key |
 | NoPlat       | varchar | 10     | primary_key                 |
 | KdMerk       | varchar | 20     | -                           |
-| IdType       | varchar | 10     | -                           |
+| IdType       | varchar | 20     | -                           |
 | StatusRental | enum    | 0      | Kosong, Jalan, Dipesan      |
 | HargaSewa    | double  | 10     | -                           |
 | JenisMobil   | varchar | 20     | -                           |

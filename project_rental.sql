@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-11-13 12:52:12
+Date: 2019-11-14 16:52:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -49,7 +49,7 @@ CREATE TABLE `mobil` (
   `id` int(3) NOT NULL AUTO_INCREMENT,
   `NoPlat` varchar(10) NOT NULL,
   `KdMerk` varchar(20) DEFAULT NULL,
-  `IdType` varchar(10) DEFAULT NULL,
+  `IdType` varchar(20) DEFAULT NULL,
   `StatusRental` enum('Jalan','Dipesan','Kosong') DEFAULT NULL,
   `HargaSewa` double(10,0) DEFAULT NULL,
   `JenisMobil` varchar(20) DEFAULT NULL,
@@ -63,9 +63,9 @@ CREATE TABLE `mobil` (
 -- ----------------------------
 INSERT INTO `mobil` VALUES ('33', 'DD 34 AD', 'TYT', 'AVZ-V-AT', 'Kosong', '315000', 'MPV', 'Matic', 'FotoMobil-1573251530-08-Nov-2019.png');
 INSERT INTO `mobil` VALUES ('34', 'DD 1717 AA', 'HND', 'MBL-S-MT', 'Kosong', '320000', 'MPV', 'Manual', 'FotoMobil-1573300731-09-Nov-2019.jpg');
-INSERT INTO `mobil` VALUES ('35', 'DD 2378 AO', 'HND', 'MBL-RS', 'Jalan', '335000', 'MPV', 'CVT', 'FotoMobil-1573300839-09-Nov-2019.png');
+INSERT INTO `mobil` VALUES ('35', 'DD 2378 AO', 'HND', 'MBL-RS', 'Kosong', '335000', 'MPV', 'CVT', 'FotoMobil-1573300839-09-Nov-2019.png');
 INSERT INTO `mobil` VALUES ('37', 'DD 3421 YU', 'SZK', 'ER3-GX-AT', 'Kosong', '284000', 'MPV', 'Matic', 'FotoMobil-1573305978-09-Nov-2019.png');
-INSERT INTO `mobil` VALUES ('38', 'DD 8247 AJ', 'NSN', 'GL-HWS', 'Dipesan', '312000', 'MPV', 'CVT', 'FotoMobil-1573301562-09-Nov-2019.png');
+INSERT INTO `mobil` VALUES ('38', 'DD 8247 AJ', 'NSN', 'GL-HWS', 'Kosong', '312000', 'MPV', 'CVT', 'FotoMobil-1573301562-09-Nov-2019.png');
 INSERT INTO `mobil` VALUES ('39', 'DE 1928 AA', 'DHT', 'XNA-R', 'Kosong', '278000', 'MPV', 'Manual', 'FotoMobil-1573302357-09-Nov-2019.jpg');
 INSERT INTO `mobil` VALUES ('40', 'DF 2421 AT', 'TYT', 'YRS-E-AT', 'Dipesan', '290000', 'City', 'Matic', 'FotoMobil-1573303283-09-Nov-2019.png');
 INSERT INTO `mobil` VALUES ('41', 'DD 5432 GG', 'SZK', 'SWF-S', 'Kosong', '300000', 'City', 'CVT', 'FotoMobil-1573303450-09-Nov-2019.png');
@@ -78,7 +78,7 @@ INSERT INTO `mobil` VALUES ('47', 'DD 129 MT', 'MBS', 'EXP-G-MT', 'Kosong', '370
 INSERT INTO `mobil` VALUES ('48', 'DD 90 FF', 'HND', 'CR-V-P-AT', 'Kosong', '385000', 'SUV', 'Matic', 'FotoMobil-1573307000-09-Nov-2019.png');
 INSERT INTO `mobil` VALUES ('49', 'DD 34 HH', 'TYT', 'R-TRDS-AT', 'Kosong', '365000', 'SUV', 'Matic', 'FotoMobil-1573307054-09-Nov-2019.png');
 INSERT INTO `mobil` VALUES ('50', 'DD 6464 KU', 'DHT', 'TRS-X-MT', 'Kosong', '377000', 'SUV', 'Manual', 'FotoMobil-1573307115-09-Nov-2019.png');
-INSERT INTO `mobil` VALUES ('51', 'DD 69 AW', 'TYT', 'FRT-VRZ-4x', 'Kosong', '400000', 'SUV', 'Matic', 'FotoMobil-1573307240-09-Nov-2019.png');
+INSERT INTO `mobil` VALUES ('51', 'DD 69 AW', 'TYT', 'FRT-VRZ-4x4-AT', 'Kosong', '400000', 'SUV', 'Matic', 'FotoMobil-1573307240-09-Nov-2019.png');
 
 -- ----------------------------
 -- Table structure for `sopir`
@@ -101,12 +101,12 @@ CREATE TABLE `sopir` (
 -- ----------------------------
 -- Records of sopir
 -- ----------------------------
-INSERT INTO `sopir` VALUES ('9', 'SPR000', '-', '-', '-', '-', 'L', '-', '0', 'Busy');
+INSERT INTO `sopir` VALUES ('9', 'SPR000', '-', '-', '-', '-', 'L', '-', '0', 'Free');
 INSERT INTO `sopir` VALUES ('10', 'SPR001', '172040', 'Muh. Rafly Hisyam', 'Taman Sudiang', '088812313211', 'L', '817381790', '210000', 'Free');
 INSERT INTO `sopir` VALUES ('11', 'SPR002', '172069', 'Wahyudi', 'Dekat penjual stiker', '081278991213', 'L', '19397147', '195000', 'Free');
 INSERT INTO `sopir` VALUES ('12', 'SPR003', '172043', 'Muhammad Atma Nugraha', 'Dg. Ramang City', '087312393987', 'L', '0138842917', '250000', 'Free');
 INSERT INTO `sopir` VALUES ('13', 'SPR004', '120308', 'Bang Kumis', 'Jl. Perumnas Sudiang', '081271289991', 'L', '12039138', '180000', 'Booked');
-INSERT INTO `sopir` VALUES ('14', 'SPR005', '172041', 'Muh. Saiful', 'Dekat tower, Laikang', '087823813115', 'L', '1923739', '174000', 'Booked');
+INSERT INTO `sopir` VALUES ('14', 'SPR005', '172041', 'Muh. Saiful', 'Dekat tower, Laikang', '087823813115', 'L', '1923739', '174000', 'Free');
 INSERT INTO `sopir` VALUES ('15', 'SPR006', '11308', 'Mamang Garox', 'Masih stay disini', '081169696969', 'L', '696969', '690000', 'Free');
 
 -- ----------------------------
@@ -141,8 +141,8 @@ CREATE TABLE `transaksi` (
 -- ----------------------------
 INSERT INTO `transaksi` VALUES ('TRS00001', '172060', '46', '2019-11-10', '2019-11-10', '2019-11-11', '2019-11-11', '1', '0', 'Rusak spion kanan', 'SPR001', '100000', '100000', '0', '730000', '750000', '20000', 'Selesai', '0');
 INSERT INTO `transaksi` VALUES ('TRS00002', '172037', '47', '2019-11-11', '2019-11-11', '2019-11-12', '2019-11-12', '1', '0', 'Ban belakang bagian kanan, kempes.', 'SPR006', '0', '5000', '0', '1065000', '1070000', '5000', 'Selesai', '0');
-INSERT INTO `transaksi` VALUES ('TRS00003', '0017093660', '35', '2019-11-12', '2019-11-12', '2019-11-13', null, '1', null, null, 'SPR000', null, null, null, '335000', null, null, 'Mulai', '0');
-INSERT INTO `transaksi` VALUES ('TRS00004', '172037', '38', '2019-11-13', '2019-11-13', '2019-11-14', null, '1', null, null, 'SPR005', null, null, null, '486000', null, null, 'Proses', '0');
+INSERT INTO `transaksi` VALUES ('TRS00003', '0017093660', '35', '2019-11-12', '2019-11-12', '2019-11-13', '2019-11-14', '1', '1', '-', 'SPR000', '45000', '100000', '50000', '530000', '550000', '20000', 'Selesai', '0');
+INSERT INTO `transaksi` VALUES ('TRS00004', '172037', '38', '2019-11-13', '2019-11-13', '2019-11-14', '2019-11-14', '1', '0', '-', 'SPR005', '50000', '0', '0', '486000', '500000', '14000', 'Selesai', '0');
 INSERT INTO `transaksi` VALUES ('TRS00005', '172060', '40', '2019-11-13', '2019-11-13', '2019-11-15', null, '2', null, null, 'SPR004', null, null, null, '940000', null, null, 'Proses', '0');
 
 -- ----------------------------
