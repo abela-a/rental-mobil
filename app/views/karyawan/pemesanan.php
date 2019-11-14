@@ -164,7 +164,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">Rp.</span>
                         </div>
-                        <input type="text" class="uang form-control" name="BiayaKerusakan" id="BiayaKerusakan" value="0">
+                        <input type="text" class="uang form-control" name="BiayaKerusakan" id="BiayaKerusakan" value="0" autocomplete="off">
                       </div>
                     </div>
 
@@ -174,7 +174,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">Rp.</span>
                         </div>
-                        <input type="text" class="uang form-control" name="BiayaBBM" id="BiayaBBM" value="0">
+                        <input type="text" class="uang form-control" name="BiayaBBM" id="BiayaBBM" value="0" autocomplete="off">
                       </div>
                     </div>
 
@@ -215,7 +215,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Rp.</span>
                           </div>
-                          <input type="text" class="uang form-control" name="JumlahBayar" id="JumlahBayar">
+                          <input type="text" class="uang form-control" name="JumlahBayar" id="JumlahBayar" autocomplete="off">
                         </div>
                       </div>
 

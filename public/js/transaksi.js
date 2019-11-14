@@ -132,9 +132,11 @@ $(document).ready(function() {
 
         totalPelanggan = JumlahBayar - totalAkhirBayar;
 
-        $("#Kembalian", ".selesai")
-          .val(totalPelanggan)
-          .mask("0.000.000.000", { reverse: true });
+        if (!isNaN(totalPelanggan)) {
+          $("#Kembalian", ".selesai")
+            .val(totalPelanggan)
+            .mask("0.000.000.000", { reverse: true });
+        }
       }
 
       $("#JumlahBayar", this).keyup(function() {
