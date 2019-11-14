@@ -33,7 +33,7 @@ Format ini berdasarkan dari [Keep a Changelog](https://keepachangelog.com/en/1.0
 
 🔥 [Download Latest Version](https://gitlab.com/abela-a/RentalMobil/-/releases)
 
-## **[1.1.0]** - [2019-11-13]
+## **[1.1.0]** - [2019-11-15]
 
 ##### ✅ Added
 
