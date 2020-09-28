@@ -8,9 +8,9 @@ Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, 
 
 ## Screenshot
 
-![Homepage](/uploads/9264cde97a1dd116e81316e838559a28/Homepage.png)
+![Homepage](https://gitlab.com/abela-a/RentalMobil/uploads/9264cde97a1dd116e81316e838559a28/Homepage.png)
 
-![Dashboard](/uploads/a18c43332b06a042f27d0eb6983b3056/Dashboard.gif)
+![Dashboard](https://gitlab.com/abela-a/RentalMobil/uploads/a18c43332b06a042f27d0eb6983b3056/Dashboard.gif)
 
 ## Fitur
 
