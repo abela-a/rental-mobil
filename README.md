@@ -2,7 +2,7 @@
 
 Aplikasi ini dibuat berdasarkan tugas Pemrograman Web & Mobile di sekolah saya, [SMK MUTIARA ILMU](http://mutiarailmu.sch.id).Aplikasi ini dibuat menggunakan bahasa pemrograman PHP yang berbasis objek atau OOP dan berbentuk MVC (Model View Controller).
 
-🔥 [Download Latest Version](https://gitlab.com/abela-a/RentalMobil/-/releases)
+🔥 [Download Latest Version](https://github.com/abela-a/rental-mobil/releases)
 
 > Aplikasi ini masih dalam tahap pengembangan.
 
